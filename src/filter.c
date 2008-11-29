@@ -181,7 +181,7 @@ gchar *get_cache_file(gchar *path)
 	gint i;
 	gint r;
 	gchar *p;
-	ssize_t length;
+	gsize length;
 	GError *error=NULL;
 	gchar *contents;
 	gchar tmpout[512];
