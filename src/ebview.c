@@ -312,6 +312,7 @@ int main( int   argc,
 #endif
 
 	g_thread_init(NULL);
+	gdk_threads_init();
 	bstarting_up = TRUE;
 
 #ifdef __WIN32__
@@ -449,8 +450,10 @@ int main( int   argc,
 */
 
 	// main loop
+	gdk_threads_enter();
 	bstarting_up = FALSE;
 	gtk_main ();
+	gdk_threads_leave();
 	ebook_end();
 
 	LOG(LOG_DEBUG, "OUT: main()");

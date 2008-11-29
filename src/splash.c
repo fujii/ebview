@@ -77,8 +77,11 @@ static gint load_watch_thread(gpointer data){
 
 void splash_message(gchar *msg)
 {
-	if((splash != NULL) && (splash_label != NULL))
+	if((splash != NULL) && (splash_label != NULL)) {
+		gdk_threads_enter();
 		gtk_label_set_text(GTK_LABEL(splash_label), msg);
+		gdk_threads_leave();
+	}
 }
 
 void show_splash()
@@ -130,7 +133,9 @@ void show_splash()
 	tag_timeout = gtk_timeout_add(200, load_watch_thread, NULL);
 	load_dictgroup_background();
 
+	gdk_threads_enter();
 	gtk_main();
+	gdk_threads_leave();
 }
 
 
