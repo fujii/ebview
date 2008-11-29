@@ -66,7 +66,9 @@ void bring_to_top(GtkWidget *win){
 		SetFocus(hWnd);
 	}
 #else
-	gtk_window_present(GTK_WINDOW(win));
+	gdk_window_show(GTK_WIDGET(win)->window);
+	gdk_window_focus(GTK_WIDGET(win)->window, gtk_get_current_event_time());
+
 #endif
 }
 

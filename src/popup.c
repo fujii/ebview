@@ -51,6 +51,8 @@ extern GtkTextTagTable *tag_table;
 //static CONTENT_AREA *popup_area=NULL;
 
 
+static void update_result(RESULT *result);
+
 gint close_popup(GtkWidget *widget, gpointer data)
 {
 
@@ -164,7 +166,7 @@ static gint title_click_event (GtkWidget *widget, GdkEventButton *event, gpointe
 				return(0);
 			rp = (RESULT *)(current_in_result->data);
 			if(current_in_result){
-				show_popup(rp);
+				update_result(rp);
 			}
 
 		} else if(strcmp(data, "X") == 0){
@@ -246,28 +248,13 @@ gint title_motion_event(GtkWidget *widget, GdkEventMotion *event)
 	return(FALSE);
 }
 
-static void create_popup_window(){
-
+static void move_popup_window() {
 	GdkModifierType mask;
 	gint pos_x, pos_y;
 	gint pointer_x, pointer_y;
 	gint root_x, root_y;
-	GdkWindow *root_win = NULL;
 	gint window_width, window_height;
-
-	GtkWidget *vbox;
-	GtkWidget *hbox;
-	GtkWidget *eventbox;
-	GtkWidget *image;
-	GtkWidget *frame;
-	GtkWidget *separator;
-
-#ifdef __WIN32__
-	HWND hWnd;
-	long nStyle;
-#endif
-
-	LOG(LOG_DEBUG, "IN : create_popup_window()");
+	GdkWindow *root_win = NULL;
 
 #ifdef __WIN32__
 	root_x = GetSystemMetrics(SM_CXSCREEN);
@@ -277,16 +264,9 @@ static void create_popup_window(){
 	gdk_window_get_size(root_win, &root_x, &root_y);
 #endif
 
-	// If there already is an window, use that position.
-	// Move if the window is out of the screen.
-//	gdk_window_get_position(popup->window, &pos_x, &pos_y);
-//	gtk_widget_destroy(popup);
-//	redraw = TRUE;
-
 	window_width = popup_width;
 	window_height = popup_height;
 
-	// If there is no window, determine from the mouse position.
 	gdk_window_get_pointer(root_win, &pointer_x, &pointer_y, &mask);
 	pos_x = pointer_x + align_x;
 	pos_y = pointer_y + align_y;
@@ -305,15 +285,49 @@ static void create_popup_window(){
 		}
 	}
 
+	gtk_window_move(GTK_WINDOW(popup), pos_x, pos_y);
+}
+
+static void create_popup_window(){
+
+	gint window_width, window_height;
+
+	GtkWidget *vbox;
+	GtkWidget *hbox;
+	GtkWidget *eventbox;
+	GtkWidget *image;
+	GtkWidget *frame;
+	GtkWidget *separator;
+
+#ifdef __WIN32__
+	HWND hWnd;
+	long nStyle;
+#endif
+
+	LOG(LOG_DEBUG, "IN : create_popup_window()");
+
+	// If there already is an window, use that position.
+	// Move if the window is out of the screen.
+//	gdk_window_get_position(popup->window, &pos_x, &pos_y);
+//	gtk_widget_destroy(popup);
+//	redraw = TRUE;
+
+	window_width = popup_width;
+	window_height = popup_height;
+/*
 	popup = gtk_widget_new (GTK_TYPE_WINDOW,
 				"type", GTK_WINDOW_TOPLEVEL,
 				 "allow-shrink", TRUE,
 				 "allow-grow", TRUE,
 				 "default-width", window_width,
 				 "default-height", window_height,
-
 				NULL);
-	gtk_window_move(GTK_WINDOW(popup), pos_x, pos_y);
+*/
+	popup = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+	gtk_window_set_resizable(GTK_WINDOW(popup), TRUE);
+	gtk_window_set_default_size(GTK_WINDOW(popup), window_width, window_height);
+	gtk_window_set_accept_focus(GTK_WINDOW(popup), FALSE);
+	move_popup_window();
 	gtk_window_set_wmclass(GTK_WINDOW(popup), "Popup", "EBView");
 	g_signal_connect(G_OBJECT(popup), "delete_event",
 			 G_CALLBACK(close_popup), NULL);
@@ -478,7 +492,7 @@ void show_result_in_popup()
 	show_popup(current_in_result->data);
 }
 
-void show_popup(RESULT *result)
+static void update_result(RESULT *result)
 {
 	gchar *text=NULL;
 	GtkTextIter iter;
@@ -489,7 +503,7 @@ void show_popup(RESULT *result)
 
 	g_assert(result->type == RESULT_TYPE_EB);
 
-	LOG(LOG_DEBUG, "IN : show_popup()");
+	LOG(LOG_DEBUG, "IN : update_result()");
 
 	text = ebook_get_text(result->data.eb.book_info,
 			      result->data.eb.pos_text.page, 
@@ -552,14 +566,24 @@ void show_popup(RESULT *result)
 	gtk_adjustment_set_value(
 		gtk_scrolled_window_get_hadjustment(GTK_SCROLLED_WINDOW(popup_scroll)), 0);
 
-
-	gtk_window_present(GTK_WINDOW(popup));
-
 	g_free(text);
 	set_current_result(result);
 
 	gtk_timeout_add(10, scroll_to_top, NULL);
 
-	LOG(LOG_DEBUG, "OUT : show_popup()");
+	LOG(LOG_DEBUG, "OUT : update_result()");
+}
 
+void show_popup(RESULT *result)
+{
+	LOG(LOG_DEBUG, "IN : show_popup()");
+
+	update_result(result);
+	if(bpushpin_down == FALSE){
+		move_popup_window();
+	}
+	gdk_window_show(GTK_WIDGET(popup)->window);
+	gdk_window_focus(GTK_WIDGET(popup)->window, gtk_get_current_event_time());
+
+	LOG(LOG_DEBUG, "OUT : show_popup()");
 }
