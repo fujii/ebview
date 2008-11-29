@@ -514,7 +514,7 @@ static EB_Error_Code hook_wave(EB_Book *book, EB_Appendix *appendix, void *conta
 		eb_write_text_string(book, "<wave>");
 		break;
 	case EB_HOOK_END_WAVE:
-		sprintf (text, "</wave page=0x%x offset=0x%x size=%d>", argv[2], argv[3], data_size);
+		sprintf (text, "</wave page=0x%x offset=0x%x size=%zu>", argv[2], argv[3], data_size);
 		eb_write_text_string(book, text);
 		break;
 	}
