@@ -1,0 +1,163 @@
+EBViewのコンパイル(Windows編)
+
+*** 警告 ***
+ソースからコンパイルするのは、環境準備を含め、とても大変です。よほどのことがない限り、バイナリを使うのがいいと思います｡
+************
+
+Windowsでは、Cygwinを使ってコンパイルします。ただし、-mno-cygwinでコンパイルされるので、動作環境にはCygwinは必要ありません。MinGWでもいいのかもしれませんが、試していません。
+
+このあたりについては、"cygwin mingw"などでインターネットを検索すると、解説しているページがあります。
+
+
+1. Cygwinのインストール
+
+以下からCygwinをインストールします。
+
+  http://www.cygwin.com/
+
+ちなみに、私はGCCはバージョン3ではなく、バージョン2.95.3-9を使っています。
+
+
+2．ライブラリのインストール
+
+以下からGTKなどのライブラリ一式をインストールします。
+
+  http://www.gimp.org/~tml/gimp/win32/
+
+インストールするディレクトリはどこでも構いませんが、C:\cygwin\usr\local(Cygwin環境内では /usr/local になる)の下にするか、C:\gtk などのように別のディレクトリにします。私は後者としました。
+
+また、以下からPOSIX Threads for Win32を取ってきてインストールします。
+
+  http://sources.redhat.com/pthreads-win32/
+
+さらに、以下から正規表現ライブラリをとってきます。
+
+  http://www2.odn.ne.jp/munesato/sylpheed/
+
+
+  全部で以下のアーカイブが必要になります(2003年6月25日時点)。
+
+  dirent.zip
+  freetype-2.1.2-1-lib.zip
+  freetype-2.1.2-bin.zip
+  gettext-dev-0.10.40-20020904.zip
+  libiconv-1.8.w32-1.bin.zip
+  libintl-0.10.40-tml-20020904.zip
+  libjpeg-6b-bin.zip
+  libjpeg-6b-lib.zip
+  libpng-1.2.4-1-bin.zip
+  libpng-1.2.4-1-lib.zip
+  pkgconfig-0.14.zip
+  tiff-3.5.7-bin.zip
+  tiff-3.5.7-lib.zip
+  zlib-1.1.4-bin.zip
+  zlib-1.1.4-lib.zip
+  
+  atk-1.0.3-20020821.zip
+  atk-dev-1.0.3-20020821.zip
+  glib-2.2.1.zip
+  glib-dev-2.2.1.zip
+  gtk+-2.2.1.zip
+  gtk+-dev-2.2.1.zip
+  pango-1.2.1.zip
+  pango-dev-1.2.1.zip
+  
+  pthreads-2003-05-10.exe
+
+  regex-dev-20020423.lzh
+
+
+3. EB Libraryのインストール
+
+ 以下からソースを取ってきます（これを書いている時点では3.3.2）｡
+
+  http://www.sra.co.jp/people/m-kasahr/eb/index-ja.html
+
+ 適当に展開します。configureを実行する前に環境変数を設定します。
+
+  export CFLAGS="-mno-cygwin -fnative-struct"
+  export CPPFLAGS="-DWIN32 -DDOS_FILE_PATH -I/cygdrive/c/gtk/include"
+  export LDFLAGS="-L/usr/local/lib -L/cygdrive/c/gtk/lib"
+  export CC=gcc-2
+
+ パスは、GTKなどのライブラリをインストールしたディレクトリを指定します。
+
+  コンパイルします。
+  
+  ./configure
+  make
+  cd eb
+  make install
+  cd ..
+  make eb.conf
+  cp eb.conf /usr/local/etc
+
+makeの途中でgetopt関係のエラーになっても、とりあえず無視します。
+
+
+4. EBViewのコンパイル
+
+以下を実行します。
+  ./configure
+  make
+
+  出来たバイナリやデータファイルは、このドキュメントの最後にあるディレクトリ構成に従って、手動でコピーします。
+
+
+5. GTKのIME用IMモジュールをインストールします。
+
+ファイルは以下にあります（これを書いている時点での最新は0.0.3）。
+
+  http://imime.sourceforge.jp/
+
+通常に./configure, makeしてもDLLができないので、以下のようなシェルスクリプトを作って実行します。
+
+****** ここから******
+#!/bin/sh
+CC=gcc-2
+LD=ld
+DLLTOOL=dlltool
+DLLNAME=im-ime.dll
+OBJS="imime.o gtkimcontextime.o"
+CFLAGS="-I/cygdrive/c/gtk/include -I/cygdrive/c/gtk/include/atk-1.0 -I/cygdrive/c/gtk/include/glib-2.0 -I/cygdrive/c/gtk/include/gtk-2.0 -I/cygdrive/c/gtk/include/pango-1.0 -I/cygdrive/c/gtk/lib/glib-2.0/include -I/cygdrive/c/gtk/lib/gtk-2.0/include -mno-cygwin -fnative-struct"
+LIBS="-lintl -lgtk-win32-2.0 -lgdk-win32-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangowin32-1.0 -lgdi32 -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -lintl -liconv -limm32"
+LDFLAGS="-L/usr/local/lib -L/cygdrive/c/gtk/lib -mno-cygwin -fnative-struct -mwindows"
+
+
+${CC} -c ${CFLAGS} imime.c
+${CC} -c ${CFLAGS} gtkimcontextime.c
+dlltool --export-all --output-def im-ime.def ${OBJS}
+dllwrap --target i386-mingw32 --mno-cygwin --export-all --def im-ime.def --driver-name gcc-2 -o im-ime.dll ${OBJS} ${LDFLAGS} ${LIBS}
+
+****** ここまで******
+
+できたim-ime.dllを、lib/gtk-2.0/2.2.0/immodules/ にコピーし、 etc/gkt-2.0/gtk.immodules に以下の行を追加します。
+
+  "/target/build/lib/gtk-2.0/2.2.0/immodules/im-ime.dll"
+  "win32ime" "Windows IME" "gtk+" "" "*"
+
+または、ファイル自体を gtk-query-immodules-2.0.exe コマンドで作成します。
+
+
+6. Windows版固有の事項
+
+  Windows版では、ebview.exeがあるディレクトリにdataというディレクトリを作成し、そこにメッセージカタログファイル、ヘルプファイル、gtkrcファイル、各種定義ファイルを入れます｡例えば、ebview.exeをC:\Program Files\ebviewに入れる場合、以下のようになります。
+
+  C:\Program Files\ebview:
+    ebview.exe
+
+  C:\Program Files\ebview\data
+    gtkrc
+    about.en
+    about.jp
+    endinglist.xml
+    endinglist-ja.xml
+    searchengines.xml
+    shortcut.xml
+
+  C:\Program Files\ebview\data\help
+    *.html
+
+  C:\Program Files\ebview\data\ja\LC_MESSAGES
+    ebview.mo
+

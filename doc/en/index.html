@@ -1,0 +1,531 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head><title>EBView Manual</title>
+  <meta name="author" content="Kenichi SUTO">
+</head>
+
+<body>
+<br>
+<br>
+<h1 align="center">How to use EBView 0.2.0</h1>
+<div align="center"><a href="../ja/index.html">日本語</a><br>
+<br>
+Kenichi SUTO<br>
+<br>
+<a href="mailto:deep_blue@users.sourceforge.net">deep_blue@users.sourceforge.net</a><br>
+<br>
+</div>
+<hr width="100%" size="2"><br>
+<blockquote><a href="#SEC1">1. Introduction</a><br>
+  <a href="#SEC2">2. Preparation</a><br>
+  <a href="#SEC3">3. Searching</a><br>
+  <a href="#SEC4">4. Selection Lookup</a><br>
+  <a href="#SEC5">5. Stemming</a><br>
+  <a href="#SEC6">6. Playing Multimedia Data</a><br>
+  <a href="#SEC7">7. Internet Search</a><br>
+  <a href="#SEC8">8. Keyboard Shortcuts</a><br>
+  <a href="#SEC9">9. Customizing the View</a><br>
+  <a href="#SEC10">10. Remote Commands</a><br>
+  <a href="#SEC11">11. Other Settings</a><br>
+</blockquote>
+<hr width="100%" size="2"><br>
+<h2><a name="SEC1"></a>1. Introduction</h2>
+<br>
+EBView is a program to display dictionaries in the EPWING format. Notable
+feature is :<br>
+<ul>
+  <li>Multi-lexicon retrieval</li>
+  <li>Automatic search of words in the selection buffer</li>
+  <li>Stemming</li>
+  <li>Multimedia support</li>
+</ul>
+As it uses Japanese you must set the character locale (LC_CTYPE) to a suitable
+value (ja_JP.EUC-JP).   For example, calling the program as follows "env
+LC_CTYPE=ja_JP.EUC-JP /usr/bin/ebview".<br>
+<h2><a name="SEC2"></a>2. Preparation</h2>
+<h3>Getting Dictionaries</h3>
+<br>
+First, one or more dictionaries are necessary to use this software. Both
+free and commercial dictionaries can be used.   You can use dictionaries
+in the EPWING format, and sometimes in the EB, EBG, EBXA and EBXA-C formats.
+There are some free dictionaries distributed on the internet.   For example,
+there is a list of <a href="http://openlab.ring.gr.jp/edict/fpw/"> "Dictionaries
+that work with FreePWING" here </a>.<br>
+Once you have the dictionaries place them in some suitable directory.   If
+you purchased dictionaries on CD-ROM then the manuals that come with them
+should tell you how to copy them.   Normally,  you can just copy the whole
+CDROM as is.   Make sure you DO NOT VIOLATE the copyright restrictions of
+any dictionaries. 
+<h3>Adding Dictionaries</h3>
+<br>
+  The first time you use the program, add one or more dictionaries using the
+"Add/Remove Dictionary" entry from the "Settings" menu.  Follow the steps
+bellow:<br>
+<br>
+<blockquote><b>1. Add a Dictionary Group</b><br>
+  <br>
+  You need to add dictionary group. Put the name in the "Group Name" box
+and click the "Add" button.    "EtoJ" or "JtoE" will be fine.<br>
+  <br>
+  If you want to use "Selection Lookup" feature, you might want to add a
+group named "selection".    If it exists, EBView will always use this group
+on Selsction Lookup.<br>
+  <br>
+  <br>
+  <b>2. Identify Avaliable Dictionaries</b><br>
+  <br>
+  Then, identify dictionaries in hard disk. Enter the directory that contains
+the dictionary information    (it should contain a file called <catalog>or
+  <catalogs>).   Then press the "Search Disk" button and it will read the
+catalog.   You can specify the depth of directories to recursively search
+using the number next to the directory name.     "0" means search no subdirectories.<br>
+  <br>
+  <b>3. Choose Selected Dictionaries to add to the Dictionary Group</b><br>
+  <br>
+  Choose the dictionary or dictionaries to add to the dictionary group and
+click the "Add" button.     You can change the name of the dictionary as
+you desire.<br>
+  <br>
+  </catalogs></catalog></blockquote>
+Now, you can start searching. All the information about setting is stored
+in a file in a directory called .ebview in the user's home directory.<br>
+<br>
+<h2><a name="SEC3"></a>3. Searching</h2>
+<br>
+Here is a steps to search.<br>
+<h3>The Dictionary Selection Toolbar</h3>
+<br>
+ The Dictionary Selection Toolbar allows you to choose a dictionary group,
+ and then select which dictionaries will be used from within that group.
+Only selected dictionaries will be searched.   If you want to stop searching
+one or more dictionaries you can toggle them by pushing their buttons.  
+If a dictionary cannot be found, then its button cannot be pushed.   In this
+case, check whether the dictionary file still exists or if its CD-ROM has
+been mounted.  You can change how many characters of the dictionary names
+appear on the buttons using the Settings/Misc/Bytes in Dictionary Bar. <br>
+<br>
+<h3>The Search Toolbar</h3>
+<br>
+You can choose the search method either from the search menu or the toolbar.
+Bellow is the meaning of each methods.<br>
+<br>
+<blockquote>        
+  <table cellpadding="2" cellspacing="2" border="1" width="80%" align="center">
+    <tbody>
+      <tr>
+        <td valign="top" align="center" bgcolor="#cccccc" width="30%">Search
+Method<br>
+        </td>
+        <td valign="top" align="center" bgcolor="#cccccc">Meaning<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Automatic Search<br>
+        </td>
+        <td valign="top">Execute both "Exactword Search" and "Keyword Search".<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Exectword Search<br>
+        </td>
+        <td valign="top">Entries which exactly matches the search word will
+be listed.<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Forward Search<br>
+        </td>
+        <td valign="top">Entries beginning with the search word will be listed.
+                         For example, when you enter "difficult" as search
+word, it matches both "difficult" and "difficulty".<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Backward Search<br>
+        </td>
+        <td valign="top">Entries end in the search word will be listed.  
+                       For example, when you enter "tist" as search word,
+it matches "dentist" and "systematist" etc.</td>
+      </tr>
+      <tr>
+        <td valign="top">Keyword Search<br>
+        </td>
+        <td valign="top">This enables you to specify multiple words, then
+entries which contain all the words will be listed.                     
+   For example, when you enter "grow" and "up" , it may matches "grow up".</td>
+      </tr>
+      <tr>
+        <td valign="top">Multiword Search<br>
+        </td>
+        <td valign="top">This also enables you to specify multiple words,
+but each words has a meaning.                           You may also choose
+words from the list if available.<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Full Text Search<br>
+        </td>
+        <td valign="top">This lists all the entries which contains search
+word in its content.                          It takes times since EBView
+has to read whole dictionary.<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Internet Search<br>
+        </td>
+        <td valign="top">Lanuch external Web browser to search keywords from
+Internet.<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Menu<br>
+        </td>
+        <td valign="top">Show menu data if available.<br>
+        </td>
+      </tr>
+       <tr>
+        <td valign="top">Copyright<br>
+        </td>
+        <td valign="top">Show copyright information if available.<br>
+        </td>
+      </tr>
+                  
+    </tbody>           
+  </table>
+</blockquote>
+<h3><br>
+</h3>
+<h3>Entering Search Words</h3>
+<br>
+Then you should enter a keyword or space-separated keywords in the text box
+and hit the enter key, or click the search icon. <br>
+<br>
+<h3>Search Result</h3>
+<br>
+A list of hits will be displayed in the box on the left of the result frame.
+The detailed informaiton of the first result will be displayed on the right.
+You can see more information about other entries by selecting them from the
+hit list.   You can also move up and down the list using shortcut key. When
+there are so manyu hits, only limited number of hits will be listed. You
+can tune this number with [Settings]-&gt;[Misc]-&gt;"Maximum hits to display".
+<br>
+<br>
+<h3>Jumping</h3>
+<br>
+Some words are highlighted in blue in the search results. These are hyperlinks
+to other entries in the dictionary. Your cursor should change as it passes
+over them, and if you click the left mouse button, you can jump to the hyperlinked
+entry. Your search history is stored, so you can go back using the back button
+and then forward again using the forward button.<br>
+<br>
+<h3>Selecting Content</h3>
+<br>
+  You can choose the index word using the mouse to mark a region (such as
+by dragging the mouse accross a word or double clicking on it). Double clicking
+will choose all characters of the same type around the cursor (where type
+is hiragana/katakana or kanji). For example, in the text "このソフトウェアは..." (This
+software-TOPIC) if you click on the "ウ" it will select "ソフトウェア" (software).
+In the same way, for the text "辞書の追加と削除", clicking on "追" will select "追加".
+<br>
+  The selected text will be placed in the X-selection, so you can paste it
+into other applications by clicking the middle button (assuming that "Selection
+Lookup" is off). <br>
+<br>
+Clicking the right button gives a menu with three options:  + Search Selected
+Word  + Copy to Clipboard (Ctrl-C)  + Display    - Menubar    - Dictionary
+Selection Toolbar    - Statusbar If you choose "search selected word", EBview
+will search for the selected word. If you choose "copy to clipboard" the
+selected word will be copied to the clipboard. You can also do this by hitting
+Ctrl-c (Holding down the control key and pressing "c"). Once a word is in
+the clipboard, you can then paste it into other applications (for example
+using Ctrl-v, or Ctrl-y in emacs. How to paste depends on the application).<br>
+<br>
+<h2><a name="SEC4"></a>4. Selection Lookup</h2>
+<br>
+Selection lookup makes it possible to look up words automatically even from
+other applications. For example, you can look up unknown words as you are
+browsing.<br>
+In general, in order not to get too many useless lookups, it is a good idea
+to choose "exact match" as the search method, and not select too many dictionaries.
+<br>
+<br>
+If a dictionary group named "selection" exists, EBView will use that group
+regardless of the current group.<br>
+<br>
+In addition to getting results in the EBView result window, you can choose
+to display them in a pop-up window. To do this you must select both "selection
+lookup" and "pop-up display".<br>
+Mouse operation on popup display:<br>
+<blockquote>                 
+  <table cellpadding="2" cellspacing="2" border="0" width="70%">
+    <tbody>
+      <tr>
+        <td valign="top">Left Button</td>
+        <td valign="top">Close popup window.</td>
+      </tr>
+      <tr>
+        <td valign="top">Middle Button</td>
+        <td valign="top">Back to previous hits.</td>
+      </tr>
+      <tr>
+        <td valign="top">Right Button</td>
+        <td valign="top">Go to next hits.</td>
+      </tr>
+                             
+    </tbody>                 
+  </table>
+  <br>
+</blockquote>
+Clicking on hypertext links with the left button works normally,  clicking
+anywhere else with the left button closes the pop-up window.<br>
+You can't look up the same word twice using selection lookup. If you want
+to look a word up again, you must first select something else,  and then
+select the word you want to look up again.<br>
+<br>
+<h2>5. Stemming</h2>
+<br>
+When looking up inflected words, such as "dictionaries", we need to search
+for the base form: "dictionary". The user can check each word and convert
+them as necessary,but this is tedious and inconvenient for automatic lookup
+of the X-selection. So, EBview automatically stems inflected words, so that
+it can lookup the base form. We call this feature "stemming". You can let
+EBView to only stem if the original form could not be found (this is the
+default).<br>
+EBview looks at the end of a word, and if it matches a set of patterns, converts
+it to the base form. Therefore, if you turn stemming on, lookup takes more
+time. You can turn stemming on or off, and customize the patterns used in
+the Settings menu, Stemming sub-menu. Adding many patterns makes the lookup
+very slow, so be careful. You can also change the order in which patterns
+match by dragging and dropping patterns in the Stemming Setting box.<br>
+Starting from version 0.1.6, EBView performs stemming for Japanese words.
+For example, when you specify 「出られない」 as search word,「出る」 will hit. Algorithm
+used in Japanese stemming is almost the same as that of English, there is
+a slight difference. When normal stemming resulted in no hit, then EBView
+will try searching with kanji characters in keyword. Yor cannot customize
+Japanese stemming pattern for the present.<br>
+<br>
+<h2><a name="SEC6"></a>6. Playing Multimedia Data</h2>
+<br>
+EBView supports multimedia data such as sound and movie. References to such
+data are shown green charancter.  Your cursor should change as it passes over
+them,  and if you click the left mouse button, you can play sound or movie.<br>
+<br>
+EBView uses external program to play multimedia, so you need to specify programs
+which are capable to play actual data. Open [Settings]-&gt;[External Program]
+and enter the name of external program. For example, "playwave %f" for sound.
+%f is mandatory.  Prior to lanuch external program, EBView will store multimedia
+data to temporally file. %f will be replaced by temporally file internally.
+<br>
+<br>
+<h2><a name="SEC7"></a>7. Internet Search</h2>
+<br>
+EBView can launch external browser to perform searching by Internet Search
+Engines. It is convenient when you cannot find desired information from your
+local dctionary,  or you want to perform internet search on multiple search
+engines.<br>
+<br>
+Choose "Internet Search" as search method. Search engines are listed in left
+frame. Choose one of them, enter keywords, press enter key or start button.
+Double click on search engine name will also start search. Right clicking
+on search engine name will popup menus.  You can jump to Homepage from here.
+You may need this when you want to specify detailed optional parameter.<br>
+<br>
+If nothing happens, please check command to launch browser.  [Settings]-&gt;[External
+Program] has an entry. Example is "gnome-moz-remote %f". %f is mandatory and
+will be replaced by URL.<br>
+<br>
+You can customize the list of search engine in [Settings]-&gt;[Search Engines].
+Final URL will be the conjunction of "Pre string" and keyword and "Post string".
+If you specify multiple words, each words will be concatenated with "Glue
+string". Character code of keyword will be converted to specified code, as
+some search engine requires specific character code. Please note that you
+can only use search engine which uses "get" method rather than "post" method.
+<br>
+<br>
+Some search engines such as "<a href="http://www.alc.co.jp/">英辞郎 on the Web</a>"
+prohibits these kind of searching. They only permits access from its Homepage.
+<br>
+<br>
+<h2><a name="SEC8"></a>8. Keyboard shortcuts</h2>
+<br>
+You can assign keyboard shortcuts to some function, such as selecting dictionary
+group. Multiple shortcuts will be assigned to a function. Here is a default
+shortcuts:<br>
+<br>
+<blockquote>             
+  <table cellpadding="2" cellspacing="2" border="1" width="70%" align="center">
+    <tbody>
+      <tr>
+        <td valign="top" bgcolor="#cccccc" align="center">Key<br>
+        </td>
+        <td valign="top" bgcolor="#cccccc" align="center">Function<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">F1</td>
+        <td valign="top">Choose Automatic Search</td>
+      </tr>
+      <tr>
+        <td valign="top">F2</td>
+        <td valign="top">Choose Exactword Search</td>
+      </tr>
+      <tr>
+        <td valign="top">F3<br>
+        </td>
+        <td valign="top">Choose Forward Search</td>
+      </tr>
+      <tr>
+        <td valign="top">F4<br>
+        </td>
+        <td valign="top">Choose Endword Search</td>
+      </tr>
+      <tr>
+        <td valign="top">F5<br>
+        </td>
+        <td valign="top">Choose Keyword Search</td>
+      </tr>
+      <tr>
+        <td valign="top">F6<br>
+        </td>
+        <td valign="top">Choose Mutiword Search</td>
+      </tr>
+      <tr>
+        <td valign="top">F7<br>
+        </td>
+        <td valign="top">Choose Full Text Search</td>
+      </tr>
+      <tr>
+        <td valign="top">F8<br>
+        </td>
+        <td valign="top">Choose Internet Search</td>
+      </tr>
+      <tr>
+        <td valign="top">Return</td>
+        <td valign="top">Start searching</td>
+      </tr>
+      <tr>
+        <td valign="top">Escape</td>
+        <td valign="top">clear keywords</td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + p<br>
+        </td>
+        <td valign="top">Previous hit<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + n</td>
+        <td valign="top">Next hit<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + c<br>
+        </td>
+        <td valign="top">Copy to clipboard<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + h<br>
+        </td>
+        <td valign="top">Show help<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + q<br>
+        </td>
+        <td valign="top">Quit program<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + Up<br>
+        </td>
+        <td valign="top">Choose previous dictionary group<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + Down<br>
+        </td>
+        <td valign="top">Choose next dictionary group<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + Number<br>
+        </td>
+        <td valign="top">Toggle Xth dictionary<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Alt + Left<br>
+        </td>
+        <td valign="top">Go back in history<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Alt + Right<br>
+        </td>
+        <td valign="top">Go forward in history<br>
+        </td>
+      </tr>
+                        
+    </tbody>        
+  </table>
+</blockquote>
+<br>
+You can cosutomize shortcuts in [Settings]-&gt;[Shortcut] Enter key combination,
+choose command, then press [Add] button.<br>
+<h2><a name="SEC9"></a>9.  Customizing the View</h2>
+<br>
+You can toggle the display of the following toolbars from the View Menu:
+<br>
+<br>
+<ul>
+  <li>Menubar</li>
+  <li>Dictionary Selection Toolbar</li>
+  <li>Statusbar</li>
+</ul>
+You can also toggle them from a context menu that pops up with a right button
+click. This is the only way to get the menubar back if you toggle it off.
+<br>
+<br>
+<h2>10. Remote Commands</h2>
+<br>
+You can send commands to already running EBView and let it perform some action.
+You may, for example, assign commands as shortcut for Window Manager or other
+programs. "ebview-client" is the program to send commands to EBView. Specifying
+function as a parameter to this client program will let EBView perform it.
+If there is no EBView running, client program first lanuch one. Formats of
+parameters are as follows.<br>
+<br>
+<blockquote><b>ebview-remote --search  keywords</b><br>
+        
+  <blockquote>Perform search with specified parameter. You can pass space-separated
+words.<br>
+  </blockquote>
+  <br>
+  <b>ebview-remote  --selection</b><br>
+        
+  <blockquote>Perform selection lookup only once.<br>
+  </blockquote>
+  <br>
+  <b>ebview-remote  --popup</b><br>
+        
+  <blockquote>Perform selection lookup only once. Result will be shown in
+popup window.</blockquote>
+</blockquote>
+<br>
+<h2>11. Other Settings</h2>
+<h3>Fonts</h3>
+Fonts can be customized from [Settings]-&gt;[Font]. EBView automatically
+chooses the size of book-specific (Gaiji) font. Even so, 14 - 16 pt is recommended.
+Some dictionary only have 16 dot book-specific font.<br>
+<br>
+If you want to use different fonts for different encodings, you can specify comma-separated fonts to construct fontset. <br>
+<br>
+<h3>Size Of Popup Window</h3>
+You can change the size of popup window. As a rule, popup window will be
+shown at right buttom of the mouse location. EBView moves the popup window
+when it does not fit in screen.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body></html>

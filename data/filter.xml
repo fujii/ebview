@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="euc-jp"?>
+<filterdef>
+  <filter>
+    <extension>.pdf</extension>
+    <filter_command>pdftotext -enc EUC-JP %f %o</filter_command>
+    <open_command>xpdf -remote ebview %f %p</open_command>
+  </filter>
+</filterdef>

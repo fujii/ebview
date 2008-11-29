@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="euc-jp"?>
+<shortcutdef>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x006e</value>
+    <command>Next Hit</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0070</value>
+    <command>Previous Hit</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0063</value>
+    <command>Copy To Clipboard</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xff0d</value>
+    <command>Start Search</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0068</value>
+    <command>Show Help</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xff1b</value>
+    <command>Clear Word</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0071</value>
+    <command>Quit Program</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xffbe</value>
+    <command>Select Automatic Search</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xffbf</value>
+    <command>Select Exactword Search</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xffc0</value>
+    <command>Select Word Search</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xffc1</value>
+    <command>Select Endword Search</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xffc2</value>
+    <command>Select Keyword Search</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xffc3</value>
+    <command>Select Multi Search</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xffc4</value>
+    <command>Select Fulltext Search</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xffc5</value>
+    <command>Select Internet Search</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xffc6</value>
+    <command>Select File Search</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xffc9</value>
+    <command>Switch Pane Direction</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0xff54</value>
+    <command>Next Dictionary Group</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0xff52</value>
+    <command>Previous Dictionary Group</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0031</value>
+    <command>Toggle Dictionary No. 1</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0032</value>
+    <command>Toggle Dictionary No. 2</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0033</value>
+    <command>Toggle Dictionary No. 3</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0034</value>
+    <command>Toggle Dictionary No. 4</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0035</value>
+    <command>Toggle Dictionary No. 5</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0036</value>
+    <command>Toggle Dictionary No. 6</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0037</value>
+    <command>Toggle Dictionary No. 7</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0038</value>
+    <command>Toggle Dictionary No. 8</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0039</value>
+    <command>Toggle Dictionary No. 9</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0030</value>
+    <command>Toggle Dictionary No. 10</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0008</modifier>
+    <value>0xff51</value>
+    <command>Go Back In History</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0008</modifier>
+    <value>0xff53</value>
+    <command>Go Forward In History</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xff56</value>
+    <command>Scroll Mainview Down</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0000</modifier>
+    <value>0xff55</value>
+    <command>Scroll Mainview Up</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0066</value>
+    <command>Next Hits</command>
+  </shortcut>
+  <shortcut>
+    <modifier>0x0004</modifier>
+    <value>0x0062</value>
+    <command>Prev. Hits</command>
+  </shortcut>
+</shortcutdef>

@@ -1,0 +1,159 @@
+2004-02-22  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* Version 0.3.5:
+	* jcode : Katakana/Hiragana conversion fixed.
+	* mainwindow.c : Japanese input on UNIX fixed.
+
+2004-02-19  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* Version 0.3.4:
+	* shortcutfunc.c : New shortcut to Expand/Shrink line, Increase/Decrease text.
+
+2004-02-15  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* shortcutfunc.c : New shortcut to paste text from clipboard.
+	* mainmenu.c, mainwindow.c : Expand/Shrink line, Increase/Decrease text.
+	
+2004-02-09  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* render.c : Improved indentation of image.
+	* mainmenu.c : Menu structure changed.
+	* selection.c : Selection search modified (ex. copy-only mode).
+	* external.c : Play sound internally (Windows).
+	* selection.c : Immediately get clipboard on Windows (No loop).
+
+2004-02-08  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* render.c : Japanese keyword emphasis bug fixed.
+	* hook.c : Handling of unbalanced hooks.
+	* headword.c : Show dictionary name on tooltips.
+	               Thanks to Mr. Masatake YAMATO.
+
+2004-02-04  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* preference.c : Config file location changed on Windows.
+	
+2004-01-27  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* jcode.c : Replace characters now defined in Unicode.
+
+2004-01-24  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* eb.c, jcode.c : Search both Katakana and Hiragana.
+
+2004-01-23  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* textview.c : Place cursor at the top when finished to render.
+	* pref_dictgroup.c : Color selection featuer added.
+	* dialog.c : Center dialog according to the grabbed window.
+	* pref_webgroup.c : Automatically saves changes.
+	
+2004-01-20  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* eb.c, menu.c : Check error when menu or copyright will be shown.
+	* pref_eictgroup.c : Default set to active.
+	
+2004-01-15  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* Version 0.3.3 Release.
+	* cellrendererebook.c : Use normal font to draw cell text.
+	* grep.c : Enable file pattern.
+	* headword.c, pref_gui.c : Calculate number of cells from window height.
+	* eb.c : Use BMH method for fulltext search.
+
+2004-01-10  Kenichi Suto <deep_blue@users.sourceforge.net>
+	Thanks to Shun-ichi TAHARA for bug report.
+	* cellrendererebook.c : Size calculation corrected.
+	* headword.c : Segfault on next and previous button fixed.
+	* preference.c : Destroying wrong widget in ok_pref() fixed.
+	* external.c : Freeze on failure of exec() fixed.
+	
+2004-01-05  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* pref_grep.c, headword.c : New option to toggle filename in hit list.
+	
+2004-01-02  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* ebview.c : Suppress console message on Windows.
+	* pref_dirgroup.c, grep.c : New "directory group" feature.
+
+2003-12-26  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* pref_io.c : Drag & drop enabled.
+	* pref_io.c, pref_dictgroup.c : Japanese path name enabled.
+
+2003-12-25  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* configure.in : Changed to use gcc3 on Cygwin environment.
+	* eb.c, hook.c : finalize_hookset() added. 
+	  Thanks to Kazuki Ohta.
+	* external.c : Call ShellExecute() when no program is specified.
+	* filter.c : Ignore zero sized cache file.
+	* render.c : Non-black gaiji color fixed.
+
+2003-06-25  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* eb.c : Japanese stemming fixed.
+	* pref_io.c : Fixed weblist for NULL entries.
+	* grep.c, filter.c, bmh.c, reg.c : New for file search.
+	* headword.c : Modified to support file search.
+	
+2003-05-26  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* mainwindow.c : Add event handler for focus_in_event.
+	
+2003-05-26  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* popup.c : Add gtk_windows_present(popup).
+	* xmlinternal.c : Support cascaded tag <modification>.
+
+2003-05-16  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* Version 0.3.0
+	* Almost all files have rewritten.
+	
+2003-04-26  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* Version 0.2.1
+	* EBView now supports FreeBSD!
+	  ( Thanks to Tetsuo Ono, Norikatsu Shigemura, KATO Tsuguru. )
+	* eb.c : Appendix support added.
+	* ebview-client.c, websearch.c : modified for FreeBSD support.
+	
+2002-12-19  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* Version 0.3.0
+	* Codeset of preferences is now UTF-8. 
+	* Length of button label is number of chars, not bytes.
+
+	
+2002-11-19  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* Version 0.2.0
+	* multi.c : List candidates on multiword search.
+	* font.c : Font selection capability added.
+	* ebview.c : Added remote invocation function.
+	* eb.c : Fulltext search added.
+	* websearch.c : Internet search.
+	* weblist.c : Internet search.
+	* popup.c : Show title, enable middle button.
+	* shortcut.c : Keyboard shortcut.
+	
+2002-05-17  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* Version 0.1.5
+	* canvas.c : Now you can click link in popup window.
+	* preference.c : Preferences now saved as XML.
+	* xml.c, xmlinternal.c : XML parser library for preference.
+	* pixmap.c : For pixmap buttons.
+	* dictgroup.c : Now you can define dictionary group.
+	
+2002-02-23  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* external.c : Executes external program to play sound and movie.
+	* preference.c : New preference mpeg_template and wave_template added.
+	
+2002-02-21  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* popup.c, render.c : Rendering engine was almost rewritten. 
+			INDENT and KEYWORD support.
+	* dump.c : Add dump facility.
+	
+2002-01-26  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* popup.c : Now X selection search can be shown in popup window.
+	
+2002-01-08  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* selection.c : Handling of COMPOUND_TEXT fixed.
+	* dicttext.c : Fixed wordwrap bug.
+	
+2001-08-04  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* aclocal.m4 : For compile on FreeBSD 4.3.
+	* render.c : Own implementation of iswalpha() for FreeBSD.
+	
+2001-07-17  Kenichi Suto <deep_blue@users.sourceforge.net>
+	* render.c : Now, superscript and subscript can be handled.
+	* dicttext.c, select.c : Character selection feature was added.
+	* eb.c, ending.c, preference.c : Support of ending pattern search.
+
+	
+2001-06-24  Kenichi Suto <deep_blue@users.sourceforge.net>
+
+	* ebview.c : Avoid crash when GTK+ theme was applied immediately
+	after the execution of EBView.
+
+	* eb.c : Avoid crash when dictionary was removed.

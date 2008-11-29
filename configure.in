@@ -1,0 +1,61 @@
+dnl Process this file with autoconf to produce a configure script.
+
+AC_PREREQ(2.53)
+
+AC_INIT(ebview, 0.3.6, http://ebview.sourceforge.net/)
+AC_CONFIG_SRCDIR(src/ebview.c)
+AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+AM_CONFIG_HEADER(config.h)
+ALL_LINGUAS="ja"
+AM_GLIB_GNU_GETTEXT
+dnl AC_FUNC_SETVBUF_REVERSED
+
+dnl Checks for programs.
+AC_PROG_CC
+dnl AC_PROG_INSTALL
+dnl AC_PROG_AWK
+AC_PROG_LN_S
+
+dnl Checks for libraries.
+PKG_CHECK_MODULES(GTK, gtk+-2.0 >= 2.0.0)
+AC_SUBST(GTK_CFLAGS)
+AC_SUBST(GTK_LIBS)
+            
+eb_LIB_EB3
+
+dnl Checks for header files.
+AC_PATH_X
+AC_HEADER_STDC
+AC_HEADER_DIRENT
+AC_HEADER_SYS_WAIT
+AC_CHECK_HEADERS(fcntl.h malloc.h sys/ioctl.h sys/time.h unistd.h eb/eb.h iconv.h libintl.h)
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_PROG_GCC_TRADITIONAL
+AC_C_CONST
+AC_TYPE_PID_T
+AC_HEADER_TIME
+AC_TYPE_OFF_T
+AC_TYPE_SIZE_T
+AC_TYPE_SIGNAL
+
+dnl Checks for library functions.
+AC_CHECK_FUNCS(mkdir select strdup strtol)
+
+AC_DEFINE_UNQUOTED(LOCALEDIR, "${PREFIX}/share/locale", Where .mo file is.)
+AC_DEFINE_UNQUOTED(PACKAGEDIR, "${PREFIX}/share/${PACKAGE}", Where EBView data goes.)
+
+case "`uname -s`" in
+CYGWIN_*) THREAD_LIBS=-lpthreadGC ;CYGWIN_CFLAGS="-mno-cygwin -mwindows -mms-bitfields";RES_FILE=ebview.res;EXTRA_LIBS="-lregex -lwinmm" ;;
+FreeBSD*) THREAD_LIBS=-pthread ;;
+Linux*) THREAD_LIBS=-lpthread ;;
+*) THREAD_LIBS=-lpthread ;;
+esac
+
+AC_SUBST(THREAD_LIBS)
+AC_SUBST(CYGWIN_CFLAGS)
+AC_SUBST(RES_FILE)
+AC_SUBST(EXTRA_LIBS)
+
+
+AC_OUTPUT(po/Makefile.in src/Makefile Makefile m4/Makefile data/Makefile doc/Makefile data/about.jp data/about.en)

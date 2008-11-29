@@ -1,0 +1,1358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>EBView マニュアル</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+  <meta name="author" content="Kenichi SUTO">
+</head>
+<body>
+<br>
+<br>
+<h1 align="center">EBView マニュアル</h1>
+<div style="text-align: center;">
+<h3>ver 0.3.4</h3>    
+</div>
+<br>
+<div align="center"><a href="../en/index.html">English</a><br>
+</div>
+<div align="center"><br>
+須藤 賢一<br>     
+<br>
+<a href="mailto:deep_blue@users.sourceforge.net">deep_blue@users.sourceforge.net</a><br>
+<br>
+</div>
+<hr width="100%" size="2"><br>
+　
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC1"></a>1. はじめに</h2>  
+    </td>
+  </tr>
+</table>
+　
+<p>   
+<br>
+EBView は、Linux、FreeBSD、Windowsで動作する EPWING  
+辞書ブラウザで、以下の特徴があります。<h3>   
+<br>
+<font color="#008080">EPWING 辞書の検索</font></h3>
+<ul>
+  <li><font color="#990000"><b>串刺し検索</b></font><br>
+    一度に複数の辞書を検索します。辞書はグループ化することが可能ですので、多数の辞書を扱う場合でも大丈夫です。また、検索結果やボタンに色を付けられるため、どの辞書の検索結果なのかが一目で分かります。<br>
+  </li>
+  <li><font color="#990000"><b>語尾補正</b></font><br>
+    英単語の過去形や複数形、日本語の活用なども正しく検索されます。たとえば、「studies」は「study」に、「見れば」は「見る」にヒットします。<br>
+  </li>
+  <li><font color="#990000"><b>マルチメディアデータのサポート</b></font><br>
+    モノクロ画像、カラー画像、音声、動画をサポートしています。<br>
+  </li>
+  <li><font color="#990000"><b>多彩な検索方法</b></font><br>
+    検索方法としては、前方一致、後方一致、完全一致、条件一致、複合検索に加えて、おまかせ検索、全文一致検索も用意されています。
+  </li>
+</ul>
+<h3><font color="#008080">ファイル検索</font></h3>
+<blockquote>
+  <p>ファイルからの検索が GUI 操作で行なえます。文字列の検索は一般的な grep     
+よりも高速です。フィルタを定義すれば、テキスト形式以外のファイルでも検索が可能になります。正規表現も使え、日本語の文字コードは自動的に認識されます。</p>
+</blockquote>
+<h3><font color="#008080">インターネット検索</font></h3>
+<blockquote>
+  <p>インターネット上の検索エンジンを登録しておけば、いちいちブラウザでキーワードを入力し直す必要がありません。手持ちの辞書には必要な情報が載っていない場合に、インターネット上の辞書で検索したり、サーチエンジンで検索したりすることができます。</p>
+</blockquote>
+<h3><font color="#008080">その他の便利な機能</font></h3>
+<ul>
+  <li><font color="#990000"><b>Xセレクション(*1)の自動検索とポップアップ表示</b></font><br>
+    マウスで選択した単語の自動検索が可能です。たとえば、Web  
+    ブラウザで英文ページを読んでいるときに、分からない単語を反転させるだけで、その単語が自動的に検索されます。     
+検索結果はマウスの位置にポップアップ表示させることもできます。<br>
+    <br>
+    (*1) Windowsではクリップボードの検索です。<br>    
+  </li>
+  <li><font color="#990000"><b>キーボードショートカット</b></font><br>
+    ほとんどの操作には、自由にキーボードショートカットを割り当てることができます。<font color="#990000"><b><br>
+    </b></font>
+  </li>
+</ul>
+EBView は、<a href="http://www.sra.co.jp/people/m-kasahr/eb/index-ja.html">EB     
+ライブラリ</a> を使っています。<br>     
+<br>
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC2"></a>2. 辞書の準備</h2>  
+    </td>
+  </tr>
+</table>
+　
+<p>   
+EBView を使用するには辞書データが必要です。辞書には CD-ROM     
+等で市販されているものや、無料で利用できるものがあります。<br>
+<br>
+</p>
+<h3><a name="SEC2_1"></a>2.1 市販の辞書</h3>     
+<br>
+市販の辞書の場合には、<a href="http://www.epwing.or.jp/">EPWING</a>、EB、EBG、EBXA、EBXA-C     
+形式の辞書が利用できます。これ以外の形式でも、変換することで利用できるものがあります。
+<p>EPWING     
+形式の辞書を購入したら、ハードディスクの適当なディレクトリにコピーします。基本的には全体をコピーすることになると思     
+いますが、コピー手順がマニュアルに記載されている場合にはそれに従って下さい。また、辞書によってはハードディスクへのコピーを禁止・制限しているものもありますので、ご注意ください。<br>
+<br>
+</p>
+<h3><a name="SEC2_2"></a>2.2 フリーな辞書</h3>     
+<br>
+無料で利用できる辞書がインターネットで配布されています。たとえば<a
+ href="http://openlab.ring.gr.jp/edict/fpw/">このページ</a>からは、EPWING     
+形式のさまざまな辞書を入手することができます。再配布が禁止されている辞書は、元となるデータを入手して、次に述べる方法で変換します。<br>
+<br>
+<h3><a name="SEC2_3"></a>2.3 ファイル形式の変換</h3>     
+海外の辞書のほとんどは EPWING 形式ではありません。たとえば、「ロングマン現代英英辞典」、「Collins COBUILD on     
+CD-ROM」などがこれに該当します。また、「英辞郎」シリーズなども EPWING     
+形式ではありません。これらの CD-ROM     
+には、たいてい専用のソフトウェアが付属していますが、いろいろな辞書を参照する必要がある人は、いくつもの専用アプリケーションを起動する     
+ことになり、とても面倒です。<br>
+<br>
+辞書を EPWING 形式に変換してしまえば、EBViewで一括して検索できるため、とても便利です。データを EPWING     
+に変換するためのソフトウェアとしては、「FreePWING」と「EBStudio」があります。<br>
+<br>
+<span style="font-weight: bold;">FreePWING</span><span
+ style="font-weight: bold;"> </span><br>
+<div style="margin-left: 40px;">JIS-X4081     
+形式の書籍データの生成を行うソフトウェアで、フリーソフトウェアです。<br>
+<a href="http://www.sra.co.jp/people/m-kasahr/freepwing/">http://www.sra.co.jp/people/m-kasahr/freepwing/</a><br>
+</div>
+<br>
+<span style="font-weight: bold;">EBStudio</span><br>
+<div style="margin-left: 40px;"><span class="logo"></span>JIS-X4081     
+(EPWINGのサブセット) または電子ブック形式で個人用途の電子辞書・電子書籍を作成するツールです。Windows     
+用のシェアウェアです。前方一致検索だけなら無料で利用できます。<br>
+<a href="http://www31.ocn.ne.jp/%7Eh_ishida/">http://www31.ocn.ne.jp/~h_ishida/</a><br>
+</div>
+<br>
+<br>
+変換方法などについては、以下のページを参考にしてください。
+<blockquote>
+  <p><a href="http://openlab.ring.gr.jp/edict/fpw/">FreePWING による各種辞書</a></p>     
+  <p><a href="http://www31.ocn.ne.jp/~h_ishida/scripts.html">EBStudio・変換スクリプト集</a></p>
+  <p><a href="http://hp.vector.co.jp/authors/VA000022/unixdic/">UNIXで電子辞書をしゃぶりつくそう</a></p>
+</blockquote>
+<p>
+<br>
+注 : 変換データは著作権を侵害する恐れがあります。使用は個人の範囲にとどめてください。<br>     
+<br>
+</p>
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC3"></a>3. 辞書グループの定義</h2>  
+    </td>
+  </tr>
+</table>
+　
+<p>
+辞書の準備ができたら、辞書グループを定義します。<br>
+<br>
+手順は以下のとおりです。<br>
+<br>
+</p>
+<ol>
+  <li><b>設定画面を開く</b><br>
+    <br>
+EBView を起動し、メニューから[ツール]→[オプション...]メニューをクリックします。設定ウィンドウが開きますので、[辞書検索]-&gt;[辞書グループ]を選択します。<br>    
+    <br>
+  </li>
+  <li><b>辞書グループの作成<br>
+    <br>
+    </b>辞書を分類するための辞書グループを作ります。辞書グループは必ず 1     
+つ以上作る必要があります。ダイアログの左側の[グループ名]という入力ボックスに名称を入力し、[追加]ボタンを押します。「英和」、「和英」など、辞     
+書の種類で分類すると良いでしょう。<br>
+    <br>
+なお、"selection"     
+というグループを作っておくと、セレクションの自動検索の際に、選択されている辞書グループに関係なくそのグループの中の辞書が使われます。<b><br>
+    <br>
+    </b></li>
+  <li><b>ディスク上の辞書の検索<br>
+    <br>
+    </b>ディスクから辞書を検索します。[ディレクトリ名]     
+という入力ボックスに、検索するトップディレクトリ名を入力し、[ディスクを検索]     
+ボタンを押します。すると、指定したディレクトリの下から辞書が検索されます。検索は、指定した深さまで行われ、catalog もしくは     
+catalogs というファイルが見つかると辞書とみなされます。深さ 0 は指定したディレクトリの中だけ (サブディレクトリは含まない)     
+を検索することを示します。辞書が見つからないときは、深さを調節してみてください。<br>
+    <br>
+検索が終わると、「Disk Search Result」という名前のグループが作成され、見つかった辞書がその中に登録されます。<br>    
+    <br>
+  </li>
+  <li><b>検索した辞書のグループへの追加</b><br>
+    <br>
+検索した辞書を選択し、「上へ」または「下へ」ボタンを使って、2.  
+    で作った辞書グループに移動します。同じの辞書を複数のグループに登録しても構いません。また、辞書や辞書グループをド  
+    ラッグアンドドロップで移動することもできます(空の辞書グループにはドロップできません)。
+    <br>
+  </li>
+  <li><b>名前の変更と Appendix の指定</b><br>    
+    <br>
+    辞書の名前は、ディスクから検索した直後は辞書データで定義された名前になっていますが、自由に変更することができます。ここで指定した名前は、辞書のボタンと検索結果の一覧で使われます。辞書データ自体が変更されるわけではありません。ツリー画面上で辞書名をクリックすると、右側のボックスにその詳細が表示されます。ここで名前やAppendix     
+(*1) ファイルのパス、副本番号などを入力します。<br> 
+    <br>
+    また、辞書には色を指定することができます。ここで指定した色は、辞書のボタンと検索結果の一覧で使われます。<br>   
+  </li>
+</ol>
+<blockquote> 
+  <p> (*1) Appendix とは、  
+  辞書の区切りデータなどが入ったファイルで、本文が正しく表示されない場合などに使用すると、改善される場合があります。Appendix データは<a     
+ href="http://www.sra.co.jp/people/m-kasahr/eb/appendix-ja.html">ここ</a>か     
+ら入手することができます。<br>
+  </p>
+</blockquote>
+<br>
+以上で準備は完了です。<br>
+<br>
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC4"></a>4. 基本的な検索</h2>  
+    </td>
+  </tr>
+</table>
+<br>
+検索を行う手順は以下の通りです。
+<ol>
+  <li>辞書の選択</li>
+  <li>検索方法の選択</li>
+  <li>検索語の入力</li>
+  <li>検索の開始<br>
+  </li>
+</ol>
+<h3><a name="SEC4_1"></a>4.1 辞書の選択</h3>     
+<br>
+使用したい辞書グループを、     
+辞書選択バーから選択します。すると、そのグループに登録されている辞書の一覧がボタンとして表示されます。ボタンの状態により辞書の使用と不使用が切り     
+替わります。ボタンが押された状態はその辞書を検索で使うことを示し、押されていない状態はその辞書を検索で使わないことを示します。なお、ボタンが押せ     
+ない状態になっているものについては、その辞書の読みこみに失敗したことを示します。辞書が削除されたか、CD-ROM  
+がマウントされていないなどの原因が考えられます。なお、各ボタンに表示する文字数と色は設定により変更が可能です。 <br>
+<br>
+<h3><a name="SEC4_2"></a>4.2 検索方法の指定</h3>     
+メニューまたはツールバーから、実行したい検索方法を選択します。検索方法の意味は次のとおりです。<br>
+<br>
+<br>
+<div style="text-align: center;">辞書を対象とした検索<br>
+</div>
+<blockquote>
+  <table cellpadding="2" cellspacing="2" border="1" width="80%"
+ align="center">
+    <tbody>
+      <tr>
+        <td valign="top" align="center" bgcolor="#cccccc" width="30%">検索
+方法<br>
+        </td>
+        <td valign="top" align="center" bgcolor="#cccccc">意味<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">おまかせ検索<br>
+        </td>
+        <td valign="top">完全一致検索と条件一致検索を自動的に行います。指定により、前方一致検索も行います。<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">完全一致検索<br>
+        </td>
+        <td valign="top">入力語に完全に一致した項目だけが検索結果として表示されます。<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">前方一致検索<br>
+        </td>
+        <td valign="top">入力語で始まる項目が検索結果として表示されます。例えば、"difficult" と入力すれば     
+"difficult" や "difficulty" などにヒットします。 <br>     
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">後方一致検索<br>
+        </td>
+        <td valign="top">入力語で終わる項目が検索結果として表示されます。例えば、 "tist" と入力すれば     
+"dentist" や "systematist" などにヒットします。</td>     
+      </tr>
+      <tr>
+        <td valign="top">条件検索<br>
+        </td>
+        <td valign="top">複数のキーワードを指定して検索する方法です。例えば、 "grow" と "up"     
+の2つを検索語として指定することで、"grow up"にヒットします。</td>     
+      </tr>
+      <tr>
+        <td valign="top">複合検索<br>
+        </td>
+        <td valign="top">複数のキーワードを指定して検索しますが、各キーワードにはあらかじめ意味がつけられています。キー
+ワードを一覧の中から指定することも可能です。<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">全文検索<br>
+        </td>
+        <td valign="top">辞書の中から、指定した検索語を本文の中に含んでいる項目を全て検索する方法です。辞書の中を最初か
+ら終わりまで検索するため、検索には時間がかかります。<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">メニュー<br>
+        </td>
+        <td valign="top">辞書のメニューデータ (通常は使用方法は凡例など)     
+を表示します。辞書によってはメニューデータがない場合もあります。<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">著作権表示<br>
+        </td>
+        <td valign="top">辞書の著作権データを表示します。辞書によってはない場合もあります。<br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+<div style="text-align: center;">
+<div style="text-align: center;"><br>
+その他の検索<br>
+</div>
+<blockquote>
+  <table cellpadding="2" cellspacing="2" border="1" width="80%"
+ align="center">
+    <tbody>
+      <tr>
+        <td valign="top" align="center" bgcolor="#cccccc" width="30%">検索
+方法<br>
+        </td>
+        <td valign="top" align="center" bgcolor="#cccccc">意味<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">インターネット検索<br>
+        </td>
+        <td valign="top">インターネットの検索エンジンを使って検索します。結果は Web ブラウザに表示されます。<br>     
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">ファイル検索<br>
+        </td>
+        <td valign="top">ファイルの中から指定した語を含む行を探します。<br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+</div>
+<br>
+検索方法は、ツリーフレーム (デフォルトで画面の左の部分) のタブでページを切り替えることでも変更することができます。<br>     
+<br>
+<h3><a name="SEC4_3"></a>4.3 検索語の入力</h3>     
+<br>
+ツールバーの入力ボックスに検索したい語句を入力します。おまかせ検索や条件検索を行う場合には、複数の語をスペースで区切っ  
+て指定します。
+<p>一度入力した検索語は履歴として残ります。同じ語を検索するには、入力ボックスの横にある下矢印ボタンを押すか、カーソルキーの上下で選択します。
+<br>
+</p>
+<h3><a name="SEC4_4"></a>4.4 検索の開始<br>     
+</h3>
+検索語を入力したら、エンターキーを押すか、エントリボックスの右にある検索開始ボタン (虫眼鏡のアイコン)  
+を押します。これで検索が始まります。検索に要する時間は、検索方法や検索語、最大ヒット数の指定によって変わります。
+<p>
+<br>
+全文検索とファイル検索は時間がかかるため、進行状況を示すダイアログが表示されます。途中でキャンセルするにはダイアログの [キャンセル]     
+ボタンを押します。<br>
+</p>
+<p>　
+</p>
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC5"></a>5. 検索結果の表示</h2>  
+    </td>
+  </tr>
+</table>
+<h3><a name="SEC5_1"></a>5.1 見出しの選択</h3>     
+<br>
+検索が終了すると、検索結果の見出しが画面左側 (デフォルト状態の場合)  
+に表示されます。参照したい項目をマウスで選択してください。選択した項目に対応する本文が画面右側に表示されます。
+<p>
+<br>
+検索結果一覧では、ショートカットキーを使って上下に移動することも可能です。なお、検索結果が多い場合は、設定した個数までしか表示されません。続きが     
+ある場合は、一覧の下にあるボタンが有効になりますので、これにより続きを参照することができます。<br>
+</p>
+<p>検索結果では、[表示]→[結果一覧]→[検索結果を辞書ごとに表示]にチェックしておくと、辞書ごとに表示されます。チェックしないと、複数の辞書の結果が次の順序でソートされます。
+</p>
+<ul style="margin-left: 40px;">
+  <li>完全一致検索の結果</li>
+  <li>見出語と検索語が完全一致するもの</li>
+  <li>見出語と検索語が前方一致するもの</li>
+  <li>見出語と検索語が部分一致するもの</li>
+  <li>見出語内に検索語の全てが含まれるもの</li>
+  <li>それ以外</li>
+</ul>
+<p>
+　
+</p>
+<h3><a name="SEC5_2"></a>5.2 リンク</h3>     
+<br>
+本文のうち、青 (デフォルト状態) 
+で表示されている部分は、別の箇所へのリンクになっていることを示します。その上にマウスカーソルを持って行くと、マウスカーソルが手の形に変化します。その状態でマウスの左ボタンをクリックすることで参照先にジャンプすることができます。<br>
+<br>
+<h3><a name="SEC5_3"></a>5.3 音と動画の再生</h3>     
+<br>
+本文のうち、緑 (デフォルト状態) 
+で表示されている部分は、音声や動画などのマルチメディアデータを示します。その上にマウスカーソルを持っていくと、マウスカーソルが手の形に変化します。その状態で 
+マウスの左ボタンをクリックすると、マルチメディアデータの再生が始まります。<br>
+<br>
+マルチメディアデータの再生には外部アプリケーションを使用します。使用するアプリケーションはカスタマイズすることが可能です。なお 
+Windows では、指定により EBView 自身で音声を再生します。
+<p>　</p>
+<h3><a name="SEC5_4"></a>5.4 履歴</h3>     
+本文として表示した内容 (辞書内の位置)     
+は表示履歴に格納されており、「戻る」「進む」ボタンで前後に移動することができます。保存できる履歴の数に制限はありませんが、EBView 
+を再起動すると履歴はクリアされます。<br>
+<br>
+<h3><a name="SEC5_5"></a>5.5 内容選択</h3>     
+<br>
+表示内容をマウスで範囲選択すると、選択した内容は X 
+のセレクションに格納され、他のアプリケーションにペーストすることが可能です。<br>
+<br>
+マウスの右ボタンを押すとメニューが表示されます。[選択した語を検索] を選ぶと、選択した語を検索語として検索が行なわれます。     
+また、[クリップボードにコピー] を選ぶと、選択した内容がクリップボードにコピーされます。クリップボードにコピーした内容は、Ctrl + v     
+など (アプリケーションによって異なる) で別のアプリケーションに貼り付けることができます。<br>     
+<p>　
+</p>
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC6"></a>6. セレクション(クリップボード)の検索</h2> 
+    </td>
+  </tr>
+</table>
+　<p>   
+<br>
+セレクションの自動検索とは、他のアプリケーション上でマウス選択されている文字列を自動的に検索するものです。たとえば、Web 
+ブラウザで英語の文章を読んでいるときにわからない単語が出てきたら、単語を選択して反転させれば、その単語が自動的に検索されます。<br>
+<br>
+なお、Windows ではセレクションではなく、クリップボードの検索となります。文字列を選択して Ctrl+C     
+などでクリップボードにコピーすることで検索されます。<br>
+<br>
+セレクションの自動検索を有効にするには、メニューの[ツール]→[セレクションの検索]から実行したい処理を選択します。<br>    
+<br>
+検索した結果は、通常の検索と同様にメインウィンドウに表示する他に、マウスカーソルがある位置にポップアップ表示させることもできます。ポップアップ     
+ウィンドウに表示するには、[ツール]→[セレクションの検索]→[ポップアップで検索]を選択します。ポップアップウィンドウ上でのマウス操作は以下のとおりです。<br>
+</p>
+<blockquote>
+  <table cellpadding="2" cellspacing="2" border="1" style="width: 80%;">
+    <tbody>
+      <tr>
+        <td style="vertical-align: top; text-align: center;"
+ bgcolor="#cccccc">マウスのボタン<br>
+        </td>
+        <td style="vertical-align: top; text-align: center;"
+ bgcolor="#cccccc">意味<br>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; width: 20%;">左ボタン </td>
+        <td style="vertical-align: top;">ポップアップウィンドウを閉じる。リンクやマルチメディアデータ上ではリンク先にジャンプまたは再生が始まる。</td>
+      </tr>
+      <tr>
+        <td valign="top">中央ボタン </td>
+        <td valign="top">前の候補を表示する。 </td>
+      </tr>
+      <tr>
+        <td valign="top">右ボタン </td>
+        <td valign="top">次の候補を表示する。 </td>
+      </tr>
+    </tbody>
+  </table>
+  　
+</blockquote>
+ポップアップウィンドウには、設定によりタイトルバーを表示させることができます。タイトルバーを表示していると、全体で何件ヒットしたかが表示され、タ 
+イトルバーをドラッグしてポップアップウィンドウを移動できるようになります。また、左上のプッシュピンのアイコンをクリックすると、ウィンドウをマウス左ボタンでク     
+リックしても閉じないようになり、次回の表示が高速になります。<br>
+<br>
+"selection" 
+という辞書グループを作成しておくと、現在選択されている辞書グループに関係なくそのグループの辞書を使って検索が行われます。検索結果をポップアップ表示する場合には、     
+本文が短めの辞書を使うのがお勧めです。<br>
+<br>
+なお、むやみにポップアップウィンドウが開くのを防ぐため、一度検索した文字列(と同じ内容の文字列 
+を続けて選択しても検索は行われません。同じ語をもう一度検索したい場合には、いったん別の語を選択してからもう一度その語を選択してください。<br>
+<br>
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC7"></a>7. 語尾の自動補正</h2>  
+    </td>
+  </tr>
+</table>
+　
+<p>   
+dictionaries のように、語尾が変化している単語を検索する場合には、元の単語である dictionary 
+で検索するのが普通です。キーワードを人間が入力するのであれば、利用者が判断して正しい語を入れることもできますが、上述のセレクションの自動検索の場合にはこれでは不都合です。<br>
+<br>
+そこで EBView 
+では、語尾が変化している単語を自動的に元の単語で検索できるようになっています。この機能を語尾補正と呼びます。EBView     
+では、語尾が特定のパターンにマッチしたら元の形を試すという方法をとっています。したがって、語尾補正を有効にすると検索に余計に時間がかかるようにな     
+ります。<br>
+<br>
+語尾補正を行うかどうか、どういうパターンの時にどう補正するのかはカスタマイズできます。また、入力した単語にマッチしない場合にだけ語尾補     
+正を行うように指定することも可能です。<br>
+<br>
+語尾補正機能は、日本語についても有効です。たとえば、「出られない」で検索すると、「出る」がヒットします。日本語の語尾補正も英語と同様の仕組みですが、語尾を補正して検索したにもかかわらずひとつもマッチしなかった場合には、さらに検索語からひらがなを除いた部分で検索を試みます。
+<p>   
+<br>
+<br>
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC8"></a>8. ファイル検索</h2>  
+    </td>
+  </tr>
+</table>
+　<p>社内でローカルに使っている用語集などは、一般にテキストファイルで書かれていることが多いと思います。このようなファイルを 
+EPWING     
+に変換すれば検索スピードは速くなりますが、作り手によってフォーマットがまちまちだったり、頻繁に更新されるような場合には、テキストファイルのまま検 
+索したほうが早いこともあります。このような時に威力を発揮するのがファイル検索です。<p>ファイル検索では、ファイルを行単位に分割し、それぞれの行に対して指定した語を含むかどうかを検査し、マッチした行を中心とした前後数行を表示します。<br>
+<br>
+また、日本語の文字コード (EUC、シフトJIS、JIS) は自動的に認識されますので、通常は手作業でコードを変換する必要はありません。     
+ただし、漢字コードの認識は間違うこともありますので、動作がおかしいと思った場合や、Unicode のファイルを検索する場合などは、ファイルを     
+EUC に変換してみてください。<p>    
+<br>
+ファイル検索では、検索語の指定方法として、次の 2 
+種類の方法があります。なお、どちらの場合でも [大文字/小文字を無視]     
+をチェックすることで、大文字と小文字が同一視されます。<br>
+<br>
+<h3><a name="SEC8_1"></a>8.1 通常のテキスト検索</h3>     
+<br>
+特殊文字を含まない通常の文字を指定した検索です。検索には BMH 法を使うため、高速な検索が可能です。また、複数の語を指定した場合には AND     
+検索となります。<br>
+<br>
+<h3><a name="SEC8_2"></a>8.2 正規表現</h3>     
+<br>
+POSIX 拡張正規表現を使った検索です。EBView     
+では、検索語にメタキャラクタが見つかると、自動的に正規表現とみなされます。使用できるメタキャラクタとその意味は次のとおりです。<br>
+<br>
+<br>
+<table cellpadding="2" cellspacing="2" border="1"
+ style="text-align: left; width: 90%; margin-left: auto; margin-right: auto;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"
+ bgcolor="#cccccc">メタキャラクタ<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"
+ bgcolor="#cccccc">意味<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"
+ bgcolor="#cccccc">例<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">|<br>
+      </td>
+      <td style="vertical-align: top;">どれかにマッチ<br>
+      </td>
+      <td style="vertical-align: top;">A|B|C AまたはBまたはCにマッチ<br>     
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">.<br>
+      </td>
+      <td style="vertical-align: top;">空文字を除く任意の1文字にマッチする<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">^<br>
+      </td>
+      <td style="vertical-align: top;">文字列先頭の空文字にマッチする</td>
+      <td style="vertical-align: top;">^abc : abcで始まる行にマッチ<br>     
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">$<br>
+      </td>
+      <td style="vertical-align: top;">文字列末尾の空文字にマッチする</td>
+      <td style="vertical-align: top;">xyz$ : xyzで終わる行にマッチ<br>     
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">(、)<br>
+      </td>
+      <td style="vertical-align: top;">その正規表現が一致する文字列にマッチする</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">()<br>
+      </td>
+      <td style="vertical-align: top;"><b>null</b>文字列にマッチする</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">[、]</td>
+      <td style="vertical-align: top;">ブラケット表現<br>
+[と]の間に指定した文字にマッチする<br>
+      </td>
+      <td style="vertical-align: top;">[abc] : abcのどれかにマッチ<br>     
+[0-9] : 0から9のどれかにマッチ<br>     
+[^abc] : aとbとc以外にマッチ<br>     
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">*<br>
+      </td>
+      <td style="vertical-align: top;">0 個以上の並び<br>     
+      </td>
+      <td style="vertical-align: top;">a* : 空文字、a、aa、aaa....にマッチ<br>     
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">+<br>
+      </td>
+      <td style="vertical-align: top;">1 個以上の並び<br>     
+      </td>
+      <td style="vertical-align: top;">a+ : a、aa、aaa....にマッチ<br>     
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">?<br>
+      </td>
+      <td style="vertical-align: top;">0 個または 1 個<br>     
+      </td>
+      <td style="vertical-align: top;">a? : 空文字、aにマッチ<br>     
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">{、}<br>
+      </td>
+      <td style="vertical-align: top;">繰返し表現<br>
+      </td>
+      <td style="vertical-align: top;">a{1,5} : aの1から5回の繰返しにマッチ<br>     
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<div style="text-align: center;">
+<div style="text-align: left;"><br>
+強制的に正規表現にしたい場合は、検索語をスラッシュ (/) 
+  で囲みます。     
+また、メタキャラクタを含んでいても強制的に通常のテキスト検索を行いたい場合は、検索語をダブルクオート (") 
+  で囲みます。<br>    
+<br>
+<br>
+</div>
+<div style="text-align: left;">
+<h3><a name="SEC8_3"></a>8.3 検索対象の指定</h3>     
+検索対象は、次の ２ つの方法のどちらかで指定できます。     
+<br>
+<ul>
+  <li>事前に指定したディレクトリグループ</li>
+  <li>手動による指定</li>
+</ul>
+<br>
+<span style="font-weight: bold;">ディレクトリグループによる指定</span><br>
+<br>
+ディレクトリグループは、設定画面で事前に設定しておきます。複数のディレクトリに対して名前をつけておけば、その名前を選択するだけで、指定したディレクトリの下にあるファイルが検索対象になります(サブディレクトリを含む)。<br>
+<br>
+また、検索対象のファイルを限定したい場合には、カンマに続けて拡張子を指定することができます。たとえば、/some/directory,.html     
+と指定すると、/some/directory 以下の、拡張子 .html のファイルが検索対象になります。<br>     
+<p>
+<br>
+<span style="font-weight: bold;">手動による指定</span><br>
+<br>
+ディレクトリグループで、「手動で選択」を選ぶことで、検索するディレクトリまたはファイルをその場で選ぶことができます。ツリー状に表示されたディレク     
+トリリストから、ディレクトリかファイルを選択 (チェックボックスにチェック)     
+して指定します。ディレクトリを指定した場合は、そのディレクトリ以下の全てのサブディレクトリとファイルが検索対象になります。<br>
+<br>
+ディレクトリツリーでの操作は、次のようになります。</p>
+<div style="text-align: center;"><br>
+<table cellpadding="2" cellspacing="2" border="1"
+ style="text-align: left; width: 90%; margin-left: auto; margin-right: auto;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"
+ bgcolor="#cccccc" width="40%">操作<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"
+ bgcolor="#cccccc">動作<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;" width="40%">Ctrl + 左シングルクリック </td>     
+      <td style="vertical-align: top;"> そのアイテムをチェック</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;" width="40%">ディレクトリを左ダブルクリック</td>
+      <td style="vertical-align: top;">ディレクトリを展開または閉じる。<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">ファイルを左ダブルクリック</td>
+      <td style="vertical-align: top;">ファイルをフィルタで指定したアプリケーションで開く。なお、ページと     
+行番号はともに     
+1 になる。</td>     
+    </tr>
+    <tr>
+      <td style="vertical-align: top;" width="40%">中央または右ボタンクリック<br>
+      </td>
+      <td style="vertical-align: top;">そのアイテムをチェック</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br>
+<br>
+[隠しファイルを表示しない] にチェックすると、ドット (.) ではじまるディレクトリやファイルは表示されません (検索対象には含まれます)。<br>    
+<br>
+<br>
+<h3><a name="SEC8_4"></a>8.4 検索の開始</h3>     
+<br>
+検索語と検索対象を指定してエンターキーか検索開始ボタンを押すことで、検索が始まります。検索が始まると、進行状況を示すダイアログが表示されます。途中でキャンセルする場合には。ダイアログ内の     
+[キャンセル] ボタンを押します。Linux、FreeBSD では、検索の結果を示すメッセージが本文ウィンドウに表示されます。<br>     
+<br>
+<h3><a name="SEC8_5"></a>8.5 結果の表示</h3>     
+検索結果の一覧に、指定したキーワードを含む行が表示されますので、その中から内容を表示させたいものを選択します。すると、一致した行を中心とする前後数行     
+(オプションで設定) が本文として表示されます。一致した行全体が強調表示され、検索語が反転表示されます。<br>     
+<br>
+<h3><a name="SEC8_6"></a>8.6 フィルタ</h3>     
+<br>
+適切なフィルタを指定することで、テキストファイル以外のファイルでも検索できるようになります。たとえば、pdftotext (xpdf に付属)     
+コマンドを使えば PDF 
+ファイルの検索が可能になります(*1)。<br>    
+<br>
+内部的にはいったんテキストファイルに変換されますので、変換に時間がかかりますが、いったん変換したファイルはディスクにキャッシュされ、次回からはテ     
+キストファイルと同様に高速に検索することができます。<br>
+<br>
+ディスクに保持するキャッシュのサイズはオプションで変更することが可能です。また、キャッシュのクリアも設定画面から行なうことができます。フィルタ     
+は、拡張子毎に登録します。
+<p>*1 pdftotext 
+では、デフォルト状態ではアルファベットが全角になってしまいます。詳しくは 
+EBView のホームページをご覧ください。<br>
+</p>
+<h3><a name="SEC8_7"></a>8.7 アプリケーションで開く</h3>     
+<br>
+検索結果をダブルクリックすることで、そのファイルをアプリケーションで開くことができます。使用するアプリケーションは、拡張子毎に登録することが可能です。アプリケーションに対するパラメータを適切に指定すれば、該当する行やページを表示することもできます。<br>
+<br>
+<br>
+<br>
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC9"></a>9. インターネット検索</h2>  
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+　
+<p>   
+インターネット上では、ポータルサイトを中心に辞書の検索機能が提供されていますので、これを使わない手はありません。また、コンピューター用語集などの日々更新される用語も、コンピューター関連サイトで検索できることがあります。さらに、調べている言葉が辞書に載っていない場合に最後の頼みとなるのが、Google     
+をはじめとするページ検索です。<br>
+<br>
+一般に、分からない用語に出会ったら、まず手持の辞書で検索し、載っていない場合にウェブブラウザを開いてブックマークから検索サイトを選び、検索語を入力し直すことになります。<br>
+<br>
+EBView     
+には、これを簡単に行なうためのインターネット検索の機能があります。インターネットのサーチエンジンをあらかじめ登録しておき、EBView から     
+Web ブラウザを呼び出して検索を行う機能です。<br>    
+<br>
+検索するには、検索方法で「インターネット検索」を選択します。画面左側に検索サイトの一覧が表示されますので、サイト名を選んで、通常通りに検索します。検索サイト名をマウスでダブルクリックしても検索が開始されます。すると、ウェブブラウザが開いて     
+(または既に開いているウェブブラウザに) 
+、検索結果のページが表示されます。<br>    
+<br>
+検索サイトによっては、ホームページから細かなオプションが指定できることがありますが、EBView 
+では全てのサイトの全てのオプションを網羅することはできませんので、あらかじめ決められた内容で検索されます。サイト名の部分でマウスの右ボタンを押すとメニューが表示され、そのサイトのホームページを開くことができますので、細かい指定をするには、いったんそのサイトのホームページを開いてくださ     
+い。<br>
+<br>
+検索を開始しても何も起きない場合には、ブラウザの設定が正しいか確認してください。使用するブラウザはオプションで指定します。<br>
+<br>
+</p>
+<div style="text-align: center;">
+<div style="text-align: left;">
+　
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC10"></a>10. キーボードショートカット</h2>  
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+　<p>   
+<br>
+使用する辞書グループの切り替えや、検索結果の見出しの移動など、ほとんどの機能にはキーボードショートカットを割り当てることができます。同じ機能に複数のキーを割り当てることも可能です。以下に示すのは、デフォルト状態で割り当てられているキーの一部です。これ以外にも割り当てることのできる機能がいくつかあります。全てのキー割り当ては、[ツール]→[オプション...]→     
+[ショートカット]で確認してください。<br>
+<br>
+<blockquote>
+  <table cellpadding="2" cellspacing="2" border="1" width="70%"
+ align="center">
+    <tbody>
+      <tr>
+        <td valign="top" bgcolor="#cccccc" align="center">キー<br>
+        </td>
+        <td valign="top" bgcolor="#cccccc" align="center">割り当てられている機能<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">F1</td>
+        <td valign="top">おまかせ検索</td>
+      </tr>
+      <tr>
+        <td valign="top">F2</td>
+        <td valign="top">完全一致検索</td>
+      </tr>
+      <tr>
+        <td valign="top">F3<br>
+        </td>
+        <td valign="top">前方一致検索</td>
+      </tr>
+      <tr>
+        <td valign="top">F4<br>
+        </td>
+        <td valign="top">後方一致検索</td>
+      </tr>
+      <tr>
+        <td valign="top">F5<br>
+        </td>
+        <td valign="top">条件検索</td>
+      </tr>
+      <tr>
+        <td valign="top">F6<br>
+        </td>
+        <td valign="top">複合検索</td>
+      </tr>
+      <tr>
+        <td valign="top">F7<br>
+        </td>
+        <td valign="top">全文検索</td>
+      </tr>
+      <tr>
+        <td valign="top">F8<br>
+        </td>
+        <td valign="top">インターネット検索</td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">F9<br>
+        </td>
+        <td style="vertical-align: top;">ファイル検索<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Return</td>
+        <td valign="top">検索を開始</td>
+      </tr>
+      <tr>
+        <td valign="top">Escape</td>
+        <td valign="top">検索語のクリア</td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + p<br>     
+        </td>
+        <td valign="top">前のヒット<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + n</td>     
+        <td valign="top">次のヒット<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + c<br>     
+        </td>
+        <td valign="top">クリップボードにコピー<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + h<br>     
+        </td>
+        <td valign="top">ヘルプの表示<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + q<br>     
+        </td>
+        <td valign="top">プログラムの終了<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + Up<br>     
+        </td>
+        <td valign="top">前の辞書グループ<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + Down<br>     
+        </td>
+        <td valign="top">次の辞書グループ<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Ctrl + 数字<br>     
+        </td>
+        <td valign="top">辞書Xの切り替え<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Alt + Left<br>     
+        </td>
+        <td valign="top">ヒストリを戻る<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Alt + Right<br>     
+        </td>
+        <td valign="top">ヒストリを進む<br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+<br>
+<div style="text-align: center;">
+<div style="text-align: left;">
+　
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC11"></a>11. 画面のカスタマイズ</h2>  
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+　   
+<h3><a name="SEC11_1"></a>11.1 表示/非表示の切り替え</h3>     
+<br>
+画面のうち、以下のものは画面から非表示にしたり再表示したりすることができます。<br>
+<ul>
+  <li>メニューバー</li>
+  <li>辞書選択バー</li>
+  <li>ステータスバー</li>
+  <li>ツリーフレームのタブ<br>
+  </li>
+</ul>
+<br>
+表示/非表示を切り替えるには、[表示]     
+メニューから該当する項目を選択してください。また、コンテンツウィンドウ上でマウスの右ボタンをクリックすると、ポップアップメニューが表示されます。     
+このメニューからも、隠れているものを表示させることができます。メニューバー自体を非表示にした場合にはこの方法でしか表示状態に戻すことができません。<br>
+<br>
+<h3><a name="SEC11_2"></a>11.2 画面分割方法の切り替え</h3>     
+<br>
+デフォルト状態では、画面は左右に分割されています。しかし、見出しが長い場合など、見えにくくなってしまうことがあります。そのようなときは、メニュー     
+の[表示]-&gt;[フレーム分割方法]で分割方向を変えることができます。<br>
+<p>なお、これ以外にも以下の指定が可能です。</p>
+<ul>
+  <li>タブの位置</li>
+  <li>キーワードの強調表示</li>
+  <li>画像のインライン表示</li>
+  <li>フォントの拡大/縮小</li>
+  <li>行間の拡大/縮小</li>
+</ul>
+<div style="text-align: center;">
+<div style="text-align: left;">
+　
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC12"></a>12. カスタマイズ</h2> 
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+　<p>   
+ここでは、EBView の動作をカスタマイズする方法を説明します。<br>     
+<br>
+カスタマイズした内容は、以下のフォルダに XML 形式のファイルとして保存されます。<p>Linux、FreeBSD 
+: ~/.ebview<p>Windows : C:\Documents and Settings\ユーザー名\Application 
+Data\EBView<p>    
+<br>
+設定ファイルには、以下の種類があります。<br>
+<br>
+<div style="text-align: center;">
+<table cellpadding="2" cellspacing="2" border="1"
+ style="text-align: left; width: 90%; margin-left: auto; margin-right: auto;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"
+ bgcolor="#cccccc">名前<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"
+ bgcolor="#cccccc">内容<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">shortcut.xml<br>
+      </td>
+      <td style="vertical-align: top;">キーボードショートカットの定義<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">endinglist.xml<br>
+      </td>
+      <td style="vertical-align: top;">英語の語尾補正パターン<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">endinglist-ja.xml<br>
+      </td>
+      <td style="vertical-align: top;">日本語の語尾補正パターン<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">searchengines.xml<br>
+      </td>
+      <td style="vertical-align: top;">検索エンジンのリスト<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">dictgroup.xml<br>
+      </td>
+      <td style="vertical-align: top;">辞書グループの定義<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">history.xml<br>
+      </td>
+      <td style="vertical-align: top;">検索語、検索ディレクトリの履歴<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">dirlist.xml<br>
+      </td>
+      <td style="vertical-align: top;">ファイル検索で指定したディレクトリ<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">filter.xml
+      </td>
+      <td style="vertical-align: top;">フィル検索のフィルタの定義
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">dirgroup.xml
+      </td>
+      <td style="vertical-align: top;">ディレクトリグループの定義
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">preference.xml<br>
+      </td>
+      <td style="vertical-align: top;">上記以外の設定<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+</div>
+<br>
+<h3><a name="SEC12_1"></a>12.1 外観</h3>     
+<br>
+<h3><a name="SEC12_1_1"></a>12.1.1 フォント</h3>     
+<br>
+使用するフォントを指定します。「通常」、「ボールド」、「イタリック」、「上付き文字」に対して指定します。なお、「上付き文字」で指定したフォント     
+は、下付き文字でも使用されます。<br>
+<br>
+<h3><a name="SEC12_1_2"></a>12.1.2 色</h3>     
+<br>
+<div style="margin-left: 40px;"><span style="color: rgb(153, 0, 0);">リンク</span><br>
+他の場所へのリンクがあるときの色です。<br>
+<br>
+<span style="color: rgb(153, 0, 0);">キーワード</span><br>
+キーワードとして指定されている部分を表示するときの色です。<br>
+<br>
+<span style="color: rgb(153, 0, 0);">サウンド</span><br>
+サウンドデータへの参照があるときの色です。<br>
+<br>
+<span style="color: rgb(153, 0, 0);">ムービー</span><br>
+ムービーデータへの参照があるときの色です。<br>
+<br>
+<span style="color: rgb(153, 0, 0);">強調表示</span><br>
+検索語を強調表示させるときの色です。<br>
+<br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">反転表示の背景</span><br>
+ファイル検索で、本文内の検索語を反転させるときの背景色です。<br>
+</div>
+<br>
+<h3><a name="SEC12_1_3"></a>12.1.3 その他</h3>     
+<br>
+<div style="margin-left: 40px;"><span style="color: rgb(153, 0, 0);">検索履
+歴に残す単語数</span><br>
+検索語の履歴に残すデータの件数です。<br>
+<br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">辞書名の文字数</span><br>
+辞書選択バーに表示する文字数です。辞書の名前が長いと、ここで指定した文字数分だけがボタンに表示されます。<br>
+  <br>
+</div>
+<div style="margin-left: 40px;"><span style="color: rgb(153, 0, 0);">起動ウィンドウを表示</span><br>
+起動時にスプラッシュ画面を表示するかどうかを指定します。<br>
+<br>
+<span style="color: rgb(153, 0, 0);">見出の数を自動計算</span><br>
+一度に表示する検索結果の数を、ウィンドウのサイズから自動的に計算します。<br>
+</div>
+　
+<div style="margin-left: 40px;"><span style="color: rgb(153, 0, 0);">表示する検索結果の最大数</span><br>
+検索結果のうち、一度に表示する見出しの数を指定します。一覧の下にある左右のボタンを押すことで、残りの結果を見ることができます。見出しの数を自動計 
+算しない場合に、ここで指定した数が表示されます。<br>
+</div>
+　
+<div style="margin-left: 40px;"><span style="color: rgb(153, 0, 0)">辞書ボタンに色をつける</span><br>
+  辞書バーのボタンに、辞書グループの指定で辞書ごとに指定した色をつけます。
+</div>
+<br>
+<h3><a name="SEC12_2"></a>12.2 辞書検索</h3>     
+<h3><a name="SEC12_2_1"></a>12.2.1 辞書グループ</h3>     
+<br>
+辞書グループの定義を行ないます。「3. 辞書グループの定義」を参照してください。<br>     
+<br>
+<h3><a name="SEC12_2_2"></a>12.2.2 セレクションの検索</h3>     
+<br>
+<div style="margin-left: 40px;"><span style="color: rgb(153, 0, 0);">検索の間隔</span><br>
+Xのセレクションを、ここで指定した時間毎にチェックします。セレクションの内容に変化があると、自動的に検索が行なわれます。Windowsでは、クリップボードにコピーするとすぐに検索が開始されますので、ここでの指定は無視されます。<br>
+<br>
+<span style="color: rgb(153, 0, 0);">最小文字数</span><br>
+ここで指定した文字数よりも小さい文字数のデータは、セレクションの自動検索での検索対象になりません。意図せずにマウスをクリックした場合にも自動検索     
+が始まるのを防ぐための設定です。<br>
+<br>
+<span style="color: rgb(153, 0, 0);">最大文字数</span><br>
+ここで指定した文字数よりも大きい文字数のデータは、セレクションの自動検索での検索対象になりません。エディ亜で文字列をカットしたような場合にも自動     
+検索が始まるのを防ぐための設定です。<br>
+<br>
+<span style="color: rgb(153, 0, 0);">ポップアップのサイズ</span><br>
+ポップアップウィンドウのサイズを指定します。<br>
+<br>
+<span style="color: rgb(153, 0, 0);">ポップアップウィンドのタイトルを表示</span><br>
+ポップアップウィンドウにタイトルバーを表示するかどうかを指定します。<br>
+<br>
+<span style="color: rgb(153, 0, 0);">ヒットしなかったらベルを鳴らす</span><br>
+セレクションの自動検索で、ヒットしなかった場合にベルを鳴らすかどうかを指定します。<br>
+</div>
+<br>
+<br>
+<h3><a name="SEC12_2_3"></a>12.2.3 語尾補正</h3>     
+<br>
+語尾補正の設定と、パターンの登録を行います。英語と日本語の語尾補正パターンが登録できます。<br>
+<br>
+<div style="margin-left: 40px;"><span style="color: rgb(153, 0, 0);">語尾補
+正を行なう</span><br>
+  語尾補正を行うかどうかを指定します。<br>
+<br>
+<span style="color: rgb(153, 0, 0);">ヒットしなかった場合のみ</span><br>
+  有効にすると、通常の検索でヒットしなかった場合にだけ語尾補正を行います。<br>
+</div>
+<br>
+パターンの登録は、「補正前の語尾」と「補正後の語尾」のペアで登録します。検索語の語尾が「補正前の語尾」にマッチすると、その部分を「補正語の語尾」     
+で置き換えた語を使って検索されます。あまりたくさんのパターンを指定すると検索に時間がかかるようになりますので注意してください。 
+なお、語尾補正は上から順に試されます。順序はドラッグ &amp; 
+ドロップで変更できます。    
+<br>
+<h3><a name="SEC12_2_4"></a>12.2.4 その他</h3>     
+<br style="color: rgb(153, 0, 0);">
+<div style="margin-left: 40px;"><span style="color: rgb(153, 0, 0);">検索する最大ヒット数</span><span style="color: rgb(153, 0, 0);"></span><br>
+  一度の検索でヒットした数がここで指定した数を超えると、そこで検索が打ち切られます。<br>
+<br>
+<span style="color: rgb(153, 0, 0);">おまかせ検索で前方一致検索を実行</span><br>
+おまかせ検索では、完全一致検索、条件一致検索が行われますが、これを有効にすると、前方一致検索も行うようになります。<br>
+<br>
+</div>
+<h3><a name="SEC12_3"></a>12.3 ファイル検索</h3>     
+<h3><a name="SEC12_3_1"></a>12.3.1 フィルタ</h3>     
+<br>
+ファイル検索で、テキストファイル以外のファイルを検索する際に使うフィルタプログラムを指定します。[追加]     
+ボタンを押すことで新規エントリが追加されますので、リスト内のセルを直接変更します。各エントリは「拡張子」、「フィルタコマンド」、「ファイルを開く     
+コマンド」の     
+3 つからなります。<br>     
+<br>
+拡張子には、ピリオドを含む拡張子を指定します。拡張子は、大文字と小文字のどちらにでもマッチします。複数の拡張子を指定する場合には、カンマで区切っ     
+て列挙することができます。<br>
+<br>
+「フィルタコマンド」、「ファイルを開くコマンド」は省略しても構いません。省略した場合には、フィルタが実行されないか、ファイルから開く際にデフォル     
+トのコマンドが使用されます。<br>
+<br>
+<br>
+「フィルタコマンド」、「ファイルを開くコマンド」では、以下に示す特殊文字が使用できます。<br>
+<br>
+<div style="margin-left: 40px;">%f : ファイル名で置き換えられる<br>     
+%p : ページ数で置き換えられる (*1)<br>     
+%l : 行番号で置き換えられる (*2)<br>     
+</div>
+<br>
+例) xpdf -remove ebview %f %p<br>     
+xpdfを使って、指定したファイルの該当ページを表示します。<br>
+<br>
+*1 ページ番号は 1 からはじまり、ファイル内に 0x0c があるとインクリメントされます。<br>     
+*2 行番号は 1 からはじまり、ファイル内に 0x0a があるとインクリメントされます。<br>     
+<br>
+なお、ディレクトリツリー (検索対象を指定するためのツリー画面)     
+でファイルをダブルクリックした場合にも、ここで指定した「ファイルを開くコマンド」を使いますが、ページ数と行番号は共に 1 になります。<br>     
+<br>
+<h3><a name="SEC12_3_2"></a>12.3.2 キャッシュ</h3>     
+最大キャッシュサイズを MB 単位で指定します。<br>     
+<br>
+検索を高速にするため、フィルタで変換したファイルは、キャッシュファイルとして保持され、次回検索時に利用されます。キャッシュファイルのサイズの合計がここで指定したサイズを超えると、古いファイルから削除されていきます。<br>
+<br>
+キャッシュをクリアするには [キャッシュをクリア] ボタンを押します。<br>     
+<br>
+<h3><a name="SEC12_3_3"></a>12.3.3 その他</h3>     
+<div style="margin-left: 40px;">
+<br>
+<span style="color: rgb(153, 0, 0);">前後に
+表示する行数</span><br>
+検索した結果、マッチした行を中心として、ここで指定した数の行が前後に表示されます。数値を大きくすると表示に時間がかかります。<br>
+<br>
+<span style="color: rgb(153, 0, 0);">前後の文字数</span><br>
+検索語の前後にここで指定した数の文字を合わせたものが見出し語として表示されます。<br>
+</div>
+<br>
+<h3><a name="SEC12_4"></a>12.4 ショートカット</h3>     
+<br>
+キーボードショートカットを定義します。     
+画面左側が定義済のショートカット、画面右側が割り当てることのできるコマンドの一覧です。右上のボタンを押してからショートカットキーを押し、割り当て     
+たいコマンドを選択して     
+[追加] ボタンを押します。<br>     
+<br>
+同一のコマンドに異なる複数のキーを割り当てることも可能です。逆に同一のキーに異なるコマンドを割り当てても、最初のコマンドだけが有効になります。<br>
+<br>
+[ロックキーを無視]を有効にしていないと、ロックキーまで含めたキーの組み合わせがショートカットとなります。<br>
+<br>
+<br>
+<h3><a name="SEC12_5"></a>12.5 インターネット検索</h3>     
+<br>
+インターネット検索で使う検索エンジンを登録します。ここで登録した内容に従って URL が組み立てられ、Web ブラウザに送られます。最終的な     
+URL     
+は、[前につける文字列]、[検索語]、[後ろにつける文字列]の順で文字列を結合したものになります。検索語を複数指定した場合には、各検索語は     
+[結合文字列] で結合されます。<br>     
+<br>
+検索語として日本語を入力すると、"%B8%A1%BA%F7" のような、文字コードを示す英数字に変換されますが、その際 [文字コード] 
+で指定したコードが使われます。検索エンジンによっては特定の文字コードしか使えない場合がありますので、そのような時に指定します。<br>
+<br>
+なお、検索エンジンとして使用できるのは HTTP の "get" メソッドを使ったサイトだけです。"put" メソッドは使用できません。<br>     
+<br>
+また、「<a href="http://www.alc.co.jp/">英辞郎 on the Web</a>」のように、検索サイトによってはブラウザによるトップページからの検索以外の使い方を禁止している場合もあります。このようなサイトを登録すると規約違反となりますので、ご注意ください。<br>
+<br>
+<br>
+<h3><a name="SEC12_6"></a>12.6 外部プログラム</h3>     
+<br>
+EBView     
+が使う外部プログラムを登録します。Windowsでは、外部プログラムが指定されていないと、エクスプローラのファイルタイプに登録されているアプリケーションが起動します。たとえば、Web ブラウザ起動コマンドに何も指定しないと、デフォルトでは InternetExplorer     
+が起動します。<br>
+<br>
+<div style="margin-left: 40px;"><span style="color: rgb(153, 0, 0);">内部で音声を再生</span><br>
+  これをチェックすると、EBView 
+  の内部ルーチンを使って音声を再生します。Windows 
+  だけで有効です。
+  <p><span style="color: rgb(153, 0, 0);">音声再生プログラム</span><br>
+音声を再生する際に使うプログラムです。WAVE ファイルが再生できるプログラムを指定してください。<br>     
+<br>
+<span style="color: rgb(153, 0, 0);">動画再生プログラム</span><br>
+動画を再生する際に使うプログラムです。MPEG ファイルが再生できるプログラムを指定してください。<br>     
+<br>
+<span style="color: rgb(153, 0, 0);">Web ブラウザ起動コマンド</span><br>
+Web ブラウザを起動するためのコマンドです。<br>     
+<br>
+<span style="color: rgb(153, 0, 0);">ファイルを開くデフォルトのコマンド</span><br>
+ファイル検索で、ファイルを開くためのコマンドがフィルタ定義内にない場合、ここで指定したコマンドが使われます。<br>
+</div>
+<br>
+いずれの場合も、以下の特殊文字が使用できます。<br>
+<br>
+<div style="margin-left: 40px;">%f : ファイル名で置き換えられる<br>     
+%p : ページ数で置き換えられる (ファイル検索のみ)<br>     
+%l : 行番号で置き換えられる (ファイル検索のみ) </div>     
+<br>
+<br>
+<p>　
+<div style="text-align: center;">
+<div style="text-align: left;">
+　
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC13"></a>13. ライセンス・免責事項</h2>  
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+　
+<p>   
+<br>
+EBView は GNU General Public License に従ったフリーソフトウェアです。この<br>     
+プログラムの利用に当たっては作者はいかなる保証も行いません。詳しくは<br>
+COPYING ファイルを参照してください。<br>     
+<br>
+<br>
+</p>
+<div style="text-align: center;">
+<div style="text-align: left;">
+　
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC14"></a>14. 謝辞</h2>  
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+　
+<p>   
+<br>
+EB ライブラリを開発された笠原さんに感謝します。EB ライブラリがなければ、このソフトウェアも開発することはできませんでした。<br>     
+<br>
+また、EBView の開発にあたり、以下の方々にご協力いただきました。この場を借りましてお礼申し上げます。<br>     
+<br>
+<br>
+<div style="margin-left: 40px;">やまだ あきら さん<br>     
+藤井 宏憲 さん<br>     
+佐古田 さん<br>     
+八田 真行 さん<br>     
+小野田 新 さん<br>     
+谷村 晋 さん<br>     
+Francis Bond さん<br>     
+小野 哲男 さん<br>     
+重村 法克 さん<br>     
+KATO Tsuguru さん<br>     
+松本 さん<br>     
+足永 拓郎 さん<br>     
+Kazuki Ohta さん<br>     
+田原 俊一 さん<br>     
+  Masatake YAMATO さん    
+</div>
+<br>
+<br>
+<div style="text-align: center;">
+<div style="text-align: left;">
+　
+<table border="0" width="100%" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <h2><a name="SEC15"></a>15. 作者への連絡先</h2>  
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+　
+<p>   
+<br>
+バグの報告、質問等は以下にお願いします。また、いろいろなフィードバックを特に歓迎します。<br>
+<br>
+</p>
+<div style="margin-left: 40px;">須藤賢一 (Kenichi SUTO)<br>   
+<br>
+E-Mail : &lt;deep_blue@users.sourceforge.net&gt;<br>   
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

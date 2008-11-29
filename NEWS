@@ -1,0 +1,70 @@
+What's new in version 0.3.4
+Bug-fix
+  * Search using Kanji character now correctly work.
+  * You can input Japanese correctly.
+
+
+
+What's new in version 0.3.4
+  * Now you specify color to dictionary button and result list.
+  * Show dictionary name on tooltip of dictionary button.
+  * Menu and shortcuts to Increase/decrease font size.
+  * Menu and shortcuts to Expand/Shrink lines.
+  * Selection search renewed.
+  * Replace special characters undefined iin Unicode.
+  * Both Katakana and Hiragana maches interchangeably.
+  * When searching dictionary from disk, they are now enabled by default.
+  * Now you don't have to push [Update] button when defining dictionary group and web search engines.
+  * Now sound will be played using internal routine (Windows).
+  * Immediately get clipboard contents (Windows).
+  * Config file location changed (Windows).
+
+
+Bug-fix
+  * Garbage shown in Japanese keyword emphasis fixed.
+  * Now end tag without start tag will be ignored.
+  * Scrolling to the end of contents unintentionally fixed.
+  * Aborts when error returned from EB library fixed.
+
+
+
+What's new in version 0.3.3
+  * Directory group feature.
+  * Suppress console message which cause console window to open.
+  * Now "normal"  font will be used in headword list.
+  * Calculate number of cells from window height.
+  * Use BMH method for fulltext search.
+
+Bug-fix
+  * Direct editing in dictionary group window may result in segfault.
+  * Segfault on next and previous button fixed.
+  * Destroying wrong widget in ok_pref() fixed.
+  * Freeze on failure of exec() fixed.
+
+
+
+What's new in version 0.3.2
+  * Drag & Drop enabled in dictionary group window.
+  * Compiles with gcc 3.x on Cygwin environment (Windows).
+  * Calls ShellExecute() when no external program is specified (Windows).
+  * Cache bug fixed (ignore files whose size is zero).
+  * Added call to finalize_hookset().
+  * Gaiji color is now correct.
+  * Now you can use Japanese path name.
+
+
+What's new in version 0.3.1
+
+  * File Search:
+	Searches keyword from file. 
+	You can use both text and regular expression as keyword.
+  * Japanese stemming fixed.
+  * Weblist destroy bug fixed.
+  * Has option to suppress image.
+  * Tab position is now modifiable.
+  * Frame direction is now modifiable.
+  * Max search and max items was separated.
+  * Search history is saved in file, available next time.
+  * Emphasize search word in contents.
+
+

@@ -1,0 +1,1433 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: EBView 0.1.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-02-22 15:46+0900\n"
+"PO-Revision-Date: 2004-02-15 23:28+0900\n"
+"Last-Translator: Kenichi SUTO <deep_blue@users.sourceforge.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: src/cellrendererebook.c:161 src/mainwindow.c:984
+msgid "Text"
+msgstr "テキスト"
+
+#: src/cellrendererebook.c:162
+msgid "Text to render"
+msgstr "表示するテキスト"
+
+#: src/cellrendererebook.c:170
+msgid "BookInfo"
+msgstr "BookInfo"
+
+#: src/cellrendererebook.c:171
+msgid "Book Information"
+msgstr "Book Information"
+
+#: src/dictbar.c:202
+msgid "Push to enable this dictionary."
+msgstr "押すと辞書が有効になります。"
+
+#: src/dictbar.c:325
+msgid "Select dictionary group."
+msgstr "辞書グループを選択してください"
+
+#: src/dump.c:217 src/dump.c:356
+msgid "Close"
+msgstr "閉じる"
+
+#: src/dump.c:229 src/dump.c:367
+msgid "page"
+msgstr "ページ"
+
+#: src/dump.c:376
+msgid "offset"
+msgstr "オフセット"
+
+#: src/eb.c:375 src/eb.c:442 src/mainmenu.c:478 src/mainwindow.c:482
+#: src/mainwindow.c:1137
+msgid "Automatic Search"
+msgstr "おまかせ検索"
+
+#: src/eb.c:380 src/eb.c:446 src/mainmenu.c:486 src/mainwindow.c:1148
+msgid "Exactword Search"
+msgstr "完全一致検索"
+
+#: src/eb.c:386 src/eb.c:450 src/mainmenu.c:492 src/mainwindow.c:1160
+msgid "Forward Search"
+msgstr "前方一致検索"
+
+#: src/eb.c:392 src/eb.c:454 src/mainmenu.c:499 src/mainwindow.c:1172
+msgid "Backward Search"
+msgstr "後方一致検索"
+
+#: src/eb.c:398 src/eb.c:458 src/mainmenu.c:506 src/mainwindow.c:1184
+msgid "Keyword Search"
+msgstr "条件検索"
+
+#: src/eb.c:404 src/eb.c:462 src/mainmenu.c:513 src/mainwindow.c:490
+#: src/mainwindow.c:491 src/mainwindow.c:1196
+msgid "Multiword Search"
+msgstr "複合検索"
+
+#: src/eb.c:423 src/eb.c:476
+msgid "Full Text Search"
+msgstr "全文検索"
+
+#: src/eb.c:427 src/eb.c:480 src/mainmenu.c:547 src/mainwindow.c:481
+#: src/mainwindow.c:499 src/mainwindow.c:500 src/mainwindow.c:1223
+#: src/preference.c:94
+msgid "Internet Search"
+msgstr "インターネット検索"
+
+#: src/eb.c:431 src/eb.c:484 src/grep.c:77 src/mainmenu.c:554
+#: src/mainwindow.c:507 src/mainwindow.c:508 src/mainwindow.c:1237
+#: src/preference.c:88
+msgid "File Search"
+msgstr "ファイル検索"
+
+#. Cancelable
+#: src/eb.c:1615 src/eb.c:1619
+msgid "Fulltext search"
+msgstr "全文検索"
+
+#: src/ebview.c:111
+msgid "Failed to execute command. Please check setting."
+msgstr "コマンドを起動できませんでした。設定を確認してください。"
+
+#: src/external.c:208
+msgid "Web browser not set"
+msgstr "ウェブブラウザが設定されていません"
+
+#. Create file list
+#: src/grep.c:442
+msgid "Listing files..."
+msgstr "ファイル一覧作成中..."
+
+#: src/grep.c:456 src/grep.c:1018 src/grep.c:1155 src/grep.c:1182
+#: src/pref_io.c:1575 src/shortcutfunc.c:85 src/shortcutfunc.c:113
+#: src/shortcutfunc.c:189 src/shortcutfunc.c:234
+msgid "Manual Select"
+msgstr "手動で選択"
+
+#: src/grep.c:545
+msgid "done\n"
+msgstr "完了\n"
+
+#: src/grep.c:555
+msgid "Force ordinary text.\n"
+msgstr "ユーザ指定による通常検索\n"
+
+#: src/grep.c:560
+msgid "Seems like regular expression.\n"
+msgstr "正規表現が入力されました。\n"
+
+#: src/grep.c:567
+msgid "Force regular expression.\n"
+msgstr "ユーザ指定による正規表現検索\n"
+
+#: src/grep.c:572
+msgid "Seems like ordinary text.\n"
+msgstr "通常の検索語が入力されました。\n"
+
+#: src/grep.c:601
+msgid "Failed to compile pattern.\n"
+msgstr "パターンのコンパイルに失敗しました。\n"
+
+#: src/grep.c:608
+msgid ""
+"\n"
+"Searching following files...\n"
+msgstr ""
+"\n"
+"次のファイルを検索中...\n"
+
+#: src/grep.c:655
+msgid ""
+"\n"
+"File search completed.\n"
+msgstr ""
+"\n"
+"ファイル検索完了。\n"
+
+#: src/grep.c:1113
+msgid "Suppress Hidden Files"
+msgstr "隠しファイルを表示しない"
+
+#: src/grep.c:1119
+msgid "Suppress files whose name start with dot."
+msgstr "ドットで始まるファイルを表示しません。"
+
+#: src/grep.c:1121
+msgid "Ignore Case"
+msgstr "大文字/小文字を無視"
+
+#: src/grep.c:1127
+msgid ""
+"When checked, uppercase letters and lowercase letters are regarded as "
+"identical."
+msgstr "チェックすると、大文字と小文字は区別されません。"
+
+#: src/headword.c:776
+msgid "Go to previous hit list."
+msgstr "前の見出しを表示する。"
+
+#: src/headword.c:795
+msgid "Go to next hit list."
+msgstr "次の見出しを表示する。"
+
+#: src/mainmenu.c:520 src/mainwindow.c:1208
+msgid "Fulltext Search"
+msgstr "全文検索"
+
+#: src/mainmenu.c:530
+msgid "Menu"
+msgstr "メニュー"
+
+#: src/mainmenu.c:537
+msgid "Copyright"
+msgstr "著作権表示"
+
+#: src/mainmenu.c:593
+msgid "Exit"
+msgstr "終了"
+
+#: src/mainmenu.c:598
+msgid "File"
+msgstr "ファイル"
+
+#: src/mainmenu.c:606
+msgid "Show/Hide"
+msgstr "表示/非表示"
+
+#: src/mainmenu.c:613
+msgid "Menu Bar"
+msgstr "メニューバー"
+
+#: src/mainmenu.c:622
+msgid "Dictionary Selection Bar"
+msgstr "辞書選択バー"
+
+#: src/mainmenu.c:631
+msgid "Status Bar"
+msgstr "ステータスバー"
+
+#: src/mainmenu.c:638
+msgid "Tree Pane Tab"
+msgstr "ツリーペインのタブ"
+
+#: src/mainmenu.c:649
+msgid "Contents"
+msgstr "本文"
+
+#: src/mainmenu.c:656
+msgid "Emphasize Keyword"
+msgstr "キーワードを強調表示する"
+
+#: src/mainmenu.c:664
+msgid "Show Image Inline"
+msgstr "画像をインライン表示する"
+
+#. text size
+#: src/mainmenu.c:678 src/pref_shortcut.c:103
+msgid "Increase Font Size"
+msgstr "フォントを拡大"
+
+#: src/mainmenu.c:684 src/pref_shortcut.c:104
+msgid "Decrease Font Size"
+msgstr "フォントを縮小"
+
+#. Space between lines
+#: src/mainmenu.c:695 src/pref_shortcut.c:105
+msgid "Expand Lines"
+msgstr "行間を拡大"
+
+#: src/mainmenu.c:701 src/pref_shortcut.c:106
+msgid "Shrink Lines"
+msgstr "行間を縮小"
+
+#. Result list
+#: src/mainmenu.c:709
+msgid "Result List"
+msgstr "結果一覧"
+
+#. Sort by dictionary.
+#: src/mainmenu.c:716
+msgid "Sort By Dictionary"
+msgstr "検索結果を辞書ごとに表示"
+
+#. Show filename
+#: src/mainmenu.c:725
+msgid "Show Filename"
+msgstr "ファイル名を表示"
+
+#. Pane direction
+#: src/mainmenu.c:740
+msgid "Pane Direction"
+msgstr "フレーム分割方向"
+
+#: src/mainmenu.c:749
+msgid "Horizontal"
+msgstr "左右"
+
+#: src/mainmenu.c:762
+msgid "Vertical"
+msgstr "上下"
+
+#. Tab position
+#: src/mainmenu.c:778
+msgid "Tab Position"
+msgstr "タブの位置"
+
+#: src/mainmenu.c:786
+msgid "Top"
+msgstr "上"
+
+#: src/mainmenu.c:796
+msgid "Bottom"
+msgstr "下"
+
+#: src/mainmenu.c:806
+msgid "Left"
+msgstr "左"
+
+#: src/mainmenu.c:816
+msgid "Right"
+msgstr "右"
+
+#: src/mainmenu.c:826
+msgid "View"
+msgstr "表示"
+
+#: src/mainmenu.c:834
+msgid "Search Method"
+msgstr "検索方法"
+
+#: src/mainmenu.c:841
+msgid "Tools"
+msgstr "ツール"
+
+#.
+#. item = gtk_menu_item_new_with_label(_("Add/Remove Dictionary"));
+#. gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+#. g_signal_connect(G_OBJECT(item), "activate",
+#. G_CALLBACK(menuitem_handler),
+#. (gpointer)"pref.dict");
+#.
+#. item = gtk_menu_item_new_with_label(_("Stemming"));
+#. gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+#. g_signal_connect(G_OBJECT(item), "activate",
+#. G_CALLBACK(menuitem_handler),
+#. (gpointer)"pref.ending");
+#.
+#. item = gtk_menu_item_new_with_label(_("Shortcut"));
+#. gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+#. g_signal_connect(G_OBJECT(item), "activate",
+#. G_CALLBACK(menuitem_handler),
+#. (gpointer)"pref.shortcut");
+#.
+#. item = gtk_menu_item_new_with_label(_("Search Engines"));
+#. gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+#. g_signal_connect(G_OBJECT(item), "activate",
+#. G_CALLBACK(menuitem_handler),
+#. (gpointer)"pref.web");
+#.
+#. item = gtk_menu_item_new_with_label(_("External Program"));
+#. gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+#. g_signal_connect(G_OBJECT(item), "activate",
+#. G_CALLBACK(menuitem_handler),
+#. (gpointer)"pref.external");
+#.
+#. item = gtk_menu_item_new_with_label(_("Font"));
+#. gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+#. g_signal_connect(G_OBJECT(item), "activate",
+#. G_CALLBACK(menuitem_handler),
+#. (gpointer)"pref.font");
+#.
+#. item = gtk_menu_item_new_with_label(_("Color"));
+#. gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+#. g_signal_connect(G_OBJECT(item), "activate",
+#. G_CALLBACK(menuitem_handler),
+#. (gpointer)"pref.color");
+#.
+#. item = gtk_menu_item_new_with_label(_("Misc"));
+#. gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+#. g_signal_connect(G_OBJECT(item), "activate",
+#. G_CALLBACK(menuitem_handler),
+#. (gpointer)"pref.misc");
+#.
+#.
+#. Selection search
+#: src/mainmenu.c:896 src/preference.c:85
+msgid "Selection"
+msgstr "セレクションの検索"
+
+#: src/mainmenu.c:904
+msgid "Do Nothing"
+msgstr "何もしない"
+
+#: src/mainmenu.c:914
+msgid "Copy Only"
+msgstr "コピーのみ"
+
+#: src/mainmenu.c:924
+msgid "Search In Main Window"
+msgstr "メインウィンドウで検索"
+
+#: src/mainmenu.c:934
+msgid "Search In Main Window + Top"
+msgstr "メインウィンドウで検索し前面へ"
+
+#: src/mainmenu.c:944
+msgid "Search In Popup"
+msgstr "ポップアップで検索"
+
+#. if(selection_mode == SELECTION_POPUP)
+#. 	gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(item), TRUE);
+#. Dump
+#: src/mainmenu.c:954
+msgid "Dump"
+msgstr "ダンプ"
+
+#: src/mainmenu.c:961
+msgid "Hex Dump"
+msgstr "Hexダンプ"
+
+#: src/mainmenu.c:967
+msgid "Text Dump"
+msgstr "Textダンプ"
+
+#. Option
+#: src/mainmenu.c:978
+msgid "Options..."
+msgstr "オプション..."
+
+#: src/mainmenu.c:988
+msgid "Usage"
+msgstr "使い方"
+
+#: src/mainmenu.c:994
+msgid "Show EBView Home"
+msgstr "ホームページを表示"
+
+#: src/mainmenu.c:1000
+msgid "About"
+msgstr "このソフトウェアについて"
+
+#: src/mainmenu.c:1007
+msgid "Help"
+msgstr "ヘルプ"
+
+#: src/mainwindow.c:101 src/websearch.c:108
+msgid "Please enter search word."
+msgstr "検索語を入力してください。"
+
+#: src/mainwindow.c:118 src/selection.c:167 src/textview.c:84
+#: src/thread_search.c:64 src/thread_search.c:150
+msgid "No hit."
+msgstr "ヒットしませんでした。"
+
+#: src/mainwindow.c:302 src/misc.c:146
+#, c-format
+msgid "Couldn't find %s. Check installation."
+msgstr "ファイル %s を開けません。インストールが正しくない可能性があります。"
+
+#: src/mainwindow.c:341
+msgid "Help will be shown in external web browser."
+msgstr "使い方はWebブラウザに表示されます。"
+
+#: src/mainwindow.c:746
+msgid "Search Word"
+msgstr "検索語"
+
+#: src/mainwindow.c:767
+msgid ""
+"Type word here. You can type multiple space-separated words for keyword "
+"search. For file search, specify words or regular expression."
+msgstr ""
+"ここに検索したい語を入力してください。複合検索と条件検索の場合には複数の単語"
+"を入れて構いません。ファイル検索の場合には、検索語か正規表現を入れてくださ"
+"い。"
+
+#: src/mainwindow.c:783 src/multi.c:294
+msgid "Start search"
+msgstr "検索を開始"
+
+#: src/mainwindow.c:809
+msgid "Select search method."
+msgstr "検索方法を指定してください。"
+
+#: src/mainwindow.c:835
+msgid "When enabled, X selection is searched automatically"
+msgstr "チェックすると、Xのセレクションを自動的に検索します。"
+
+#: src/mainwindow.c:853
+msgid ""
+"When enabled, result of X selection search will be shown in popup window"
+msgstr ""
+"チェックすると、Xのセレクションの自動検索結果をポップアップウィンドウに表示し"
+"ます"
+
+#: src/mainwindow.c:869
+msgid "Previous Item"
+msgstr "前の項目"
+
+#: src/mainwindow.c:881
+msgid "Next Item"
+msgstr "次の項目"
+
+#: src/mainwindow.c:896
+msgid "show next in history"
+msgstr "次へ"
+
+#: src/mainwindow.c:907
+msgid "show previous in history"
+msgstr "戻る"
+
+#: src/mainwindow.c:993
+msgid "Candidate"
+msgstr "候補"
+
+#. 						rp->heading = strdup(_("menu"));
+#: src/menu.c:70
+msgid "menu"
+msgstr "メニュー"
+
+#. 						rp->heading = strdup(_("copyright"));
+#: src/menu.c:130
+msgid "copyright"
+msgstr "著作権表示"
+
+#: src/misc.c:160
+#, c-format
+msgid "Couldn't open %s. Check installation."
+msgstr "ファイル %s を開けません。インストールが正しくない可能性があります。"
+
+#: src/multi.c:241 src/pref_color.c:238
+msgid "Keyword"
+msgstr "キーワード"
+
+#: src/multi.c:283 src/multi.c:303
+msgid "Candidates"
+msgstr "候補"
+
+#: src/pref_color.c:95 src/pref_dictgroup.c:1160
+msgid "Choose Color"
+msgstr "色を選択してください"
+
+#: src/pref_color.c:220
+msgid "Link"
+msgstr "リンク"
+
+#: src/pref_color.c:230 src/pref_color.c:248 src/pref_color.c:266
+#: src/pref_color.c:283 src/pref_color.c:301 src/pref_color.c:321
+#: src/pref_font.c:176 src/pref_font.c:193 src/pref_font.c:210
+#: src/pref_font.c:227
+msgid "Choose"
+msgstr "選択"
+
+#: src/pref_color.c:256
+msgid "Sound"
+msgstr "サウンド"
+
+#: src/pref_color.c:272
+msgid "Movie"
+msgstr "ムービー"
+
+#: src/pref_color.c:290
+msgid "Emphasis"
+msgstr "強調表示"
+
+#: src/pref_color.c:310
+msgid "Reverse Background"
+msgstr "反転表示の背景"
+
+#: src/pref_dictgroup.c:148 src/pref_dirgroup.c:132 src/pref_weblist.c:201
+msgid "Please select group."
+msgstr "グループを選択してください"
+
+#: src/pref_dictgroup.c:163 src/pref_dictgroup.c:315
+msgid "Failed to load dictionary."
+msgstr "書籍一覧の取得に失敗しました。"
+
+#: src/pref_dictgroup.c:383 src/pref_dictgroup.c:503 src/pref_weblist.c:75
+#: src/pref_weblist.c:111
+msgid "Please select dictionary."
+msgstr "辞書を選択してください。"
+
+#: src/pref_dictgroup.c:689
+msgid "Failed to get subbook directory."
+msgstr "書籍のディレクトリを取得できませんでした。"
+
+#: src/pref_dictgroup.c:698
+msgid "Failed to get title."
+msgstr "タイトルを取得できませんでした。"
+
+#: src/pref_dictgroup.c:721
+msgid "Failed to load book."
+msgstr "書籍一覧の取得に失敗しました。書籍が間違っている可能性があります。"
+
+#: src/pref_dictgroup.c:847
+msgid "Please enter directory name"
+msgstr "ディレクトリ名を入力してください。"
+
+#: src/pref_dictgroup.c:899
+msgid "Please specify title."
+msgstr "タイトルを指定してください。"
+
+#: src/pref_dictgroup.c:905
+msgid "Please specify book path."
+msgstr "辞書のパスを選択してください"
+
+#: src/pref_dictgroup.c:915
+msgid "Subbook number incorrect."
+msgstr "副本番号が正しくありません。"
+
+#: src/pref_dictgroup.c:1070 src/pref_dictgroup.c:1072
+#: src/pref_dictgroup.c:1075 src/pref_dictgroup.c:1077
+#: src/pref_dictgroup.c:1123 src/pref_dictgroup.c:1125
+#: src/pref_dictgroup.c:1128 src/pref_dictgroup.c:1130
+#: src/pref_dictgroup.c:1200 src/pref_dictgroup.c:1525
+msgid "Sample"
+msgstr "サンプル"
+
+#: src/pref_dictgroup.c:1286 src/pref_dictgroup.c:1475 src/pref_dirgroup.c:315
+#: src/pref_weblist.c:535
+msgid "Name"
+msgstr "名称"
+
+#: src/pref_dictgroup.c:1388 src/pref_weblist.c:480
+msgid "Group name"
+msgstr "グループ名"
+
+#: src/pref_dictgroup.c:1398 src/pref_dirgroup.c:355 src/pref_grep.c:285
+#: src/pref_shortcut.c:441 src/pref_shortcut.c:533 src/pref_stemming.c:232
+#: src/pref_weblist.c:488 src/pref_weblist.c:613
+msgid "Add"
+msgstr "追加"
+
+#: src/pref_dictgroup.c:1405 src/pref_dirgroup.c:368 src/pref_grep.c:292
+#: src/pref_shortcut.c:422 src/pref_stemming.c:239 src/pref_weblist.c:499
+msgid "Remove"
+msgstr "削除"
+
+#: src/pref_dictgroup.c:1412 src/pref_weblist.c:506
+msgid "Up"
+msgstr "上へ"
+
+#: src/pref_dictgroup.c:1418 src/pref_weblist.c:512
+msgid "Down"
+msgstr "下へ"
+
+#: src/pref_dictgroup.c:1429 src/pref_dictgroup.c:1483
+msgid "Path"
+msgstr "パス"
+
+#: src/pref_dictgroup.c:1439
+msgid "Depth"
+msgstr "深さ"
+
+#: src/pref_dictgroup.c:1453
+msgid "Specify search depth. 0 means to search only specified directory."
+msgstr ""
+"検索の深さを指定してください。 0はそのディレクトリの直下だけを探すことを意味"
+"します。"
+
+#: src/pref_dictgroup.c:1457
+msgid "Search Disk"
+msgstr "ディスクを検索"
+
+#: src/pref_dictgroup.c:1493
+msgid "Subbook Number"
+msgstr "副本番号"
+
+#: src/pref_dictgroup.c:1503
+msgid "Appendix Path"
+msgstr "Appendixのパス"
+
+#: src/pref_dictgroup.c:1511
+msgid "Appendix Subbook Number"
+msgstr "Appendixの副本番号"
+
+#: src/pref_dictgroup.c:1530
+msgid "FG"
+msgstr "前景"
+
+#: src/pref_dictgroup.c:1536
+msgid "BG"
+msgstr "背景"
+
+#: src/pref_dictgroup.c:1542
+msgid "Clear"
+msgstr "クリア"
+
+#: src/pref_dirgroup.c:209
+msgid "Select directory"
+msgstr "ディレクトリグループを選択してください"
+
+#: src/pref_dirgroup.c:261
+msgid "Directory group list"
+msgstr "ディレクトリグループ一覧"
+
+#: src/pref_dirgroup.c:308
+msgid "Detail"
+msgstr "詳細"
+
+#: src/pref_dirgroup.c:323
+msgid "Enter the name of directory group."
+msgstr "ディレクトリグループの名前を入力します。"
+
+#: src/pref_dirgroup.c:325
+msgid "Directory list"
+msgstr "ディレクトリ一覧"
+
+#: src/pref_dirgroup.c:345
+msgid ""
+"Specify directory names one per line. You can specify extension of files "
+"that will be searched. For example, \"/some/dir/name,.txt\" searches all "
+"files under /some/dir/name which have the extension .txt."
+msgstr ""
+"ディレクトリを指定します。複数指定する場合には改行で区切ります。検索するファ"
+"イルの拡張子を指定することもできます。たとえば \\\"/some/dir/name,.txt\\\" と"
+"指定すると、/some/dir/name の下の、拡張子 .txt の全てのファイルが検索されま"
+"す。"
+
+#: src/pref_dirgroup.c:361
+msgid "Change"
+msgstr "更新"
+
+#: src/pref_dirgroup.c:375
+msgid "Choose.."
+msgstr "選択.."
+
+#. 	gtk_container_add(GTK_CONTAINER(frame), vbox);
+#: src/pref_external.c:80
+msgid "Play sound internally"
+msgstr "内部で音声を再生"
+
+#: src/pref_external.c:84
+msgid "Use internal routine to play sound. Valid only on windows."
+msgstr "内部ルーチンを使って音声を生成します。Windowsでのみ有効です。"
+
+#: src/pref_external.c:94
+msgid "Command to play sound "
+msgstr "音声再生プログラム"
+
+#: src/pref_external.c:106
+#, c-format
+msgid ""
+"External command to play WAVE sound. %f will be replaced by data file name."
+msgstr ""
+"WAVE音声を再生するためのプログラムを指定します。%fはファイル名で置き換えられ"
+"ます。"
+
+#: src/pref_external.c:116
+msgid "Command to play movie "
+msgstr "動画再生プログラム"
+
+#: src/pref_external.c:128
+#, c-format
+msgid ""
+"External command to play MPEG movie. %f will be replaced by data file name."
+msgstr ""
+"MPEG動画を再生するためのプログラムを指定します。%fはファイル名で置き換えられ"
+"ます。"
+
+#: src/pref_external.c:138
+msgid "Command to launch web browser "
+msgstr "Webブラウザ起動コマンド"
+
+#: src/pref_external.c:150
+#, c-format
+msgid "External command to launch Web browser. %f will be replaced by URL."
+msgstr ""
+"Webブラウザを起動するためのプログラムを指定します。%fはURLで置き換えられま"
+"す。"
+
+#: src/pref_external.c:161
+msgid "Standard command to open file "
+msgstr "ファイルを開くデフォルトのコマンド"
+
+#: src/pref_external.c:173
+msgid ""
+"Standard command to open file. %f will be replaced by filename, %l by line "
+"number."
+msgstr ""
+"ファイルをオープンするためのプログラムを指定します。%f はファイル名で、%l は"
+"行番号で置き換えられます。"
+
+#: src/pref_font.c:166 src/pref_stemming.c:281
+msgid "Normal"
+msgstr "通常"
+
+#: src/pref_font.c:183
+msgid "Bold"
+msgstr "ボールド"
+
+#: src/pref_font.c:200
+msgid "Italic"
+msgstr "イタリック"
+
+#: src/pref_font.c:216
+msgid "Superscript"
+msgstr "上付き文字"
+
+#: src/pref_grep.c:132
+msgid "Additional Lines To Display"
+msgstr "前後に表示する行数"
+
+#: src/pref_grep.c:150
+msgid ""
+"In addition to matched line, additional lines will be shown in contents."
+msgstr "マッチした行の前後に、ここで指定した行数分が表示されます。"
+
+#: src/pref_grep.c:157
+msgid "Additional Chars To Display"
+msgstr "前後の文字数"
+
+#: src/pref_grep.c:176
+msgid ""
+"When matched line is too long, several characters around keyword will be "
+"shown in heading."
+msgstr "検索語の前後に、ここで指定した数の文字が見出しに表示されます。"
+
+#: src/pref_grep.c:239
+msgid "Extension"
+msgstr "拡張子"
+
+#: src/pref_grep.c:250
+msgid "Filter Command"
+msgstr "フィルタコマンド"
+
+#: src/pref_grep.c:261
+msgid "Open Command"
+msgstr "ファイルを開くコマンド"
+
+#: src/pref_grep.c:387
+msgid "Maximum Cache Size (MB)"
+msgstr "最大キャッシュサイズ"
+
+#: src/pref_grep.c:406
+msgid "Specify maximum cache size in MB."
+msgstr "最大キャッシュサイズをMB単位で指定します。"
+
+#: src/pref_grep.c:408
+msgid "Clear Cache"
+msgstr "キャッシュをクリア"
+
+#: src/pref_gui.c:75
+msgid "Maximum words in history"
+msgstr "検索履歴に残す単語数"
+
+#: src/pref_gui.c:94
+msgid "Maximum number of words to remember in word history"
+msgstr "検索履歴に残す最大の単語数を指定します。"
+
+#: src/pref_gui.c:103
+msgid "Chars in dictionary bar"
+msgstr "辞書名の文字数"
+
+#: src/pref_gui.c:122
+msgid ""
+"Specify the number of characters to display on top of each toggle buttons in "
+"dictionary bar."
+msgstr "辞書選択バーのトグルボタンに表示する辞書名の文字数を指定します。"
+
+#: src/pref_gui.c:126
+msgid "Show splash screen"
+msgstr "起動ウィンドウを表示"
+
+#: src/pref_gui.c:128
+msgid "Show splash screen on loading."
+msgstr "起動時に起動ウィンドウを表示します。"
+
+#: src/pref_gui.c:136
+msgid "Calculate heading automatically"
+msgstr "見出の数を自動計算"
+
+#: src/pref_gui.c:138
+msgid "Calculate the number of cells in heading list to suit the window size."
+msgstr "見出一覧に表示する数をウィンドウサイズから計算します。"
+
+#: src/pref_gui.c:152
+msgid "Maximum hits to display"
+msgstr "表示する検索結果の最大数"
+
+#: src/pref_gui.c:171
+msgid ""
+"Maximum number of hits to be displayed at once.\n"
+"You can go forward and backward using buttons. Valid only if automatic "
+"calculation is disabled."
+msgstr ""
+"一度に表示する見出の最大数を指定します。\n"
+"ボタンを使って前後に移動することができます。ウィンドウサイズからの自動計算を"
+"しないときだけ有効です。"
+
+#.
+#: src/pref_gui.c:174
+msgid "Enable dictionary button color"
+msgstr "辞書ボタンに色をつける"
+
+#: src/pref_gui.c:176
+msgid "Enable background color of dictionary button."
+msgstr "辞書ボタンに色をつけます。"
+
+#: src/pref_io.c:124
+msgid "Couldn't open preference. Will use default value."
+msgstr "設定ファイルを開けません。デフォルトの値を使います。"
+
+#: src/pref_io.c:130 src/pref_io.c:138 src/pref_io.c:269 src/pref_io.c:277
+#: src/pref_io.c:284 src/pref_io.c:299 src/pref_io.c:336 src/pref_io.c:539
+#: src/pref_io.c:548 src/pref_io.c:555 src/pref_io.c:573 src/pref_io.c:637
+#: src/pref_io.c:646 src/pref_io.c:653 src/pref_io.c:670 src/pref_io.c:844
+#: src/pref_io.c:853 src/pref_io.c:861 src/pref_io.c:875 src/pref_io.c:898
+#: src/pref_io.c:906 src/pref_io.c:1079 src/pref_io.c:1087 src/pref_io.c:1094
+#: src/pref_io.c:1111 src/pref_io.c:1263 src/pref_io.c:1271 src/pref_io.c:1281
+#: src/pref_io.c:1349 src/pref_io.c:1357 src/pref_io.c:1367 src/pref_io.c:1412
+#: src/pref_io.c:1420 src/pref_io.c:1427 src/pref_io.c:1447 src/pref_io.c:1640
+#: src/pref_io.c:1649 src/pref_io.c:1658 src/pref_io.c:1675
+#, c-format
+msgid "Failed to parse %s. Check contents."
+msgstr "%s をオープンできませんでした。内容を確認してください。す。"
+
+#: src/pref_search.c:66
+msgid "Maximum hits to search"
+msgstr "検索する最大ヒット数"
+
+#: src/pref_search.c:84
+msgid ""
+"Maximum number of hits to be searched.\n"
+"If you increase this number, it takes time to search."
+msgstr ""
+"検索する最大のヒット数を指定してください。\n"
+"数を増やすと、検索に時間がかかります。"
+
+#: src/pref_search.c:87
+msgid "Perform word search in automatic search"
+msgstr "おまかせ検索で前方一致検索を実行"
+
+#: src/pref_search.c:89
+msgid "Perform word search in automatic search."
+msgstr "おまかせ検索で前方一致検索を行います。"
+
+#: src/pref_selection.c:72
+msgid "Lookup interval (ms)"
+msgstr "検索の間隔(ミリ秒単位)"
+
+#: src/pref_selection.c:91
+msgid ""
+"Interval to check selection. \n"
+"Increasing this number may eat up your CPU.\n"
+"Ignored on Windows."
+msgstr ""
+"セレクションを検索する間隔を指定します。この数を小さくするとより多くのCPUを使"
+"うようになります。Windowsでは無視されます。"
+
+#: src/pref_selection.c:99
+msgid "Minimum chars for selection lookup"
+msgstr "最小文字数"
+
+#: src/pref_selection.c:120
+msgid ""
+"When the number of characters in selection is less than this number, it will "
+"not be looked up."
+msgstr ""
+"セレクションを検索する場合の最小の文字数を指定します。この数よりも小さい文字"
+"列は検索されません。"
+
+#. 	gtk_box_pack_start (GTK_BOX(vbox)
+#. 			    , hbox,FALSE, FALSE, 0);
+#: src/pref_selection.c:130
+msgid "Maximum chars for automatic lookup"
+msgstr "最大文字数"
+
+#: src/pref_selection.c:151
+msgid ""
+"When the number of characters in selection is larger than this number, it "
+"will not be looked up."
+msgstr ""
+"セレクションを検索する場合の最大の文字数を指定します。この数よりも大きい文字"
+"列は検索されません。"
+
+#. 	gtk_box_pack_start (GTK_BOX(vbox)
+#. 			    , hbox,FALSE, FALSE, 0);
+#: src/pref_selection.c:161
+msgid "Popup window size"
+msgstr "ポップアップのサイズ"
+
+#.
+#. hbox = gtk_hbox_new(FALSE,10);
+#. gtk_container_set_border_width(GTK_CONTAINER(hbox), 2);
+#. gtk_box_pack_start (GTK_BOX(vbox)
+#. , hbox,FALSE, FALSE, 0);
+#.
+#: src/pref_selection.c:213
+msgid "Show popup title"
+msgstr "ポップアップのタイトルを表示"
+
+#: src/pref_selection.c:215
+msgid "Show title of popup window."
+msgstr "ポップアップウィンドウのタイトルを表示します。"
+
+#.
+#. hbox = gtk_hbox_new(FALSE,10);
+#. gtk_container_set_border_width(GTK_CONTAINER(hbox), 2);
+#. gtk_box_pack_start (GTK_BOX(vbox)
+#. , hbox,FALSE, FALSE, 0);
+#.
+#: src/pref_selection.c:230
+msgid "Beep on no hit"
+msgstr "ヒットしなかったらベルを鳴らす"
+
+#: src/pref_selection.c:232
+msgid "Beep when no hit."
+msgstr "検索した結果、ひとつも一致しなかったらベルを鳴らします。"
+
+#: src/pref_shortcut.c:59
+msgid "Toggle Menu Mar"
+msgstr "メニューバーの表示/非表示切り替え"
+
+#: src/pref_shortcut.c:60
+msgid "Toggle Status Bar"
+msgstr "ステータスバーの表示/非表示切り替え"
+
+#: src/pref_shortcut.c:61
+msgid "Toggle Dictionary Bar"
+msgstr "辞書選択バーの表示/非表示切り替え"
+
+#: src/pref_shortcut.c:62
+msgid "Switch Pane Direction"
+msgstr "ペイン分割方向の切り替え"
+
+#: src/pref_shortcut.c:63
+msgid "Select Automatic Search"
+msgstr "検索方法：おまかせ検索"
+
+#: src/pref_shortcut.c:64
+msgid "Select Exactword Search"
+msgstr "検索方法：完全一致検索"
+
+#: src/pref_shortcut.c:65
+msgid "Select Word Search"
+msgstr "検索方法：前方一致検索"
+
+#: src/pref_shortcut.c:66
+msgid "Select Endword Search"
+msgstr "検索方法：後方一致検索"
+
+#: src/pref_shortcut.c:67
+msgid "Select Keyword Search"
+msgstr "検索方法：条件検索"
+
+#: src/pref_shortcut.c:68
+msgid "Select Multi Search"
+msgstr "検索方法：複合検索"
+
+#: src/pref_shortcut.c:69
+msgid "Select Fulltext Search"
+msgstr "検索方法：全文一致検索"
+
+#: src/pref_shortcut.c:70
+msgid "Select Internet Search"
+msgstr "検索方法：インターネット検索"
+
+#: src/pref_shortcut.c:71
+msgid "Select File Search"
+msgstr "検索方法：ファイル検索"
+
+#: src/pref_shortcut.c:72
+msgid "Next Dictionary Group"
+msgstr "次の辞書グループ"
+
+#: src/pref_shortcut.c:73
+msgid "Previous Dictionary Group"
+msgstr "前の辞書グループ"
+
+#: src/pref_shortcut.c:74
+msgid "Toggle Dictionary No. 1"
+msgstr "辞書1の切り替え"
+
+#: src/pref_shortcut.c:75
+msgid "Toggle Dictionary No. 2"
+msgstr "辞書2の切り替え"
+
+#: src/pref_shortcut.c:76
+msgid "Toggle Dictionary No. 3"
+msgstr "辞書3の切り替え"
+
+#: src/pref_shortcut.c:77
+msgid "Toggle Dictionary No. 4"
+msgstr "辞書4の切り替え"
+
+#: src/pref_shortcut.c:78
+msgid "Toggle Dictionary No. 5"
+msgstr "辞書5の切り替え"
+
+#: src/pref_shortcut.c:79
+msgid "Toggle Dictionary No. 6"
+msgstr "辞書6の切り替え"
+
+#: src/pref_shortcut.c:80
+msgid "Toggle Dictionary No. 7"
+msgstr "辞書7の切り替え"
+
+#: src/pref_shortcut.c:81
+msgid "Toggle Dictionary No. 8"
+msgstr "辞書8の切り替え"
+
+#: src/pref_shortcut.c:82
+msgid "Toggle Dictionary No. 9"
+msgstr "辞書9の切り替え"
+
+#: src/pref_shortcut.c:83
+msgid "Toggle Dictionary No. 10"
+msgstr "辞書10の切り替え"
+
+#: src/pref_shortcut.c:84
+msgid "Next Hit"
+msgstr "次のヒット"
+
+#: src/pref_shortcut.c:85
+msgid "Previous Hit"
+msgstr "前のヒット"
+
+#: src/pref_shortcut.c:86
+msgid "Copy To Clipboard"
+msgstr "クリップボードにコピー"
+
+#: src/pref_shortcut.c:87
+msgid "Paste From Clipboard"
+msgstr "クリップボードからペースト"
+
+#: src/pref_shortcut.c:88
+msgid "Start Search"
+msgstr "検索を開始"
+
+#: src/pref_shortcut.c:89
+msgid "Go Back In History"
+msgstr "ヒストリを戻る"
+
+#: src/pref_shortcut.c:90
+msgid "Go Forward In History"
+msgstr "ヒストリを進む"
+
+#: src/pref_shortcut.c:91
+msgid "Show Previous Text"
+msgstr "前の項目を表示"
+
+#: src/pref_shortcut.c:92
+msgid "Show Next Text"
+msgstr "次の項目を表示"
+
+#. 	{ N_("Toggle Selection Search"), toggle_auto},
+#. 	{ N_("Toggle Popup"), toggle_popup},
+#: src/pref_shortcut.c:95
+msgid "Show Help"
+msgstr "ヘルプの表示"
+
+#: src/pref_shortcut.c:96
+msgid "Clear Word"
+msgstr "検索語のクリア"
+
+#: src/pref_shortcut.c:97
+msgid "Quit Program"
+msgstr "プログラムの終了"
+
+#: src/pref_shortcut.c:98
+msgid "Iconify Window"
+msgstr "ウィンドウの最小化"
+
+#: src/pref_shortcut.c:99
+msgid "Scroll Mainview Down"
+msgstr "メインウィンドウを下にスクロール"
+
+#: src/pref_shortcut.c:100
+msgid "Scroll Mainview Up"
+msgstr "メインウィンドウを上にスクロール"
+
+#: src/pref_shortcut.c:101
+msgid "Next Hits"
+msgstr "次の検索結果"
+
+#: src/pref_shortcut.c:102
+msgid "Prev. Hits"
+msgstr "前の検索結果"
+
+#: src/pref_shortcut.c:377 src/preference.c:93
+msgid "Shortcut"
+msgstr "ショートカット"
+
+#: src/pref_shortcut.c:400
+msgid "Key"
+msgstr "キー"
+
+#: src/pref_shortcut.c:408 src/pref_shortcut.c:522
+msgid "Command"
+msgstr "コマンド"
+
+#: src/pref_shortcut.c:464
+msgid "Grab"
+msgstr "ボタンを押してキー入力"
+
+#: src/pref_shortcut.c:540
+msgid "Ignore locks"
+msgstr "ロックキーを無視"
+
+#: src/pref_shortcut.c:544
+msgid "Ignore Caps Lock and Num Lock key."
+msgstr "Caps Lock キーと Num Lock キーを無視します"
+
+#: src/pref_stemming.c:166
+msgid "Perform stemming"
+msgstr "語尾補正を行う"
+
+#: src/pref_stemming.c:168
+msgid ""
+"When ending of each words matches the pattern in the list, normal form of "
+"the word will also be tried. It takes longer."
+msgstr ""
+"語尾が変化している単語がこのリストのパターンにマッチした場合、元の形で検索を"
+"行います。時間がかかります。"
+
+#: src/pref_stemming.c:175
+msgid "Stemming only when no hit"
+msgstr "ヒットしなかった場合のみ"
+
+#: src/pref_stemming.c:177
+msgid "Do not perform stemming when original words hit."
+msgstr "元の単語で検索にヒットした場合には語尾補正は行いません"
+
+#: src/pref_stemming.c:187
+msgid "English"
+msgstr "英語"
+
+#: src/pref_stemming.c:190
+msgid "Japanese"
+msgstr "日本語"
+
+#: src/pref_stemming.c:211 src/pref_stemming.c:273
+msgid "Pattern"
+msgstr "補正前の語尾"
+
+#: src/pref_stemming.c:224
+msgid "Correction"
+msgstr "補正後の語尾"
+
+#: src/pref_weblist.c:352
+msgid "Please specify name"
+msgstr "名称を入力してください。"
+
+#: src/pref_weblist.c:359
+msgid "Please specify pre string"
+msgstr "前につける文字列を入力してください。"
+
+#: src/pref_weblist.c:428
+msgid "Search engines"
+msgstr "検索エンジン"
+
+#: src/pref_weblist.c:519
+msgid "Search engine"
+msgstr "検索エンジン"
+
+#: src/pref_weblist.c:545
+msgid "Homepage"
+msgstr "ホーム"
+
+#: src/pref_weblist.c:555
+msgid "Pre string"
+msgstr "前につける文字列"
+
+#: src/pref_weblist.c:565
+msgid "Post string"
+msgstr "後ろにつける文字列"
+
+#: src/pref_weblist.c:575
+msgid "Glue string"
+msgstr "結合文字列"
+
+#: src/pref_weblist.c:586
+msgid "Character Code"
+msgstr "文字コード"
+
+#: src/preference.c:79
+msgid "Appearance"
+msgstr "外観"
+
+#: src/preference.c:80
+msgid "Font"
+msgstr "フォント"
+
+#: src/preference.c:81
+msgid "Color"
+msgstr "色"
+
+#: src/preference.c:82 src/preference.c:92
+msgid "Misc."
+msgstr "その他"
+
+#: src/preference.c:83
+msgid "Dictionary Search"
+msgstr "辞書検索"
+
+#: src/preference.c:84
+msgid "Dictionary Group"
+msgstr "辞書グループ"
+
+#: src/preference.c:86
+msgid "Stemming"
+msgstr "語尾補正"
+
+#: src/preference.c:87
+msgid "Misc"
+msgstr "その他"
+
+#: src/preference.c:89
+msgid "Directory Group"
+msgstr "ディレクトリグループ"
+
+#: src/preference.c:90
+msgid "Filter"
+msgstr "フィルタ"
+
+#: src/preference.c:91
+msgid "Cache"
+msgstr "キャッシュ"
+
+#: src/preference.c:95
+msgid "External Program"
+msgstr "外部プログラム"
+
+#: src/preference.c:573
+msgid "Items"
+msgstr "設定項目"
+
+#: src/preference.c:634
+msgid "Ok"
+msgstr "完了"
+
+#: src/render.c:869
+msgid " [Movie] "
+msgstr "[動画]"
+
+#: src/splash.c:120
+msgid "Loading dictionary..."
+msgstr "辞書の読み込み中..."
+
+#: src/textview.c:47
+msgid "/Search This Word"
+msgstr "/選択した語を検索"
+
+#: src/textview.c:48
+msgid "/Copy To Clipboard"
+msgstr "/クリップボードにコピー"
+
+#: src/textview.c:49
+msgid "/Display"
+msgstr "/表示"
+
+#: src/textview.c:50
+msgid "/Display/Menu bar"
+msgstr "/表示/メニューバー"
+
+#: src/textview.c:51
+msgid "/Display/Dictionary Selection Bar"
+msgstr "/表示/辞書選択バー"
+
+#: src/textview.c:52
+msgid "/Display/Status Bar"
+msgstr "/表示/ステータスバー"
+
+#: src/textview.c:53
+msgid "/Display/Tree Frame Tab"
+msgstr "/表示/ツリーフレームのタブ"
+
+#: src/thread_search.c:61
+msgid "Canceled"
+msgstr "キャンセルしました"
+
+#: src/thread_search.c:100
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: src/thread_search.c:106
+msgid "Searching"
+msgstr "検索中"
+
+#: src/thread_search.c:136
+#, c-format
+msgid "%d hit"
+msgstr "%d 項目のヒット"
+
+#: src/websearch.c:42
+msgid "/Go Home"
+msgstr "/ホームへ"
+
+#: src/websearch.c:43
+msgid "/Search"
+msgstr "/検索"
+
+#: src/websearch.c:116 src/websearch.c:178
+msgid "Please select web site"
+msgstr "ウェブサイトを選択してください。"
+
+#~ msgid "Key : "
+#~ msgstr "キー :"
+
+#~ msgid "Search"
+#~ msgstr "検索"
+
+#~ msgid "Settings"
+#~ msgstr "設定"
+
+#~ msgid "Failed to open %s. Check installation."
+#~ msgstr ""
+#~ "%s をオープンできませんでした。正しくインストールされていない可能性があり"
+#~ "ます。"
+
+#~ msgid "Directory name"
+#~ msgstr "ディレクトリ名"
+
+#~ msgid "Show filename in list."
+#~ msgstr "検索結果一覧にファイル名を表示します。"
+
+#~ msgid "Present Results By Dictionaries"
+#~ msgstr "検索結果を辞書毎に表示"
+
+#~ msgid "Present results by dictionaries."
+#~ msgstr "検索結果を辞書毎に表示します。"
+
+#~ msgid "Emphasize search word in contents."
+#~ msgstr "検索語を強調表示します。"
+
+#~ msgid "Show image in contents."
+#~ msgstr "コンテンツ内に画像を表示します。"
+
+#~ msgid "Bring window to top"
+#~ msgstr "ウィンドウを前面に"
+
+#~ msgid "Bring main/popup windows to top"
+#~ msgstr "メイン/ポップアップウィンドウを前面に表示します。"
+
+#~ msgid "Toggle Selection Search"
+#~ msgstr "セレクション検索の切り替え"
+
+#~ msgid "Toggle Popup"
+#~ msgstr "ポップアップ表示の切り替え"
+
+#~ msgid "Debug"
+#~ msgstr "デバッグ"
+
+#~ msgid "Failed to open directory "
+#~ msgstr "ディレクトリのオープンに失敗しました。"
+
+#~ msgid "Enter or select directory name to search."
+#~ msgstr "検索するディレクトリ名を入力または選択してください。"
+
+#~ msgid "Grep Search"
+#~ msgstr "Grep 検索"
