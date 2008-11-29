@@ -15,7 +15,7 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 */
 
-#define GTK_DISABLE_DEPRECATED 1
+//#define GTK_DISABLE_DEPRECATED 1
 
 #define _GLOBAL
 #include <signal.h>
