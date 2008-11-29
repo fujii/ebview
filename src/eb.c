@@ -674,7 +674,8 @@ EB_Error_Code ebook_my_backward_text(BOOK_INFO *binfo)
 	EB_Error_Code error_code=EB_SUCCESS;
 	EB_Position text_position;
 	char data[EB_SIZE_PAGE+4];
-	int i, length;
+	int i;
+	ssize_t length;
 
 	int start_page;
 	int end_page;
@@ -856,7 +857,8 @@ static gint ebook_full_search_old(BOOK_INFO *binfo, char *word, gint method, gch
 	char data[EB_SIZE_PAGE];
 	char *jisword;
 	char *word_p;
-	int i, length;
+	int i;
+	ssize_t length;
 	char *p;
 	char heading[MAXLEN_TEXT + 1];
 	RESULT *rp;
@@ -1053,7 +1055,7 @@ static gint ebook_full_search(BOOK_INFO *binfo, char *word, gint method, gchar *
 	char data[EB_SIZE_PAGE];
 	char *jisword;
 	char *word_p;
-	int length;
+	ssize_t length;
 	char *p;
 	char heading[MAXLEN_TEXT + 1];
 	RESULT *rp;
@@ -1679,7 +1681,8 @@ gint ebook_search_auto(char *g_word, gint method)
 gint ebook_simple_search2(BOOK_INFO *binfo, char *word, gint method, gchar *title)
 {
 	EB_Error_Code error_code=EB_SUCCESS;
-	int i, len, total_hits=0;
+	int i, total_hits=0;
+	ssize_t len;
 	EB_Hit hits[MAX_HITS];
 	int hitcount;
 	char heading[MAXLEN_HEADING + 1];
@@ -1988,7 +1991,7 @@ static gint ebook_ending_search(BOOK_INFO *binfo, char *word, gint method, gchar
 gchar *ebook_get_heading(BOOK_INFO *binfo, int page, int offset)
 {
 	EB_Error_Code error_code;
-	int len;
+	ssize_t len;
 	char heading[MAXLEN_HEADING + 1];
 	EB_Position position;
 	gchar *p;
@@ -2021,7 +2024,7 @@ gchar *ebook_get_heading(BOOK_INFO *binfo, int page, int offset)
 
 gchar *ebook_get_text(BOOK_INFO *binfo, int page, int offset){
 	EB_Error_Code error_code;
-	int len;
+	ssize_t len;
 	char text[MAXLEN_TEXT + 1];
 	EB_Position position;
 	gchar *p;
@@ -2064,7 +2067,7 @@ gchar *ebook_get_text(BOOK_INFO *binfo, int page, int offset){
 gchar *ebook_get_candidate(BOOK_INFO *binfo, int page, int offset)
 {
 	EB_Error_Code error_code;
-	int len;
+	ssize_t len;
 	char text[MAXLEN_TEXT + 1];
 	EB_Position position;
 	gchar *p;
@@ -2627,7 +2630,7 @@ static void ebook_bitmap_to_gif(bitmap, width, height, gif, gif_length, fg, bg)
     int width;
     int height;
     char *gif;
-    guint *gif_length;
+    size_t *gif_length;
     guint fg;
     guint bg;
 {
@@ -3022,7 +3025,7 @@ EB_Error_Code ebook_output_mono(BOOK_INFO *binfo, gchar *filename, gint page, gi
 	ssize_t read_length;
 	gint data_size;
 	gchar *bmp_data;
-	gint bmp_length;
+	size_t bmp_length;
 
 #ifdef COLOR_HACK
 	
