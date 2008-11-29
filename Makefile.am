@@ -1,2 +1,4 @@
 ACLOCAL_AMFLAGS = -I m4
-SUBDIRS = src po m4 data doc
+SUBDIRS = src po data doc
+
+EXTRA_DIST = pixmaps

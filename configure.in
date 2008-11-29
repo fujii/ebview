@@ -6,8 +6,13 @@ AC_INIT(ebview, 0.3.6, http://ebview.sourceforge.net/)
 AC_CONFIG_SRCDIR(src/ebview.c)
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
 AM_CONFIG_HEADER(config.h)
+AC_CONFIG_MACRO_DIR([m4])
+
+GETTEXT_PACKAGE=ebview
+AC_SUBST(GETTEXT_PACKAGE)
 ALL_LINGUAS="ja"
 AM_GLIB_GNU_GETTEXT
+
 dnl AC_FUNC_SETVBUF_REVERSED
 
 dnl Checks for programs.
@@ -17,11 +22,14 @@ dnl AC_PROG_AWK
 AC_PROG_LN_S
 
 dnl Checks for libraries.
-PKG_CHECK_MODULES(GTK, gtk+-2.0 >= 2.0.0)
-AC_SUBST(GTK_CFLAGS)
-AC_SUBST(GTK_LIBS)
-            
-eb_LIB_EB3
+AM_PATH_GTK_2_0(2.0.0, , AC_MSG_ERROR(Cannot find GTK+), gthread)
+
+PKG_CHECK_MODULES(PANGOX, pangox)
+AC_SUBST(PANGOX_CFLAGS)
+AC_SUBST(PANGOX_LIBS)
+
+LT_INIT           
+eb_LIB_EB4
 
 dnl Checks for header files.
 AC_PATH_X
@@ -46,16 +54,15 @@ AC_DEFINE_UNQUOTED(LOCALEDIR, "${PREFIX}/share/locale", Where .mo file is.)
 AC_DEFINE_UNQUOTED(PACKAGEDIR, "${PREFIX}/share/${PACKAGE}", Where EBView data goes.)
 
 case "`uname -s`" in
-CYGWIN_*) THREAD_LIBS=-lpthreadGC ;CYGWIN_CFLAGS="-mno-cygwin -mwindows -mms-bitfields";RES_FILE=ebview.res;EXTRA_LIBS="-lregex -lwinmm" ;;
-FreeBSD*) THREAD_LIBS=-pthread ;;
-Linux*) THREAD_LIBS=-lpthread ;;
-*) THREAD_LIBS=-lpthread ;;
+  CYGWIN_*)
+    CYGWIN_CFLAGS="-mms-bitfields"
+    CYGWIN_LDFLAGS="-mno-cygwin -mwindows"
+    CYGWIN_LDADD="ebview.res -lregex -lwinmm -lpthreadGC"
+    ;;
 esac
 
-AC_SUBST(THREAD_LIBS)
 AC_SUBST(CYGWIN_CFLAGS)
-AC_SUBST(RES_FILE)
-AC_SUBST(EXTRA_LIBS)
+AC_SUBST(CYGWIN_LDFLAGS)
+AC_SUBST(CYGWIN_LDADD)
 
-
-AC_OUTPUT(po/Makefile.in src/Makefile Makefile m4/Makefile data/Makefile doc/Makefile data/about.jp data/about.en)
+AC_OUTPUT(po/Makefile.in src/Makefile Makefile data/Makefile doc/Makefile data/about.jp data/about.en)

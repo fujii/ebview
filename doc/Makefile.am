@@ -1,29 +1,16 @@
+EXTRA_DIST = ja en
+
 dir = ja en
-data = index.html menu.html body.html
 
-all: 
-
-check: all
-
-install:
-	dir="$(dir)"; \
-	for lang in $$dir; do \
-		if test -r $(MKINSTALLDIRS); then \
-			$(MKINSTALLDIRS) $(pkgdatadir)/help/$$lang; \
-		else \
-			$(top_srcdir)/mkinstalldirs $(pkgdatadir)/help/$$lang; \
-		fi; \
-	done; \
-	data="$(data)"; \
-	for lang in $$dir; do \
-		for file in $$data; do \
-			$(INSTALL_DATA) $(srcdir)/$$lang/$$file $(pkgdatadir)/help/$$lang/$$file; \
-		done; \
+install-data-local:
+	$(MKDIR_P) "$(DESTDIR)$(pkgdatadir)/help"
+	for lang in $(dir); do \
+	  $(MKDIR_P) "$(DESTDIR)$(pkgdatadir)/help/$$lang"; \
+	  for p in "$(srcdir)/$$lang/"*.html; do \
+	    f=`echo $$p | sed -e 's|^.*/||'`; \
+	    $(install_sh_DATA) "$$p" "$(DESTDIR)$(pkgdatadir)/help/$$lang/$$f"; \
+	  done; \
 	done;
 
-# Define this as empty until I found a useful application.
-installcheck:
-
-uninstall:
-	rm -fr $(pkgdatadir)/help
-
+uninstall-local:
+	rm -rf "$(DESTDIR)$(pkgdatadir)/help"
