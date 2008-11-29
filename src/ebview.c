@@ -311,6 +311,7 @@ int main( int   argc,
 #endif
 #endif
 
+	g_thread_init(NULL);
 	bstarting_up = TRUE;
 
 #ifdef __WIN32__
