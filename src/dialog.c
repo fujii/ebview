@@ -69,7 +69,7 @@ gboolean idle_warning(gpointer data){
 					GTK_DIALOG_DESTROY_WITH_PARENT /* | GTK_DIALOG_NO_SEPARATOR */,
 					GTK_MESSAGE_WARNING,
 					GTK_BUTTONS_OK,
-					g_message);
+					"%s", g_message);
 	gtk_dialog_run(GTK_DIALOG(dialog));
 	gtk_widget_destroy(dialog);
 	active  = FALSE;
@@ -98,7 +98,7 @@ gboolean idle_error(gpointer data){
 					GTK_DIALOG_DESTROY_WITH_PARENT /* | GTK_DIALOG_NO_SEPARATOR */,
 					GTK_MESSAGE_ERROR,
 					GTK_BUTTONS_CLOSE,
-					g_message);
+					"%s", g_message);
 					
 	gtk_dialog_run(GTK_DIALOG(dialog));
 	gtk_widget_destroy(dialog);
