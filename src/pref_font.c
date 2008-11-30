@@ -79,7 +79,7 @@ static void show_fontsel(GtkWidget *widget,gpointer *data){
 
 	LOG(LOG_DEBUG, "IN : show_fontsel()");
 
-	font_no = (gint)data;
+	font_no = GPOINTER_TO_INT(data);
 
 	fontsel_dlg = gtk_font_selection_dialog_new("Please select font");
 

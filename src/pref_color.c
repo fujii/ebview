@@ -89,7 +89,7 @@ static void show_colorsel(GtkWidget *widget,gpointer *data){
 	
 	LOG(LOG_DEBUG, "IN : show_colorsel()");
 	
-	color_no = (gint)data;
+	color_no = GPOINTER_TO_INT(data);
 
 
 	colorsel_dlg = gtk_color_selection_dialog_new(_("Choose Color"));
