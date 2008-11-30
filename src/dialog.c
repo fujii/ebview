@@ -113,8 +113,12 @@ void popup_warning(char *message){
 
 	LOG(LOG_DEBUG, "IN : popup_warning");
 
-	g_idle_add(idle_warning, (gpointer)message);
 	strcpy(g_message, message);
+#if 0
+	g_idle_add(idle_warning, (gpointer)message);
+#else
+	idle_warning(NULL);
+#endif
 
 	LOG(LOG_DEBUG, "OUT : popup_warning");
 }
@@ -125,7 +129,11 @@ void popup_error(char *message){
 
 	strcpy(g_message, message);
 
+#if 0
 	g_idle_add(idle_error, (gpointer)message);
+#else
+	idle_error(NULL);
+#endif
 
 	LOG(LOG_DEBUG, "OUT : popup_error");
 }
