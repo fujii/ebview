@@ -522,25 +522,14 @@ gint ebook_end(){
 
 	LOG(LOG_DEBUG, "IN : ebook_end()");
 
-	if(ebook_initialized == TRUE) {
+	if(!ebook_initialized) {
 		LOG(LOG_DEBUG, "OUT : ebook_end()");
 		return(0);
 	}
 
-	book_item = g_list_first(book_list);
-	while(book_item != NULL){
+	while(book_item = g_list_first(book_list)){
 		binfo = (BOOK_INFO *)(book_item->data);
-		eb_unset_subbook(binfo->book);
-		eb_finalize_book(binfo->book);
-	        free(binfo->book_path);
-	        free(binfo->appendix_path);
-	        free(binfo->subbook_dir);
-	        free(binfo->subbook_title);
-		
-		free_gaiji(binfo);
-
-		g_list_remove(book_list, book_item->data);
-		book_item = g_list_next(book_item);
+		unload_book(binfo);
 	}
 	
 	finalize_hooksets();
