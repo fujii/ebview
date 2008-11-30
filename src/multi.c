@@ -283,7 +283,7 @@ static void show_candidate(BOOK_INFO *binfo, gint code){
 			button = gtk_button_new_with_label(_("Candidates"));
 			g_signal_connect(G_OBJECT (button), "pressed",
 					 G_CALLBACK(candidate_pressed),
-					 (gpointer)i);
+					 GINT_TO_POINTER(i));
 
 			gtk_table_attach(GTK_TABLE(entry_table), button, 2, 3, i, i+1,
 					 xoption, yoption, 5, 1);
@@ -545,7 +545,7 @@ static void candidate_pressed(GtkWidget *widget, gpointer data)
 
 	LOG(LOG_DEBUG, "IN : candidate_pressed()");
 
-	global_entry_id = (gint)data;
+	global_entry_id = GPOINTER_TO_INT(data);
 
 	error_code = eb_multi_entry_candidates(global_book_info->book, global_multi_code, global_entry_id, &position);
 	if (error_code == EB_ERR_NO_CANDIDATES) {
