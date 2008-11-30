@@ -476,6 +476,7 @@ void note_switch_page(GtkNotebook *notebook, GtkNotebookPage *page, gint page_nu
 		switch (page_num) {
 		case 0:
 			eb_web = 0;
+			gtk_notebook_set_current_page(GTK_NOTEBOOK(note_bar), 0);
 			gtk_notebook_set_current_page(GTK_NOTEBOOK(note_text), 0);
 
 			if(strcmp(gtk_entry_get_text(GTK_ENTRY(GTK_COMBO(combo_method)->entry)), _("Internet Search")) == 0)
