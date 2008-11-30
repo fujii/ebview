@@ -40,7 +40,7 @@ gboolean accel_handler(GtkAccelGroup *accelgroup,
 
 	LOG(LOG_DEBUG, "IN : accel_handler()");
 
-	event.keyval = user_data;
+	event.keyval = GPOINTER_TO_UINT(user_data);
 	event.state = arg3;
 
 	ret = perform_shortcut_by_event(&event);
@@ -93,7 +93,7 @@ void install_shortcut(){
 			if((state == 0) && (keyval == GDK_Return))
 				continue;
 
-			closure = g_cclosure_new(G_CALLBACK(accel_handler), (gpointer)keyval, NULL);
+			closure = g_cclosure_new(G_CALLBACK(accel_handler), GINT_TO_POINTER(keyval), NULL);
 
 
 			gtk_accel_group_connect(accel_group, keyval, state, GTK_ACCEL_VISIBLE, closure);
