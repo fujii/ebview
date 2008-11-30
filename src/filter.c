@@ -402,7 +402,7 @@ static void check_cache_size()
 	}
 
 	// Sort by date
-	g_list_sort(grep_file_list, compare_func);
+	grep_file_list = g_list_sort(grep_file_list, compare_func);
 
 
 	l = g_list_first(grep_file_list);

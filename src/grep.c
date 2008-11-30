@@ -456,7 +456,7 @@ static void *grep_search_thread(void *arg)
 	if(strcmp(group, _("Manual Select")) == 0) {
 		dir_list = get_active_dir_list();
 
-		g_list_sort(dir_list, compare_func);
+		dir_list = g_list_sort(dir_list, compare_func);
 
 		l = g_list_first(dir_list);
 		while(l){
@@ -468,7 +468,7 @@ static void *grep_search_thread(void *arg)
 		}
 
 		// Sort by name (full path)
-		g_list_sort(grep_file_list, compare_func);
+		grep_file_list = g_list_sort(grep_file_list, compare_func);
 
 		// Remove duplicate file
 		l = g_list_first(grep_file_list);
@@ -539,7 +539,7 @@ static void *grep_search_thread(void *arg)
 		}
 
 		// Sort by name (full path)
-		g_list_sort(grep_file_list, compare_func);
+		grep_file_list = g_list_sort(grep_file_list, compare_func);
 	}
 
 	push_message(_("done\n"));

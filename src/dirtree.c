@@ -414,8 +414,8 @@ static void row_expanded(GtkTreeView *treeview,
 	g_free(dirname);
 
 	// Since insertion is done by "prepend", reverse sort.
-	g_list_sort(dir_list, reverse_compare_func);
-	g_list_sort(file_list, reverse_compare_func);
+	dir_list = g_list_sort(dir_list, reverse_compare_func);
+	file_list = g_list_sort(file_list, reverse_compare_func);
 
 
 	l = g_list_first(file_list);
@@ -616,8 +616,8 @@ static void show_directory()
 	}
 	g_dir_close(dir);
 
-	g_list_sort(dir_list, compare_func);
-	g_list_sort(file_list, compare_func);
+	dir_list = g_list_sort(dir_list, compare_func);
+	file_list = g_list_sort(file_list, compare_func);
 
 	l = g_list_first(dir_list);
 	while(l){
