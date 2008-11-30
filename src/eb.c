@@ -800,7 +800,7 @@ static gchar *euc2jis(gchar *inbuf){
 	guchar *jis_p;
 
 	euc_p = inbuf;
-	jis_p = jisbuf = malloc(strlen(euc_p)*2);
+	jis_p = jisbuf = malloc(strlen(euc_p)*2 + 1);
 
 	while(*euc_p != '\0'){
 		if(( 0x20 <= *euc_p) && (*euc_p <= 0x7e) && (ascii_to_jisx2080_table[*euc_p] != 0x00)){
