@@ -573,10 +573,9 @@ xmlResult parse_attribute(GNode *node, gchar *tag){
 		return(XML_OK);
 	}
 
-	
-	p++;
-
 	while(1){
+		while (*p == ' ')
+			p ++;
 		p2 = strchr(p, '=');
 		if(p2 == NULL){
 #ifdef XML_TRACE
@@ -636,8 +635,9 @@ xmlResult parse_attribute(GNode *node, gchar *tag){
 			return(XML_OK);
 		}
 		else {
-			p3 ++;
-			p = p3 + 1;
+			if (*p3 == '\"')
+				p3 ++;
+			p = p3;
 		}
 	}
 
