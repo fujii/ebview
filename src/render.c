@@ -319,7 +319,7 @@ static void draw_string(CANVAS *canvas, DRAW_TEXT *text, TAG *tag, gchar *word)
 	gchar *p;
 	gchar *p0;
 	gchar *r;
-	TAG l_tag;
+	TAG l_tag = {0};
 	DRAW_TEXT l_text;
 	gint len;
 
@@ -549,7 +549,7 @@ void draw_content(CANVAS *canvas, DRAW_TEXT *text, BOOK_INFO *binfo, TAG *tag, g
 	gint  l_page=0, l_offset=0, l_size=0;
 	gint  l_width, l_height;
 	gint  l_indent;
-	TAG  l_tag;
+	TAG  l_tag = {0};
 	DRAW_TEXT l_text;
 
 
