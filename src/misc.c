@@ -55,10 +55,10 @@ void remove_space(gchar *f){
 		else
 			break;
 	}
-	strcpy(f,p);
+	memmove(f, p, strlen(p) + 1);
 
 	// Delete following saces
-	for(i=(strlen(p) -1);;i--){
+	for(i=(strlen(p) -1); i>=0 ;i--){
 		if((f[i] == ' ') || (f[i] == '\t') || (f[i] == '\n') ||
 		   (f[i] == ',') || (f[i] == '.') || (f[i] == '!') ||
 		   (f[i] == ':') || (f[i] == ';') || (f[i] == '*') ||
