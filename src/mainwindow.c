@@ -379,7 +379,7 @@ static void dict_forward_text(GtkWidget *widget, gpointer *data)
 {
 	gint page, offset;
 	EB_Error_Code error_code;
-	RESULT result;
+	RESULT result = {0};
 
 	LOG(LOG_DEBUG, "IN : dict_forward_text()");
 
@@ -417,7 +417,7 @@ static void dict_backward_text(GtkWidget *widget, gpointer *data)
 {
 	gint page, offset;
 	EB_Error_Code error_code;
-	RESULT result;
+	RESULT result = {0};
 
 	LOG(LOG_DEBUG, "IN : dict_backward_text()");
 	
