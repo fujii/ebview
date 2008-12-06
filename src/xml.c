@@ -406,6 +406,7 @@ xmlResult xml_destroy_document(xmlDoc *doc){
 	}
 
 	xml_destroy_tree_internal(doc->root, NULL);
+	free(doc->root->data);
 	g_node_destroy((GNode *)doc->root);
 	g_free(doc->version);
 	g_free(doc->encoding);

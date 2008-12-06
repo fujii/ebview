@@ -89,7 +89,7 @@ void install_shortcut(){
 					   -1);
 
 //			g_snprintf(string, 64, "sc_%s", command->name);
-			str = g_strdup_printf("sc_%s", command->name);
+			//str = g_strdup_printf("sc_%s", command->name);
 			if((state == 0) && (keyval == GDK_Return))
 				continue;
 

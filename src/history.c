@@ -280,8 +280,8 @@ void clear_search_result()
 		return;
 
 	l = g_list_first(search_result);
-		free_result((RESULT *)(l->data));
 	while(l != NULL){
+		free_result((RESULT *)(l->data));
 		l = g_list_next(l);
 	}
 	g_list_free(search_result);
