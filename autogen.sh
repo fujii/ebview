@@ -1,5 +1,5 @@
 #! /bin/sh
-mkdir -p acaux
+mkdir -p build-aux
 glib-gettextize 
 libtoolize
 autoreconf -i -v

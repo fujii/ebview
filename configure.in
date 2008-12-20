@@ -4,7 +4,7 @@ AC_PREREQ(2.53)
 
 AC_INIT(ebview, 0.3.6, http://ebview.sourceforge.net/)
 AC_CONFIG_SRCDIR(src/ebview.c)
-AC_CONFIG_AUX_DIR([acaux])
+AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
 AM_CONFIG_HEADER(config.h)
 AM_INIT_AUTOMAKE
