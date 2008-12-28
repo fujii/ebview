@@ -148,11 +148,11 @@ static void search_selected(gchar *str)
 				save_word_history(str);
 			} else {
 				ebook_search_auto(euc_str, method);
+				show_result_tree();
 				if(search_result){
 					if(selection_mode == SELECTION_POPUP) {
 						show_result_in_popup();
 					} else {
-						show_result_tree();
 						select_first_item();
 						if(selection_mode == SELECTION_SEARCH_TOP)
 							bring_to_top(main_window);
