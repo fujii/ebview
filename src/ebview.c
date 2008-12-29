@@ -361,10 +361,9 @@ int main( int   argc,
 	load_preference();
 
 	if(bshow_splash)
-		show_splash();
-	else
-		load_dictgroup();
-
+		splash_create();
+	load_dictgroup();
+	splash_update(_("Loading ..."), "");
 	load_weblist();
 	load_shortcut();
 	load_stemming_en();
@@ -423,13 +422,8 @@ int main( int   argc,
 #endif
 #endif
 
-
 	// Create main window
 	create_main_window();
-
-	// Show initial message
-//	show_about();
-
 
 	calculate_font_size();
 
@@ -442,12 +436,8 @@ int main( int   argc,
 		execute_remote_command(argc, argv);
 
 #endif
-/*
 
-	load_dictgroup_background();
-	tag_timeout = gtk_timeout_add(100, load_watch_thread, NULL);
-	gtk_widget_set_sensitive(main_window, FALSE);
-*/
+	splash_destroy();
 
 	// main loop
 	gdk_threads_enter();

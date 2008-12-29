@@ -373,7 +373,7 @@ gboolean load_dictgroup()
 			binfo = load_book(fs_book_path, subbook_no, 
 					  fs_appendix_path, appendix_subbook_no, fg, bg);
 
-			splash_message(fs_book_path);
+			splash_update(_("Loading dictionary..."), fs_book_path);
 
 			g_free(fs_book_path);
 			g_free(fs_appendix_path);

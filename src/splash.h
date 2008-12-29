@@ -20,8 +20,9 @@
 
 #include "defs.h"
 
-void show_splash();
-void splash_message(gchar *msg);
+void splash_create(void);
+void splash_destroy(void);
+void splash_update(const gchar *text1, const gchar *text2);
 
 #endif /* __SPLASH_H__ */
 
