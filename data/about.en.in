@@ -1,5 +1,5 @@
 
-<center><keyword>EBView @VERSION@</keyword></center>
+<center><keyword>@PACKAGE_STRING@</keyword></center>
 
 <center>(C) Copyright 2001-2003</center>
 <center>Author : Kenichi Suto</center>
