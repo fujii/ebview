@@ -591,7 +591,6 @@ static void unset_focus(GtkWidget *widget, gpointer data){
 
 void create_main_window()
 {
-	gchar title[32];
 	GtkWidget *vbox;
 	GtkWidget *widget;
 	GdkPixbuf *pixbuf;
@@ -609,10 +608,9 @@ void create_main_window()
 	gtk_container_add (GTK_CONTAINER (hidden_window), hidden_entry);
 	gtk_widget_realize(hidden_window);
 
-	sprintf(title, "EBView %s", VERSION);
 	main_window = gtk_widget_new (GTK_TYPE_WINDOW,
 				"type", GTK_WINDOW_TOPLEVEL,
-				 "title", title,
+				 "title", PACKAGE_NAME,
 				 "allow-shrink", TRUE,
 				 "allow-grow", TRUE,
 				 "default-width", window_width,
