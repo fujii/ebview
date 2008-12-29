@@ -49,6 +49,7 @@ void load_dictgroup_background()
 
  	pthread_attr_init (&thread_attr) ;
  	pthread_attr_setstacksize (&thread_attr, 512*1024) ;
+	pthread_attr_setdetachstate(&thread_attr, PTHREAD_CREATE_DETACHED);
 
 	LOG(LOG_DEBUG, "thread_create");
 	rc = pthread_create(&tid, &thread_attr, load_thread, (void *)NULL);
