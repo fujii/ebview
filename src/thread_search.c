@@ -145,15 +145,6 @@ static gint watch_thread(gpointer data){
 	}
 	gtk_timeout_remove(tag_timeout);
 
-	show_result_tree();
-	if(search_result == NULL)
-		push_message(_("No hit."));
-	else {
-		push_message("");
-	}
-
-//	if(ebook_search_method() != SEARCH_METHOD_GREP)
-		select_first_item();
 	gtk_grab_remove(cancel_dialog);
 	gtk_widget_destroy(cancel_dialog);
 	cancel_dialog=NULL;
@@ -205,8 +196,6 @@ void thread_search(gboolean cancelable, gchar *text, void *(*func)(void *), void
 	} else {
 		pthread_join(tid, &p);
 		thread_running = 0;
-		show_result_tree();
-		select_first_item();
 	}
 
 	LOG(LOG_DEBUG, "OUT : thread_search()");

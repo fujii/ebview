@@ -1606,10 +1606,13 @@ gint ebook_search(const char *word, gint method)
 		thread_search(TRUE, _("Fulltext search"),
 			      ebook_search_thread, (void *)gword);
 	} else {
-		// Non-cancelable
-		thread_search(FALSE, _("Fulltext search"),
-			      ebook_search_thread, (void *)gword);
+		ebook_search_thread(gword);
 	}
+	show_result_tree();
+	if (search_result == NULL)
+		push_message(_("No hit."));
+	else
+		select_first_item();
 
 	LOG(LOG_DEBUG, "OUT : ebook_search()");
 

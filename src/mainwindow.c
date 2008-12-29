@@ -114,8 +114,6 @@ void start_search(){
 		} else {
 			clear_message();
 			ebook_search(euc_str, method);
-			if(search_result == NULL)
-				push_message(_("No hit."));
 		}
 		save_word_history(word);
 		gtk_editable_select_region(GTK_EDITABLE(word_entry), 
