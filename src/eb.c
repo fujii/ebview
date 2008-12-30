@@ -1080,7 +1080,6 @@ static gint ebook_full_search(BOOK_INFO *binfo, char *word, gint method, gchar *
 	bmh = bmh_prepare(jisword, TRUE);
 
 	word_len = strlen(jisword);
-	memset(data, 0, word_len);
 
 	for(current_page = start_page ; current_page <= end_page ; current_page ++){
 
@@ -1099,7 +1098,7 @@ static gint ebook_full_search(BOOK_INFO *binfo, char *word, gint method, gchar *
 
 		error_code = eb_read_rawtext(binfo->book, 
 					     EB_SIZE_PAGE, 
-					     &data[word_len],
+					     data,
 					     &length);
 		if (error_code != EB_SUCCESS || length != EB_SIZE_PAGE){
 			LOG(LOG_CRITICAL, "Failed to read rawtext : %s",
@@ -1110,7 +1109,7 @@ static gint ebook_full_search(BOOK_INFO *binfo, char *word, gint method, gchar *
 		start_p = data;
 		while(start_p){
 
-			start_p = bmh_search(bmh, start_p, EB_SIZE_PAGE + word_len - (start_p - data));
+			start_p = bmh_search(bmh, start_p, EB_SIZE_PAGE - (start_p - data));
 		
 			if(start_p == NULL)
 				break;
