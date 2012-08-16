@@ -201,7 +201,7 @@ static void add_dict_buttons(GtkWidget *bar)
 						}
 
 						tip_string = g_strconcat(_("Push to enable this dictionary."), "\n(", title, ")", NULL);
-						gtk_tooltips_set_tip(tooltip, toggle, tip_string, "Private");
+						gtk_widget_set_tooltip_text(toggle, tip_string);
 						g_free(tip_string);
 						g_free(title);
 
@@ -323,7 +323,7 @@ GtkWidget *create_dict_bar()
 
 	gtk_container_set_border_width(GTK_CONTAINER(dict_bar), 1);
 
-	gtk_tooltips_set_tip(tooltip, GTK_COMBO(combo_group)->entry, _("Select dictionary group."),"Private");
+	gtk_widget_set_tooltip_text(GTK_COMBO(combo_group)->entry, _("Select dictionary group."));
 
 
 	active_found = FALSE;

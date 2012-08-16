@@ -540,8 +540,8 @@ GtkWidget *pref_start_shortcut()
 	check_lock = gtk_check_button_new_with_label(_("Ignore locks"));
 	gtk_box_pack_start(GTK_BOX(vbox2), check_lock,
 			   FALSE, FALSE, 0);
-	gtk_tooltips_set_tip(tooltip, check_lock, 
-			     _("Ignore Caps Lock and Num Lock key."),"Private");
+	gtk_widget_set_tooltip_text(check_lock, 
+			     _("Ignore Caps Lock and Num Lock key."));
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(check_lock), bignore_locks);
 	g_signal_connect(G_OBJECT(check_lock), "clicked",
 			 G_CALLBACK(lock_changed), NULL);

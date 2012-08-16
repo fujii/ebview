@@ -766,14 +766,14 @@ GtkWidget *create_headword_tree(){
 			 G_CALLBACK(previous_heading),
 			 NULL);
 	gtk_box_pack_start(GTK_BOX(hbox), button_prev_hit, TRUE, TRUE, 0);
-	gtk_tooltips_set_tip(tooltip, button_prev_hit, _("Go to previous hit list."),"Private");
+	gtk_widget_set_tooltip_text(button_prev_hit, _("Go to previous hit list."));
 */
 	button_prev_hit = gtk_button_new();
 	g_signal_connect(G_OBJECT (button_prev_hit), "pressed",
 			 G_CALLBACK(previous_heading),
 			 NULL);
 	gtk_box_pack_start(GTK_BOX(hbox), button_prev_hit, TRUE, TRUE, 0);
-	gtk_tooltips_set_tip(tooltip, button_prev_hit, _("Go to previous hit list."),"Private");
+	gtk_widget_set_tooltip_text(button_prev_hit, _("Go to previous hit list."));
 
 	image_prev = gtk_image_new_from_stock(GTK_STOCK_GO_BACK, GTK_ICON_SIZE_SMALL_TOOLBAR);
 	gtk_container_add(GTK_CONTAINER(button_prev_hit), image_prev);
@@ -784,7 +784,7 @@ GtkWidget *create_headword_tree(){
 			 G_CALLBACK(next_heading),
 			 NULL);
 	gtk_box_pack_start(GTK_BOX(hbox), button_next_hit, TRUE, TRUE, 0);
-	gtk_tooltips_set_tip(tooltip, button_next_hit, _("Go to next hit list."),"Private");
+	gtk_widget_set_tooltip_text(button_next_hit, _("Go to next hit list."));
 */
 
 	button_next_hit = gtk_button_new();
@@ -792,7 +792,7 @@ GtkWidget *create_headword_tree(){
 			 G_CALLBACK(next_heading),
 			 NULL);
 	gtk_box_pack_start(GTK_BOX(hbox), button_next_hit, TRUE, TRUE, 0);
-	gtk_tooltips_set_tip(tooltip, button_next_hit, _("Go to next hit list."),"Private");
+	gtk_widget_set_tooltip_text(button_next_hit, _("Go to next hit list."));
 
 	image_next = gtk_image_new_from_stock(GTK_STOCK_GO_FORWARD, GTK_ICON_SIZE_SMALL_TOOLBAR);
 	gtk_container_add(GTK_CONTAINER(button_next_hit), image_next);

@@ -87,8 +87,8 @@ GtkWidget *pref_start_selection()
 	gtk_table_attach(GTK_TABLE(table), spin_interval, 3, 4, 0, 1,
 			 xoption, yoption, 10, 10);	
 
-	gtk_tooltips_set_tip(tooltip, spin_interval,
-			     _("Interval to check selection. \nIncreasing this number may eat up your CPU.\nIgnored on Windows."), "Private");
+	gtk_widget_set_tooltip_text(spin_interval,
+			     _("Interval to check selection. \nIncreasing this number may eat up your CPU.\nIgnored on Windows."));
 
 	hbox = gtk_hbox_new(FALSE,10);
 	gtk_container_set_border_width(GTK_CONTAINER(hbox), 2);
@@ -116,8 +116,8 @@ GtkWidget *pref_start_selection()
 	gtk_table_attach(GTK_TABLE(table), spin_minchar, 3, 4, 1, 2,
 			 xoption, yoption, 10, 10);	
 
-	gtk_tooltips_set_tip(tooltip, spin_minchar,
-			     _("When the number of characters in selection is less than this number, it will not be looked up."), "Private");
+	gtk_widget_set_tooltip_text(spin_minchar,
+			     _("When the number of characters in selection is less than this number, it will not be looked up."));
 
 
 	hbox = gtk_hbox_new(FALSE,10);
@@ -147,8 +147,8 @@ GtkWidget *pref_start_selection()
 	gtk_table_attach(GTK_TABLE(table), spin_maxchar, 3, 4, 2, 3,
 			 xoption, yoption, 10, 10);	
 
-	gtk_tooltips_set_tip(tooltip, spin_maxchar,
-			     _("When the number of characters in selection is larger than this number, it will not be looked up."), "Private");
+	gtk_widget_set_tooltip_text(spin_maxchar,
+			     _("When the number of characters in selection is larger than this number, it will not be looked up."));
 
 
 	hbox = gtk_hbox_new(FALSE,10);
@@ -211,8 +211,8 @@ GtkWidget *pref_start_selection()
 */
 
 	check_popup_title = gtk_check_button_new_with_label(_("Show popup title"));
-	gtk_tooltips_set_tip(tooltip, check_popup_title, 
-			     _("Show title of popup window."),"Private");
+	gtk_widget_set_tooltip_text(check_popup_title, 
+			     _("Show title of popup window."));
 //	gtk_box_pack_start (GTK_BOX(hbox)
 //			    , check_popup_title,FALSE,FALSE, 0);
 	gtk_table_attach(GTK_TABLE(table), check_popup_title, 0, 1, 4, 5,
@@ -228,8 +228,8 @@ GtkWidget *pref_start_selection()
 */
 
 	check_beep = gtk_check_button_new_with_label(_("Beep on no hit"));
-	gtk_tooltips_set_tip(tooltip, check_beep, 
-			     _("Beep when no hit."),"Private");
+	gtk_widget_set_tooltip_text(check_beep, 
+			     _("Beep when no hit."));
 //	gtk_box_pack_start (GTK_BOX(hbox)
 //			    , check_beep,FALSE,FALSE, 0);
 	gtk_table_attach(GTK_TABLE(table), check_beep, 0, 1, 5, 6,

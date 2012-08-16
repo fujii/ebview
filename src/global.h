@@ -21,9 +21,6 @@ global GtkWidget *button_back;
 global GtkWidget *button_forward;
 global GtkWidget *status_bar;
 
-global GtkTooltips *tooltip;
-
-
 global GList *search_result;
 global RESULT *current_result;
 

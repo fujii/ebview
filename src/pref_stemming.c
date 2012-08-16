@@ -164,8 +164,8 @@ GtkWidget *pref_start_stemming()
 			    , vbox,TRUE,FALSE, 0);
 
 	check_ending = gtk_check_button_new_with_label(_("Perform stemming"));
-	gtk_tooltips_set_tip(tooltip, check_ending, 
-			     _("When ending of each words matches the pattern in the list, normal form of the word will also be tried. It takes longer."),"Private");
+	gtk_widget_set_tooltip_text(check_ending, 
+			     _("When ending of each words matches the pattern in the list, normal form of the word will also be tried. It takes longer."));
 	gtk_box_pack_start (GTK_BOX(vbox)
 			    , check_ending,FALSE,FALSE, 0);
 	g_signal_connect(G_OBJECT (check_ending), "clicked",
@@ -173,8 +173,8 @@ GtkWidget *pref_start_stemming()
 
 
 	check_nohit = gtk_check_button_new_with_label(_("Stemming only when no hit"));
-	gtk_tooltips_set_tip(tooltip, check_nohit, 
-			     _("Do not perform stemming when original words hit."),"Private");
+	gtk_widget_set_tooltip_text(check_nohit, 
+			     _("Do not perform stemming when original words hit."));
 	gtk_box_pack_start (GTK_BOX(vbox)
 			    , check_nohit,FALSE,FALSE, 0);
 	g_signal_connect(G_OBJECT (check_nohit), "clicked",

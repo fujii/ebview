@@ -597,8 +597,6 @@ void create_main_window()
 
 	LOG(LOG_DEBUG, "IN: create_main_window()");
 
-	tooltip = gtk_tooltips_new();
-
 	hidden_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 	hidden_entry = gtk_entry_new();
 	
@@ -764,7 +762,7 @@ GtkWidget *create_dict_window()
 	g_signal_connect(G_OBJECT(word_entry),"focus_in_event",
 			 G_CALLBACK(entry_focus_in_event), NULL);
 
-	gtk_tooltips_set_tip(tooltip, word_entry, _("Type word here. You can type multiple space-separated words for keyword search. For file search, specify words or regular expression."),"Private");
+	gtk_widget_set_tooltip_text(word_entry, _("Type word here. You can type multiple space-separated words for keyword search. For file search, specify words or regular expression."));
 
 	gtk_window_set_focus(GTK_WINDOW(main_window), word_entry);
 
@@ -780,7 +778,7 @@ GtkWidget *create_dict_window()
 			 G_CALLBACK(start_search),
 			 (gpointer)button_start);
 
-	gtk_tooltips_set_tip(tooltip, button_start, _("Start search"),"Private");
+	gtk_widget_set_tooltip_text(button_start, _("Start search"));
 	image = gtk_image_new_from_stock(GTK_STOCK_FIND, GTK_ICON_SIZE_SMALL_TOOLBAR);
 	gtk_container_add(GTK_CONTAINER(button_start), image);
 
@@ -806,7 +804,7 @@ GtkWidget *create_dict_window()
 		gtk_combo_set_popdown_strings( GTK_COMBO(combo_method), method_list) ;
 
 	gtk_box_pack_start(GTK_BOX (hbox), combo_method, FALSE, TRUE, 0);
-	gtk_tooltips_set_tip(tooltip, GTK_COMBO(combo_method)->entry, _("Select search method."),"Private");
+	gtk_widget_set_tooltip_text(GTK_COMBO(combo_method)->entry, _("Select search method."));
 	handler_method = g_signal_connect(G_OBJECT (GTK_COMBO(combo_method)->entry), "changed",
 					  G_CALLBACK(method_changed),
 					  NULL);
@@ -832,7 +830,7 @@ GtkWidget *create_dict_window()
 	g_signal_connect(G_OBJECT (button_auto), "toggled",
 			 G_CALLBACK(toggle_auto_callback),
 			 NULL);
-	gtk_tooltips_set_tip(tooltip, button_auto, _("When enabled, X selection is searched automatically"),"Private");
+	gtk_widget_set_tooltip_text(button_auto, _("When enabled, X selection is searched automatically"));
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button_auto), bauto_lookup);
 
 	button_popup = gtk_toggle_button_new();
@@ -850,7 +848,7 @@ GtkWidget *create_dict_window()
 	g_signal_connect(G_OBJECT (button_popup), "toggled",
 			 G_CALLBACK(toggle_popup_callback),
 			 NULL);
-	gtk_tooltips_set_tip(tooltip, button_popup, _("When enabled, result of X selection search will be shown in popup window"),"Private");
+	gtk_widget_set_tooltip_text(button_popup, _("When enabled, result of X selection search will be shown in popup window"));
 
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button_popup), bshow_popup);
 	gtk_widget_set_sensitive(button_popup, bauto_lookup);
@@ -866,7 +864,7 @@ GtkWidget *create_dict_window()
 	g_signal_connect(G_OBJECT (button_up), "pressed",
 			 G_CALLBACK(dict_backward_text),
 			 NULL);
-	gtk_tooltips_set_tip(tooltip, button_up, _("Previous Item"),"Private");
+	gtk_widget_set_tooltip_text(button_up, _("Previous Item"));
 
 	image = gtk_image_new_from_stock(GTK_STOCK_GO_UP, GTK_ICON_SIZE_SMALL_TOOLBAR);
 	gtk_container_add(GTK_CONTAINER(button_up), image);
@@ -878,7 +876,7 @@ GtkWidget *create_dict_window()
 	g_signal_connect(G_OBJECT (button_down), "pressed",
 			 G_CALLBACK(dict_forward_text),
 			 NULL);
-	gtk_tooltips_set_tip(tooltip, button_down, _("Next Item"),"Private");
+	gtk_widget_set_tooltip_text(button_down, _("Next Item"));
 
 	image = gtk_image_new_from_stock(GTK_STOCK_GO_DOWN, GTK_ICON_SIZE_SMALL_TOOLBAR);
 	gtk_container_add(GTK_CONTAINER(button_down), image);
@@ -893,7 +891,7 @@ GtkWidget *create_dict_window()
 	g_signal_connect(G_OBJECT (button_forward), "pressed",
 			 G_CALLBACK(dict_history_forward),
 			 NULL);
-	gtk_tooltips_set_tip(tooltip, button_forward, _("show next in history"),"Private");
+	gtk_widget_set_tooltip_text(button_forward, _("show next in history"));
 
 	image = gtk_image_new_from_stock(GTK_STOCK_GO_FORWARD, GTK_ICON_SIZE_SMALL_TOOLBAR);
 	gtk_container_add(GTK_CONTAINER(button_forward), image);
@@ -904,7 +902,7 @@ GtkWidget *create_dict_window()
 	g_signal_connect(G_OBJECT (button_back), "pressed",
 			 G_CALLBACK(dict_history_back),
 			 NULL);
-	gtk_tooltips_set_tip(tooltip, button_back, _("show previous in history"),"Private");
+	gtk_widget_set_tooltip_text(button_back, _("show previous in history"));
 	image = gtk_image_new_from_stock(GTK_STOCK_GO_BACK, GTK_ICON_SIZE_SMALL_TOOLBAR);
 	gtk_container_add(GTK_CONTAINER(button_back), image);
 

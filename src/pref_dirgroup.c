@@ -319,8 +319,8 @@ GtkWidget *pref_start_dirgroup()
 	entry_group_name = gtk_entry_new();
 	gtk_box_pack_start (GTK_BOX (vbox), entry_group_name,
 			    FALSE, FALSE, 0);
-	gtk_tooltips_set_tip(tooltip, entry_group_name,
-			     _("Enter the name of directory group."),"Private");
+	gtk_widget_set_tooltip_text(entry_group_name,
+			     _("Enter the name of directory group."));
 
 	label = gtk_label_new(_("Directory list"));
 	gtk_box_pack_start (GTK_BOX (vbox), label,
@@ -341,8 +341,8 @@ GtkWidget *pref_start_dirgroup()
 	dirgroup_view = gtk_text_view_new();
 //	gtk_widget_set_size_request(dirgroup_view, 200, 200);
 	gtk_container_add(GTK_CONTAINER(scroll), dirgroup_view);
-	gtk_tooltips_set_tip(tooltip, dirgroup_view,
-			     _("Specify directory names one per line. You can specify extension of files that will be searched. For example, \"/some/dir/name,.txt\" searches all files under /some/dir/name which have the extension .txt."),"Private");
+	gtk_widget_set_tooltip_text(dirgroup_view,
+			     _("Specify directory names one per line. You can specify extension of files that will be searched. For example, \"/some/dir/name,.txt\" searches all files under /some/dir/name which have the extension .txt."));
 
 
 

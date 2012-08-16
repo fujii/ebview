@@ -80,13 +80,13 @@ GtkWidget *pref_start_search()
 	gtk_table_attach(GTK_TABLE(table), spin_max_search, 1, 2, 0, 1,
 			 xoption, yoption, 10, 10);	
 
-	gtk_tooltips_set_tip(tooltip, spin_max_search, 
-			     _("Maximum number of hits to be searched.\nIf you increase this number, it takes time to search."),"Private");
+	gtk_widget_set_tooltip_text(spin_max_search, 
+			     _("Maximum number of hits to be searched.\nIf you increase this number, it takes time to search."));
 
 
 	check_word_search = gtk_check_button_new_with_label(_("Perform word search in automatic search"));
-	gtk_tooltips_set_tip(tooltip, check_word_search, 
-			     _("Perform word search in automatic search."),"Private");
+	gtk_widget_set_tooltip_text(check_word_search, 
+			     _("Perform word search in automatic search."));
 
 	gtk_table_attach(GTK_TABLE(table), check_word_search, 0, 1, 2, 3,
 			 xoption, yoption, 10, 10);	

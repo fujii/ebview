@@ -146,8 +146,8 @@ GtkWidget *pref_start_grep()
 	gtk_table_attach(GTK_TABLE(table), spin_additional_line, 1, 2, 1, 2,
 			 xoption, yoption, 10, 10);	
 
-	gtk_tooltips_set_tip(tooltip, spin_additional_line, 
-			     _("In addition to matched line, additional lines will be shown in contents."),"Private");
+	gtk_widget_set_tooltip_text(spin_additional_line, 
+			     _("In addition to matched line, additional lines will be shown in contents."));
 
 	hbox = gtk_hbox_new(FALSE,10);
 	gtk_container_set_border_width(GTK_CONTAINER(hbox), 2);
@@ -172,8 +172,8 @@ GtkWidget *pref_start_grep()
 	gtk_table_attach(GTK_TABLE(table), spin_additional_char, 1, 2, 2, 3,
 			 xoption, yoption, 10, 10);	
 
-	gtk_tooltips_set_tip(tooltip, spin_additional_char, 
-			     _("When matched line is too long, several characters around keyword will be shown in heading."), "Private");
+	gtk_widget_set_tooltip_text(spin_additional_char, 
+			     _("When matched line is too long, several characters around keyword will be shown in heading."));
 
 
 
@@ -402,8 +402,8 @@ GtkWidget *pref_start_cache()
 	gtk_table_attach(GTK_TABLE(table), spin_cache_size, 1, 2, 0, 1,
 			 xoption, yoption, 10, 10);	
 
-	gtk_tooltips_set_tip(tooltip, spin_cache_size, 
-			     _("Specify maximum cache size in MB."), "Private");
+	gtk_widget_set_tooltip_text(spin_cache_size, 
+			     _("Specify maximum cache size in MB."));
 
 	button = gtk_button_new_with_label(_("Clear Cache"));
 	gtk_table_attach(GTK_TABLE(table), button, 2, 3, 0, 1,

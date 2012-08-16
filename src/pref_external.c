@@ -80,8 +80,8 @@ GtkWidget *pref_start_external()
 	check_sound = gtk_check_button_new_with_label(_("Play sound internally"));
 	gtk_box_pack_start (GTK_BOX(vbox)
 			    , check_sound,FALSE, FALSE, 5);
-	gtk_tooltips_set_tip(tooltip, check_sound, 
-			     _("Use internal routine to play sound. Valid only on windows."),"Private");
+	gtk_widget_set_tooltip_text(check_sound, 
+			     _("Use internal routine to play sound. Valid only on windows."));
 
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(check_sound), bplay_sound_internally);
 
@@ -102,8 +102,8 @@ GtkWidget *pref_start_external()
 			    , entry_wave,TRUE, TRUE, 0);
 	gtk_size_group_add_widget (entry_group, entry_wave);
 
-	gtk_tooltips_set_tip(tooltip, entry_wave, 
-			     _("External command to play WAVE sound. %f will be replaced by data file name."),"Private");
+	gtk_widget_set_tooltip_text(entry_wave, 
+			     _("External command to play WAVE sound. %f will be replaced by data file name."));
 
 	gtk_entry_set_text(GTK_ENTRY(entry_wave), wave_template);
 
@@ -124,8 +124,8 @@ GtkWidget *pref_start_external()
 	gtk_box_pack_start (GTK_BOX(hbox)
 			    , entry_mpeg, TRUE, TRUE, 0);
 	gtk_size_group_add_widget (entry_group, entry_mpeg);
-	gtk_tooltips_set_tip(tooltip, entry_mpeg, 
-			     _("External command to play MPEG movie. %f will be replaced by data file name."),"Private");
+	gtk_widget_set_tooltip_text(entry_mpeg, 
+			     _("External command to play MPEG movie. %f will be replaced by data file name."));
 	gtk_entry_set_text(GTK_ENTRY(entry_mpeg), mpeg_template);
 
 
@@ -146,8 +146,8 @@ GtkWidget *pref_start_external()
 	gtk_box_pack_start (GTK_BOX(hbox)
 			    , entry_browser, TRUE, TRUE, 0);
 	gtk_size_group_add_widget (entry_group, entry_browser);
-	gtk_tooltips_set_tip(tooltip, entry_browser, 
-			     _("External command to launch Web browser. %f will be replaced by URL."),"Private");
+	gtk_widget_set_tooltip_text(entry_browser, 
+			     _("External command to launch Web browser. %f will be replaced by URL."));
 	gtk_entry_set_text(GTK_ENTRY(entry_browser), browser_template);
 
 
@@ -169,8 +169,8 @@ GtkWidget *pref_start_external()
 	gtk_box_pack_start (GTK_BOX(hbox)
 			    , entry_open, TRUE, TRUE, 0);
 	gtk_size_group_add_widget (entry_group, entry_open);
-	gtk_tooltips_set_tip(tooltip, entry_open, 
-			     _("Standard command to open file. %f will be replaced by filename, %l by line number."),"Private");
+	gtk_widget_set_tooltip_text(entry_open, 
+			     _("Standard command to open file. %f will be replaced by filename, %l by line number."));
 	gtk_entry_set_text(GTK_ENTRY(entry_open), open_template);
 
 

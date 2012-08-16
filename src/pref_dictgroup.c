@@ -1449,8 +1449,8 @@ GtkWidget *pref_start_dictgroup()
 	spin_search_depth = gtk_spin_button_new(GTK_ADJUSTMENT(adj), 1.0, 0);
 	gtk_box_pack_start(GTK_BOX(hbox2),
 			   spin_search_depth,FALSE, FALSE, 2);
-	gtk_tooltips_set_tip(tooltip, spin_search_depth, 
-			     _("Specify search depth. 0 means to search only specified directory."),"Private");
+	gtk_widget_set_tooltip_text(spin_search_depth, 
+			     _("Specify search depth. 0 means to search only specified directory."));
 
 
 

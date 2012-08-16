@@ -1116,7 +1116,7 @@ GtkWidget *create_grep_bar()
 			 G_CALLBACK(suppress_hidden_toggled),
 			 NULL);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button), bsuppress_hidden_files);
-	gtk_tooltips_set_tip(tooltip, button, _("Suppress files whose name start with dot."),"Private");
+	gtk_widget_set_tooltip_text(button, _("Suppress files whose name start with dot."));
 
 	button = gtk_check_button_new_with_label(_("Ignore Case"));
 	gtk_box_pack_start(GTK_BOX (grep_bar), button, FALSE, FALSE, 5);
@@ -1124,7 +1124,7 @@ GtkWidget *create_grep_bar()
 			 G_CALLBACK(ignore_case_toggled),
 			 NULL);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button), bignore_case);
-	gtk_tooltips_set_tip(tooltip, button, _("When checked, uppercase letters and lowercase letters are regarded as identical."),"Private");
+	gtk_widget_set_tooltip_text(button, _("When checked, uppercase letters and lowercase letters are regarded as identical."));
 
 	active_found = FALSE;
 	old_found = FALSE;
