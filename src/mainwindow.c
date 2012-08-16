@@ -463,7 +463,7 @@ void go_down(){
 	LOG(LOG_DEBUG, "OUT : go_down()");
 }
 
-void note_switch_page(GtkNotebook *notebook, GtkNotebookPage *page, gint page_num, gpointer data)
+void note_switch_page(GtkNotebook *notebook, gpointer *page, guint page_num, gpointer data)
 {
 	LOG(LOG_DEBUG, "IN : note_switch_page()");
 
