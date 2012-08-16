@@ -12,7 +12,6 @@ ebview_LDFLAGS = @EBCONF_PTHREAD_LDFLAGS@ @CYGWIN_LDFLAGS@
 ebview_SOURCES = \
 	bmh.c \
 	bmh.h \
-	cellrenderercolor.h \
 	cellrendererebook.c \
 	cellrendererebook.h \
 	defs.h \

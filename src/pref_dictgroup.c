@@ -17,7 +17,6 @@
 
 #include "defs.h"
 #include "global.h"
-#include "cellrenderercolor.h"
 #include "eb.h"
 #include "xml.h"
 #include "dialog.h"
