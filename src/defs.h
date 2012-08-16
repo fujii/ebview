@@ -18,9 +18,6 @@
 #ifndef __DEFS_H__
 #define __DEFS_H__
 
-/* Disable old GTK+ functions */
-//#define GTK_DISABLE_DEPRECATED 1
-
 #include "../config.h"
 #include <sys/stat.h>
 #include <fcntl.h>
