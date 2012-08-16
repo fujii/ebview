@@ -201,7 +201,7 @@ GtkWidget *create_button_with_image(ImageNumber number){
 	pixbuf = gdk_pixbuf_new_from_xpm_data((const char **)pixmaps[number]);
 	image = gtk_image_new_from_pixbuf(pixbuf);
 	gtk_container_add(GTK_CONTAINER(button), image);
-	gdk_pixbuf_unref(pixbuf);
+	g_object_unref(G_OBJECT(pixbuf));
 	return(button);
 }
 
@@ -217,7 +217,7 @@ GtkWidget *create_toggle_button_with_image(ImageNumber number){
 	pixbuf = gdk_pixbuf_new_from_xpm_data((const char **)pixmaps[number]);
 	image = gtk_image_new_from_pixbuf(pixbuf);
 	gtk_container_add(GTK_CONTAINER(button), image);
-	gdk_pixbuf_unref(pixbuf);
+	g_object_unref(G_OBJECT(pixbuf));
 	return(button);
 }
 
@@ -238,5 +238,5 @@ GdkPixbuf *create_pixbuf(ImageNumber number){
 }
 
 void destroy_pixbuf(GdkPixbuf *pixbuf){
-	gdk_pixbuf_unref(pixbuf);
+	g_object_unref(G_OBJECT(pixbuf));
 }

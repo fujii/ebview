@@ -366,7 +366,7 @@ static void cell_renderer_ebook_render_gaiji(GtkCellRenderer *cell,
 	cellebook->width += width + 2;
 
 
-	gdk_pixbuf_unref(pixbuf);
+	g_object_unref(G_OBJECT(pixbuf));
 	g_free(color_name);
 
 //	LOG(LOG_DEBUG, "OUT : cell_renderer_ebook_render_gaiji()");

@@ -422,7 +422,7 @@ static void draw_gaiji(CANVAS *canvas, BOOK_INFO *binfo, TAG *tag, gchar *code)
 	gtk_text_buffer_insert_pixbuf(
 			canvas->buffer, canvas->iter,
 			pixbuf);
-	gdk_pixbuf_unref(pixbuf);
+	g_object_unref(G_OBJECT(pixbuf));
 
 	end_iter = *(canvas->iter);
 	start_iter = *(canvas->iter);
@@ -514,7 +514,7 @@ static void draw_graphic(CANVAS *canvas, BOOK_INFO *binfo, gint type, gint page,
 	gtk_text_buffer_insert_pixbuf(
 			canvas->buffer, canvas->iter,
 			pixbuf);
-	gdk_pixbuf_unref(pixbuf);
+	g_object_unref(G_OBJECT(pixbuf));
 
 	end_iter = *(canvas->iter);
 	start_iter = *(canvas->iter);
