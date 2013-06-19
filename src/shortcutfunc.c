@@ -324,12 +324,7 @@ void quit(){
 }
 
 void iconify(){
-#ifdef __WIN32__
-#else
-    XIconifyWindow (GDK_DISPLAY (), 
-		    GDK_WINDOW_XWINDOW(main_window->window),
-		    DefaultScreen (GDK_DISPLAY ()));
-#endif
+	gtk_window_iconify(GTK_WINDOW(main_window));
 }
 
 void paste_from_clipboard()
