@@ -27,10 +27,9 @@
 gint launch_external(gchar *cmd, gboolean wait){
 
 	gint status;
-	GError *error = NULL;
 	gboolean ok;
 	if (wait) {
-		ok = g_spawn_command_line_sync(cmd, NULL, NULL, &status, &error);
+		ok = g_spawn_command_line_sync(cmd, NULL, NULL, &status, NULL);
 		if (!ok)
 			popup_warning(_("Failed to execute command. Please check setting."));
 		if (ok) {
@@ -38,7 +37,7 @@ gint launch_external(gchar *cmd, gboolean wait){
 		}
 		return status;
 	} else {
-		ok = g_spawn_command_line_async(cmd, &error);
+		ok = g_spawn_command_line_async(cmd, NULL);
 		if (!ok)
 			popup_warning(_("Failed to execute command. Please check setting."));
 		return 0;
