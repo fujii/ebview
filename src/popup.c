@@ -261,7 +261,7 @@ static void move_popup_window() {
 	root_y = GetSystemMetrics(SM_CYSCREEN);
 #else
 	root_win = gdk_window_foreign_new (GDK_ROOT_WINDOW ());
-	gdk_window_get_size(root_win, &root_x, &root_y);
+	gdk_drawable_get_size(root_win, &root_x, &root_y);
 #endif
 
 	window_width = popup_width;
