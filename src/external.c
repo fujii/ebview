@@ -24,69 +24,25 @@
 #include <sys/wait.h>
 #endif
 
-#define USE_EXEC 1
-
 gint launch_external(gchar *cmd, gboolean wait){
 
-#ifdef __WIN32__
-	PROCESS_INFORMATION pinfo;
-	STARTUPINFO sinfo;
-#else
-	pid_t pid;
-	gchar *words[128];
 	gint status;
-#endif
-
-#ifdef __WIN32__
-	ZeroMemory(&sinfo, sizeof(sinfo));
-	sinfo.cb = sizeof(sinfo);
-
-	LOG(LOG_DEBUG, "Lanuching external command : %s", cmd);
-	if(!CreateProcess(NULL, cmd, NULL, NULL, FALSE, NORMAL_PRIORITY_CLASS, NULL, NULL, &sinfo, &pinfo)){
-		LOG(LOG_CRITICAL, "Failed to execute command : %s", cmd);
-		return(0);
-	}
-	CloseHandle(pinfo.hThread);
-	if(wait == TRUE)
-		WaitForSingleObject(pinfo.hProcess, INFINITE);
-	CloseHandle(pinfo.hProcess);
-	return(0);
-#else
-	switch(pid = fork()){
-	case -1:
-		LOG(LOG_CRITICAL, "fork : %s", strerror(errno));
-		exit(1);
-	case  0:
-		LOG(LOG_DEBUG, "Lanuching external command : %s", cmd);
-
-#ifdef USE_EXEC
-		split_word(cmd, words);
-
-		if(execvp(words[0], words) == -1){
-		LOG(LOG_CRITICAL, "exec : %s", strerror(errno));
-			free_words(words);
-			_exit(100);
-			break;
+	GError *error = NULL;
+	gboolean ok;
+	if (wait) {
+		ok = g_spawn_command_line_sync(cmd, NULL, NULL, &status, &error);
+		if (!ok)
+			popup_warning(_("Failed to execute command. Please check setting."));
+		if (ok) {
+			LOG(LOG_DEBUG, "Child exited with status %d\n", status);
 		}
-		free_words(words);
-#else
-		system(cmd);
-#endif
-		_exit(0);
-		
-		break;
-	default:
-		if(wait == TRUE) {
-			waitpid(pid, &status, 0);
-			LOG(LOG_DEBUG, "Child exited with status %d\n", WEXITSTATUS(status));
-			if(WIFEXITED(status) == 0){
-				LOG(LOG_WARNING, "Child exited abnormally with status %d\n", WEXITSTATUS(status));
-				return(WEXITSTATUS(status));
-			}
-		}
+		return status;
+	} else {
+		ok = g_spawn_command_line_async(cmd, &error);
+		if (!ok)
+			popup_warning(_("Failed to execute command. Please check setting."));
+		return 0;
 	}
-	return(0);
-#endif
 }
 
 #ifdef __WIN32__

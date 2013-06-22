@@ -102,14 +102,6 @@ static void sig_handler(int sig){
 	gint status;
 
 	switch(sig){
-#ifndef __WIN32__
-	case SIGCHLD:
-		wait(&status);
-		if(WEXITSTATUS(status) == 100){
-			popup_warning(_("Failed to execute command. Please check setting."));
-		}
-		break;
-#endif
 	case SIGTERM:
 	case SIGINT:
 		exit_program(NULL, NULL);
