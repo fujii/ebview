@@ -275,7 +275,7 @@ gchar *iconv_convert2(const gchar *icode, const gchar *ocode, const gchar *orig)
 	return(result);
 }
 
-inline gboolean isjisp(const gchar *buff){
+gboolean isjisp(const gchar *buff){
         g_assert(buff != NULL);
 
         if((buff[0] >= 0x21) && (buff[0] <= 0x74) &&
