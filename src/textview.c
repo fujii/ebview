@@ -357,7 +357,7 @@ gint motion_notify_event(GtkWidget *widget, GdkEventMotion *event)
 		cursor = gdk_cursor_new(CURSOR_NORMAL);
 	}
 	gdk_window_set_cursor(gtk_text_view_get_window(GTK_TEXT_VIEW(widget), GTK_TEXT_WINDOW_TEXT), cursor);
-	gdk_cursor_destroy (cursor);
+	gdk_cursor_unref(cursor);
 
 	gdk_window_get_pointer(widget->window, &x, &y, &mask);
 #endif
@@ -388,7 +388,7 @@ gint leave_notify_event(GtkWidget *widget, GdkEventCrossing *event, gpointer dat
 	gdk_window_set_cursor(gtk_text_view_get_window(GTK_TEXT_VIEW(widget), 
 						       GTK_TEXT_WINDOW_TEXT),
 			      cursor);
-	gdk_cursor_destroy (cursor);
+	gdk_cursor_unref(cursor);
 #endif
 	LOG(LOG_DEBUG, "OUT : leave_notify_event()");
 	return(FALSE);
