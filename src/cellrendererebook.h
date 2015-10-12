@@ -42,7 +42,7 @@
 #define __GTK_CELL_RENDERER_EBOOK_H__
 
 #include <pango/pango.h>
-#include <gtk/gtkcellrenderer.h>
+#include <gtk/gtk.h>
 
 #include "defs.h"
 
