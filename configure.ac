@@ -55,18 +55,6 @@ AC_CHECK_FUNCS(mkdir select strdup strtol)
 AC_DEFINE_UNQUOTED(LOCALEDIR, "${PREFIX}/share/locale", Where .mo file is.)
 AC_DEFINE_UNQUOTED(PACKAGEDIR, "${PREFIX}/share/${PACKAGE}", Where EBView data goes.)
 
-case "$host_os" in
-  cygwin*)
-    CYGWIN_CFLAGS="-mms-bitfields"
-    CYGWIN_LDFLAGS="-mno-cygwin -mwindows"
-    CYGWIN_LDADD="ebview.res -lregex -lwinmm -lpthreadGC"
-    ;;
-esac
-
-AC_SUBST(CYGWIN_CFLAGS)
-AC_SUBST(CYGWIN_LDFLAGS)
-AC_SUBST(CYGWIN_LDADD)
-
 AC_CONFIG_FILES([po/Makefile.in src/Makefile Makefile data/Makefile doc/Makefile])
 AC_CONFIG_FILES([data/about.jp data/about.en])
 AC_OUTPUT
