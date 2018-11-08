@@ -547,8 +547,6 @@ void show_preference()
 	pref_dlg = gtk_dialog_new();
 	gtk_window_set_position(GTK_WINDOW(pref_dlg), GTK_WIN_POS_CENTER_ALWAYS);
 
-	gtk_grab_add(pref_dlg);
-
 	g_signal_connect(G_OBJECT (pref_dlg), "delete_event",
 			 G_CALLBACK(delete_event), NULL);
 
@@ -642,6 +640,7 @@ void show_preference()
 
 
 	gtk_widget_show_all(pref_dlg);
+	gtk_grab_add(GTK_WIDGET(pref_dlg));
 
 	gtk_tree_view_expand_all(GTK_TREE_VIEW(preflist_view));
 
