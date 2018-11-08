@@ -270,6 +270,8 @@ gint copy_clipboard_x(gpointer data){
 
 	LOG(LOG_DEBUG, "IN : copy_clipboard()");
 
+	tag_timeout = 0;
+
 	/*
 	xwindow = XGetSelectionOwner (gdk_display_get_default(), GDK_SELECTION_PRIMARY);
 	if (xwindow == None){
