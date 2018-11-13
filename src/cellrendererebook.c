@@ -93,10 +93,10 @@ enum {
 static gpointer parent_class;
 
 
-GtkType
+GType
 gtk_cell_renderer_ebook_get_type (void)
 {
-	static GtkType cell_ebook_type = 0;
+	static GType cell_ebook_type = 0;
 
 //	LOG(LOG_DEBUG, "IN : gtk_cell_renderer_ebook_get_type()");
 
